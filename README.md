@@ -22,5 +22,5 @@ The theme is applied only to the top level visuals, meaning that context, popup 
 4. Open **userChrome.css** in **Notepad** and paste in the code of Firefox Edge
 5. Save the **userChrome.css** file and restart Firefox
 
-*Note: You can find the code either in the **FirefoxEdge.css** file, or on the [Firefox Edge](https://userstyles.org/styles/135593/firefox-edge) userstyles page by clicking on **Show CSS**.*
+_Note: You can find the code either in the **FirefoxEdge.css** file, or on the [Firefox Edge](https://userstyles.org/styles/135593/firefox-edge) userstyles page by clicking on **Show CSS**._
 
