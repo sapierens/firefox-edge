@@ -774,6 +774,42 @@
     max-width: 20px;
   }
   
+  /* BOOKMARKS TOOLBAR */
+  #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+    background-color: #383838 !important;
+    background-image: none !important;
+  }
+  
+  toolbarbutton.bookmark-item:not(.subviewbutton) {
+    padding: 2px 6px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    transition-property: none !important;
+    box-shadow: none !important;
+    color: #FFFFFF !important;
+  }
+  
+  toolbarbutton.bookmark-item:hover:not(.subviewbutton):not([disabled="true"]):not([open]) {
+    background: #4C4C4C !important;
+  }
+  
+  toolbarbutton.bookmark-item:hover:active:not(.subviewbutton):not([disabled="true"]):not([open]),
+  toolbarbutton.bookmark-item:not(.subviewbutton):not([disabled="true"])[open] {
+    background: #606060 !important;
+  }
+  
+  #PlacesToolbarDropIndicator {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAASCAMAAAC+XgR6AAAAKlBMVEX///////////////////////////////////////////////////////9q+00tAAAADXRSTlMAAQQNMTM0NTg6PD0+gWb5JgAAADxJREFUCNdj4GVlAAEuXgYWXjYwgwNEcAIxD0SCi5cdrISZm5ebAQq4YAxGBkzAyMuIIY0khgBEizGhcAGvcQFTGxYNKQAAAABJRU5ErkJggg==) !important;
+  }
+  
+  .bookmark-item {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEX///////9VfPVsAAAAAXRSTlMAQObYZgAAABxJREFUeAFjwACMaICBEVUeU4CgFnoJEHYYQQAAKjwARSYaXOEAAAAASUVORK5CYII=);
+  }
+  
+  toolbarbutton.chevron {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAACVBMVEX///////////+OSuX+AAAAAnRSTlMAJqSeSMUAAAATSURBVHgBY2BkYgRjBgwWjEZgAAOTACjpnfF2AAAAAElFTkSuQmCC) !important;
+  }
+  
   /* TAB THROBBER ANIMATION */
   .tab-throbber[busy],
   .tab-throbber[progress] {
