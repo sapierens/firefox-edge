@@ -3,9 +3,13 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul") {
   
-  /* MAIN WINDOW & TITLEBAR BUTTONS  */
+  /* MAIN WINDOW & TITLEBAR BUTTONS  */  
   #main-window {
     background-color: #242424 !important;
+  }
+  
+  #main-menubar {
+    color: #FFFFFF !important;
   }
   
   #titlebar-min {
