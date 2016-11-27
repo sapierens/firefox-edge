@@ -777,9 +777,11 @@
   }
 
   /* BOOKMARKS TOOLBAR */
-  #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+  #navigator-toolbox > #PersonalToolbar {
     background-color: var(--top-level-bg-color) !important;
     background-image: none !important;
+    height: 33px !important;
+    border-top: 1px solid var(--navigator-separator-bg-color);
   }
 
   toolbarbutton.bookmark-item:not(.subviewbutton) {
