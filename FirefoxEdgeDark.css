@@ -807,7 +807,7 @@
   }
 
   .bookmark-item {
-    list-style-image: var(--tab-icon-image) !important;
+    list-style-image: var(--bookmarks-favicon-image);
   }
 
   toolbarbutton.chevron {
@@ -889,6 +889,7 @@
     --menu-button-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAV1BMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////c7HqBAAAAHHRSTlMAAQIDBAVERUZHSE5Qa3yAhbvAw8bJys/5+vv+9w1rHQAAAFVJREFUGNPNzEEOgkAYxeDv/YNKkBCi9z+oyei4gEPQTZMuyuVoJCBnKUrbjrasgTyl1XuZPkPN+/3bqdfaegnF8KuONmlDsh/TxxwkW84z5PTNFfkDHP0J37JuxWgAAAAASUVORK5CYII=);
     --bookmarks-drop-indicator-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAASCAMAAAC+XgR6AAAAKlBMVEX///////////////////////////////////////////////////////9q+00tAAAADXRSTlMAAQQNMTM0NTg6PD0+gWb5JgAAADxJREFUCNdj4GVlAAEuXgYWXjYwgwNEcAIxD0SCi5cdrISZm5ebAQq4YAxGBkzAyMuIIY0khgBEizGhcAGvcQFTGxYNKQAAAABJRU5ErkJggg==);
     --bookmarks-chevron-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAACVBMVEX///////////+OSuX+AAAAAnRSTlMAJqSeSMUAAAATSURBVHgBY2BkYgRjBgwWjEZgAAOTACjpnfF2AAAAAElFTkSuQmCC);
+	--bookmarks-favicon-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEX///9MTExeXl5vb299fX2JiYmUlJSdnZ2np6etra20tLS6urrAwMDGxsbLy8vR0dHX19eCE9+7AAAAAXRSTlMAQObYZgAAAGpJREFUeNpdTlsOwCAIEx3iC/H+p50YcXH9aENDKW7j8e4G0c9gvmcvcmdiKfEyKmK1azIUAEtk3g49217uQQUqw1KucGLK8r2CrNzwGIWgNaByjI4950k2hyE4czKCtbFX8Wz9abdBmvQCh9YDNnXx7dcAAAAASUVORK5CYII=);
   }
 
 }
