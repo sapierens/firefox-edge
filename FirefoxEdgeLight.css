@@ -701,6 +701,13 @@
     border: none !important;
     box-shadow: none !important;
   }
+  
+  #downloads-button[cui-areatype="toolbar"] .toolbarbutton-icon {
+    width: 20px !important;
+    height: 20px !important;
+    list-style-image: none !important;
+    background: var(--downloads-button-image) no-repeat center !important;
+  }
 
   #downloads-indicator-icon {
     width: 20px !important;
