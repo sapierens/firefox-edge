@@ -722,12 +722,17 @@
   }
 
   #downloads-indicator-counter {
-    margin: -3px 0px 1px 0px !important;
+    margin: 0 !important;
     height: 10px !important;
     color: var(--inactive-font-color) !important;
     text-shadow: none !important;
     font-size: 10px !important;
     line-height: 10px !important;
+  }
+  
+  #downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+    background: var(--downloads-button-image) center no-repeat;
+    background-size: 16px;
   }
 
   #downloads-indicator-progress {
