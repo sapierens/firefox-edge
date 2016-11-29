@@ -1,5 +1,9 @@
 # Changelog
 
+**[v1.3.1 November 29th, 2016]**
+
+* Fixed a glitchy Pocked icon, if viewed from within the menu.
+
 **[v1.3.0 November 29th, 2016]**
 
 * All toolbar button mouse-over interactions should be consistent now.
