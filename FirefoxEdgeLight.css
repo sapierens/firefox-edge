@@ -369,25 +369,11 @@
     padding: 0 !important;
     padding-inline-start: 0 !important;
     padding-inline-end: 0 !important;
-    width: 44px !important;
-    height: 44px !important;
-    background-color: var(--top-level-bg-color) !important;
-  }
-
-  #back-button:not([disabled]):hover {
-    background-color: var(--top-level-bg-hover-color) !important;
-  }
-
-  #back-button:not([disabled]):hover:active {
-    background-color: var(--top-level-bg-active-color) !important;
   }
 
   #back-button > .toolbarbutton-icon {
     padding: 0 !important;
     max-width: 36px !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
   }
 
   /* FORWARD BUTTON */
@@ -403,17 +389,6 @@
   #forward-button {
     list-style-image: var(--forward-button-image);
     -moz-image-region: auto !important;
-    width: 44px !important;
-    height: 44px !important;
-    background-color: var(--top-level-bg-color) !important;
-  }
-
-  #forward-button:not([disabled]):hover {
-    background-color: var(--top-level-bg-hover-color) !important;
-  }
-
-  #forward-button:not([disabled]):hover:active {
-    background-color: var(--top-level-bg-active-color) !important;
   }
 
   #forward-button > .toolbarbutton-icon {
@@ -626,13 +601,6 @@
     max-width: 34px;
   }
 
-  #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-  #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-    background: none !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
-
   #bookmarks-menu-button[cui-areatype="toolbar"] {
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
@@ -682,10 +650,6 @@
     background-image: var(--bookmarked-notification-image);
   }
 
-  #nav-bar .badged-button {
-    width: 44px !important;
-  }
-
   #nav-bar .badged-button:hover {
     background-color: var(--top-level-bg-hover-color) !important;
   }
@@ -695,12 +659,6 @@
   }
 
   /* DOWNLOADS BUTTON */
-  #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-stack,
-  #nav-bar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
   
   #downloads-button[cui-areatype="toolbar"] .toolbarbutton-icon {
     width: 20px !important;
@@ -776,15 +734,37 @@
     list-style-image: var(--menu-button-image);
     -moz-image-region: auto !important;
     border-inline-start: none !important;
-    border: none !important;
-    border-image: none !important;
   }
 
   #PanelUI-menu-button > :-moz-any(.toolbarbutton-menubutton-button, .toolbarbutton-badge-stack) > .toolbarbutton-icon {
     max-width: 20px;
   }
   
-  /* TOOLBARBUTTON BADGE */
+  /* TOOLBAR BUTTON */
+  #nav-bar .toolbarbutton-1 {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+  
+  #nav-bar .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([disabled]):hover {
+    background-color: var(--top-level-bg-hover-color) !important;
+  }
+  
+  #nav-bar .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([disabled]):hover:active {
+    background-color: var(--top-level-bg-active-color) !important;
+  }
+  
+  #nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
+  #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+  #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+  #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-stack,
+  #nav-bar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* TOOLBAR BUTTON BADGE */
   #nav-bar .toolbarbutton-badge {
     background-color: var(--toolbarbutton-badge-bg-color) !important;
     border-radius: 50% !important;
