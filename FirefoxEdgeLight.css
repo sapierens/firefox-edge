@@ -783,6 +783,17 @@
   #PanelUI-menu-button > :-moz-any(.toolbarbutton-menubutton-button, .toolbarbutton-badge-stack) > .toolbarbutton-icon {
     max-width: 20px;
   }
+  
+  /* TOOLBARBUTTON BADGE */
+  #nav-bar .toolbarbutton-badge {
+    background-color: var(--toolbarbutton-badge-bg-color) !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--toolbarbutton-badge-border-color) !important;
+    box-shadow: none !important;
+    margin: 8px 0 0 !important;
+    margin-inline-end: -8px !important;
+    min-width: 16px !important;
+  }
 
   /* BOOKMARKS TOOLBAR */
   #navigator-toolbox > #PersonalToolbar {
@@ -865,6 +876,8 @@
     --main-font-color: #000000;
     --inactive-font-color: #525252;
     --verified-identity-font-color: #107C10;
+    --toolbarbutton-badge-bg-color: rgba(100, 100, 100, 0.7);
+    --toolbarbutton-badge-border-color: rgba(55, 55, 55, 0.6);
 
     /* IMAGE VARIABLES */
     --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize");
