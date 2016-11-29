@@ -1,5 +1,11 @@
 # Changelog
 
+**[v1.3.0 November 29th, 2016]**
+
+* All toolbar button mouse-over interactions should be consistent now.
+* Toolbar button badge icons will now fit the style of Microsoft Edge.
+* Changed Pocket icon in dark theme to one that's made for dark themes.
+
 **[v1.2.0 November 28th, 2016]**
 
 * Added the light version of the theme.
