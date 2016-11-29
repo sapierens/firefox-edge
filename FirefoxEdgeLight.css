@@ -826,7 +826,7 @@
   }
   
   /* POCKET BUTTON */
-  #pocket-button {
+  #nav-bar #pocket-button {
     list-style-image: var(--pocket-button-image) !important;
   }
 
