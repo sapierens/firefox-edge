@@ -15,3 +15,9 @@ The theme is applied only to the top level visuals, meaning that context, popup 
 
 *Note: After installing the theme you might need to restart Firefox to correct any visual bugs.*
 
+## Screenshots
+### Light theme
+![Firefox Edge Screenshot](https://github.com/sapierens/firefox-edge/raw/master/Resources/ffedge_window_light.png)
+
+### Dark theme
+![Firefox Edge Screenshot](https://github.com/sapierens/firefox-edge/raw/master/Resources/ffedge_window_dark.png)
