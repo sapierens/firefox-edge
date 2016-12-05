@@ -155,8 +155,17 @@
       transparent 100%);
   }
 
-  .tabbrowser-tab .close-icon {
+  .close-icon {
     list-style-image: var(--tab-close-button-image);
+    -moz-image-region: rect(0, 20px, 20px, 0px);
+  }
+  
+  .close-icon:hover {
+    -moz-image-region: rect(0, 40px, 20px, 20px);
+  }
+  
+  .close-icon:hover:active {
+    -moz-image-region: rect(0, 60px, 20px, 40px);
   }
 
   .tab-close-button:not([selected]) {
@@ -415,6 +424,10 @@
     width: 44px !important;
     height: 44px !important;
   }
+  
+  #urlbar-reload-button > .toolbarbutton-icon {
+    width: 18px;
+  }
 
   #urlbar-reload-button:not([displaystop]) {
     visibility: visible !important;
@@ -444,6 +457,10 @@
     padding: 0 !important;
     width: 44px !important;
     height: 44px !important;
+  }
+  
+  #urlbar-stop-button > .toolbarbutton-icon {
+    width: 16px;
   }
 
   #urlbar-stop-button:not([disabled]):hover {
@@ -529,6 +546,7 @@
 
   .urlbar-history-dropmarker {
     list-style-image: var(--urlbar-history-dropmarker-image);
+    -moz-image-region: auto !important;
     transition: none !important;
   }
 
@@ -573,6 +591,15 @@
 
   .searchbar-search-button {
     list-style-image: var(--searchbar-search-button-image);
+    -moz-image-region: rect(0, 20px, 20px, 0);
+  }
+  
+  .searchbar-search-button:hover {
+    -moz-image-region: rect(0, 40px, 20px, 20px);
+  }
+
+  .searchbar-search-button:hover:active {
+    -moz-image-region: rect(0, 60px, 20px, 40px);
   }
 
   .searchbar-search-button[addengines="true"] {
@@ -581,7 +608,16 @@
 
   .search-go-button {
     list-style-image: var(--searchbar-go-button-image);
+    -moz-image-region: rect(0, 14px, 14px, 0);
     padding: 0 !important;
+  }
+  
+  .search-go-button:hover {
+    -moz-image-region: rect(0, 28px, 14px, 14px);
+  }
+  
+  .search-go-button:hover:active {
+    -moz-image-region: rect(0, 42px, 14px, 28px);
   }
 
   /* BOOKMARKS BUTTON */
