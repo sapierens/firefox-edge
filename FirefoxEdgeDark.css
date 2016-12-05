@@ -57,6 +57,8 @@
   /* TABS */
   #TabsToolbar {
     height: 33px !important;
+    background-color: var(--second-level-bg-color) !important;
+    margin-bottom: 0 !important;
   }
 
   .tabbrowser-tab {
@@ -367,6 +369,12 @@
     background-image: none !important;
     background-color: var(--top-level-bg-color) !important;
     height: 44px !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  
+  #TabsToolbar:not([collapsed="true"]) + #nav-bar {
+    border: none !important;
   }
 
   #urlbar > toolbarbutton {
@@ -551,6 +559,7 @@
     list-style-image: var(--urlbar-history-dropmarker-image);
     -moz-image-region: auto !important;
     transition: none !important;
+    -moz-appearance: none;
   }
 
   .urlbar-icon {
@@ -582,6 +591,7 @@
     border-color: var(--tab-separator-color) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+    height: 26px !important;
   }
 
   .searchbar-textbox:hover {
