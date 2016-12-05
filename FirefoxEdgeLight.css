@@ -158,6 +158,9 @@
   .close-icon {
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
+    background-image: none !important;
+    height: 20px;
+    width: 20px;
   }
   
   .close-icon:hover {
