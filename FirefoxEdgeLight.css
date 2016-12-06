@@ -888,7 +888,7 @@
     margin-top: 1px !important;
     width: 20px !important;
     height: 20px !important;
-    image-rendering: optimizespeed !important;
+    image-rendering: auto !important;
     list-style-image: var(--tab-throbber-animation-image) !important;
   }
 
