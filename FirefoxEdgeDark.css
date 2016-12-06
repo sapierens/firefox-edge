@@ -878,6 +878,12 @@
   #nav-bar #pocket-button {
     list-style-image: var(--pocket-button-image) !important;
   }
+  
+  @media (min-resolution: 1.1dppx) {
+    #nav-bar #pocket-button {
+      list-style-image: var(--pocket-button-image2x) !important;
+    }
+  }
 
   /* TAB THROBBER ANIMATION */
   .tab-throbber[busy],
@@ -958,6 +964,7 @@
     --bookmarks-chevron-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDE4IDEwIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MS41cHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJkYXJrIj48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjEgMSA5IDkgMTcgMSIvPjwvZz48L3N2Zz4=);
     --bookmarks-favicon-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MS40cHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJkYXJrLWZhdmljb24iPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIyIDggOCA4IDEwIDIuMiAxMiA4IDE4IDggMTMgMTIgMTUgMTguMiAxMCAxNC41IDUgMTguMiA3IDEyIDIgOCIvPjwvZz48L3N2Zz4=);
     --pocket-button-image: url(chrome://pocket/skin/Toolbar-inverted.png);
+    --pocket-button-image2x: url(chrome://pocket/skin/Toolbar-inverted@2x.png);
   }
 
 }
