@@ -193,7 +193,7 @@
   .tabbrowser-arrowscrollbox > .scrollbutton-up, 
   .tabbrowser-arrowscrollbox > .scrollbutton-down {
     list-style-image: var(--tab-scroll-up-down-button-image);
-    -moz-image-region: rect(0, 15px, 17px, 0);
+    -moz-image-region: rect(0, 15px, 17px, 0) !important;
     background-image: none !important;
     background-color: var(--tab-scroll-up-down-bg-color) !important;
     width: 34px !important;
@@ -214,8 +214,12 @@
   .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled],
   .tabbrowser-arrowscrollbox > .scrollbutton-down[disabled] {
     background-color: var(--tab-scroll-up-down-bg-disabled-color) !important;
-    -moz-image-region: rect(0, 30px, 17px, 15px);
     opacity: 1.0;
+  }
+  
+  .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled]  > .toolbarbutton-icon,
+  .tabbrowser-arrowscrollbox > .scrollbutton-down[disabled]  > .toolbarbutton-icon {
+    opacity: 0.5;
   }
 
   .tabbrowser-arrowscrollbox > .scrollbutton-down > .toolbarbutton-icon,
