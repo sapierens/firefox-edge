@@ -559,7 +559,16 @@
     list-style-image: var(--urlbar-history-dropmarker-image);
     -moz-image-region: auto !important;
     transition: none !important;
+    opacity: 0.7;
     -moz-appearance: none;
+  }
+  
+  .urlbar-history-dropmarker:hover {
+    opacity: 0.85;
+  }
+  
+  .urlbar-history-dropmarker:hover:active {
+    opacity: 1.0;
   }
 
   .urlbar-icon {
