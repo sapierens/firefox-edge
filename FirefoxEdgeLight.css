@@ -157,7 +157,7 @@
       transparent 100%);
   }
 
-  .close-icon {
+  .tabbrowser-tab .close-icon {
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
     background-image: none !important;
@@ -165,11 +165,11 @@
     width: 20px;
   }
   
-  .close-icon:hover {
+  .tabbrowser-tab .close-icon:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
-  .close-icon:hover:active {
+  .tabbrowser-tab .close-icon:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
 
