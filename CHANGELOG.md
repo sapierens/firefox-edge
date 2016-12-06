@@ -1,5 +1,10 @@
 # Changelog
 
+**[v1.4.0 December 6th, 2016]**
+
+* The theme is now high-dpi compatible (no more blurry/double images).
+* Improved compatibility with Firefox for Linux (tested on Linux Mint).
+
 **[v1.3.1 November 29th, 2016]**
 
 * Fixed a glitchy Pocked icon, if viewed from within the menu.
