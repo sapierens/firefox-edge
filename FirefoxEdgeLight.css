@@ -917,6 +917,178 @@
       list-style-image: var(--tab-throbber-animation-image2x) !important;
     }
   }
+  
+  /* MENU & POPUPS */
+  #mainPopupSet .panel-arrowcontent {
+    background-color: var(--top-level-bg-color) !important;
+    color: var(--main-font-color) !important;
+    --panel-arrowcontent-border: 1px solid var(--urlbar-separator-color) !important;
+  }
+  
+  #mainPopupSet .panel-subviews {
+    background-color: var(--top-level-bg-color) !important;
+    border-left: 1px solid var(--urlbar-separator-color);
+  }
+  
+  #mainPopupSet .panel-subview-header,
+  #mainPopupSet .PanelUI-subView .subviewbutton[shortcut]::after {
+    color: var(--gray-text-color) !important;
+  }
+  
+  #mainPopupSet toolbarbutton {
+    color: var(--main-font-color) !important;
+    border: none !important;
+  }
+  
+  #mainPopupSet toolbarbutton:hover {
+    background-color: var(--top-level-bg-hover-color);
+  }
+  
+  #mainPopupSet toolbarbutton:hover:active {
+    background-color: var(--top-level-bg-active-color);
+  }
+  
+  #mainPopupSet .subviewbutton.panel-subview-footer {
+    background-color: var(--second-level-bg-color) !important;
+    border-top: 1px solid var(--panel-separator-color) !important; 
+  }
+  
+  #mainPopupSet .subviewbutton.panel-subview-footer:hover {
+    background-color: var(--second-level-bg-hover-color) !important;
+  }
+  
+  #mainPopupSet .subviewbutton.panel-subview-footer:hover:active {
+    background-color: var(--second-level-bg-active-color) !important;
+  }
+  
+  #mainPopupSet #edit-controls,
+  #mainPopupSet #zoom-controls {
+    border-bottom: 1px solid var(--panel-separator-color);
+  }
+  
+  #mainPopupSet #edit-controls:hover,
+  #mainPopupSet #zoom-controls:hover {
+    border: 1px solid var(--panel-separator-color);
+  }
+  
+  #mainPopupSet #PanelUI-footer {
+    background-color: var(--second-level-bg-color) !important;
+  }
+  
+  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover {
+    background-color: var(--second-level-bg-hover-color);
+  }
+  
+  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover:active {
+    background-color: var(--second-level-bg-active-color);
+  }
+  
+  #mainPopupSet #PanelUI-footer-inner,
+  #mainPopupSet #PanelUI-footer-fxa:not([hidden]) {
+    border-top: 1px solid var(--panel-separator-color);
+  }
+  
+  #mainPopupSet #PanelUI-footer-inner > toolbarseparator,
+  #mainPopupSet #PanelUI-footer-fxa > toolbarseparator {
+    border-left: 1px solid var(--panel-separator-color);
+  }
+  
+  #mainPopupSet separator {
+    background: var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet .panel-arrow[side="top"],
+  #mainPopupSet .panel-arrow[side="bottom"] {
+    list-style-image: var(--panel-arrow-vertical) !important;
+  }
+  
+  @media not all and (min-resolution: 1.1dppx) {
+    #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
+    #mainPopupSet :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"],
+    #mainPopupSet toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
+      list-style-image: var(--menupanel-images);
+    }
+    
+    #mainPopupSet #PanelUI-help[panel-multiview-anchor="true"]::after,
+    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"],
+    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
+      background-color: var(--blue-accent-color) !important;
+      background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted.png) !important;
+    }
+    
+    #mainPopupSet #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
+    #mainPopupSet #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
+    #mainPopupSet toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton,
+    #mainPopupSet toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton {
+      list-style-image: var(--menupanel-small-images);
+    }
+    
+    #mainPopupSet #pocket-button[cui-areatype="menu-panel"],
+    #mainPopupSet toolbarpaletteitem[place="palette"] > #pocket-button {
+      list-style-image: var(--pocket-menupanel-image) !important;
+    }
+    
+    #mainPopupSet #PanelUI-fxa-label,
+    #mainPopupSet #PanelUI-fxa-icon {
+      list-style-image: var(--panelUI-fxa-icon);
+    }
+    
+    #mainPopupSet #PanelUI-customize {
+      list-style-image: var(--panelUI-customize-icon);
+    }
+    
+    #mainPopupSet #PanelUI-help {
+      list-style-image: var(--panelUI-help-icon);
+    }
+
+    #mainPopupSet #PanelUI-quit {
+      list-style-image: var(--panelUI-quit-icon);
+    }
+  }
+  
+  @media (min-resolution: 1.1dppx) {
+    #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
+    #mainPopupSet :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"],
+    #mainPopupSet toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
+      list-style-image: var(--menupanel-images-2x);
+    }
+    
+    #mainPopupSet #PanelUI-help[panel-multiview-anchor="true"]::after,
+    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"],
+    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
+      background-color: var(--blue-accent-color) !important;
+      background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted@2x.png) !important;
+    }
+    
+    #mainPopupSet #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
+    #mainPopupSet #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
+    #mainPopupSet toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton,
+    #mainPopupSet toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton {
+      list-style-image: var(--menupanel-small-images-2x);
+    }
+    
+    #mainPopupSet #pocket-button[cui-areatype="menu-panel"],
+    #mainPopupSet toolbarpaletteitem[place="palette"] > #pocket-button {
+      list-style-image: var(--pocket-menupanel-image-2x) !important;
+    }
+    
+    #mainPopupSet #PanelUI-fxa-label,
+    #mainPopupSet #PanelUI-fxa-icon {
+      list-style-image: var(--panelUI-fxa-icon-2x);
+    }
+    
+    #mainPopupSet #PanelUI-customize {
+      list-style-image: var(--panelUI-customize-icon-2x);
+    }
+    
+    #mainPopupSet #PanelUI-help {
+      list-style-image: var(--panelUI-help-icon-2x);
+    }
+
+    #mainPopupSet #PanelUI-quit {
+      list-style-image: var(--panelUI-quit-icon-2x);
+    }
+  }
 
   :root {
     /* COLOR VARIABLES */
@@ -927,6 +1099,7 @@
     --top-level-bg-active-color: #C2C2C2;
     --second-level-bg-color: #CCCCCC;
     --second-level-bg-hover-color: #E6E6E6;
+    --second-level-bg-active-color: #F9F9F9;
     --tab-scroll-up-down-bg-color: #E6E6E6;
     --tab-scroll-up-down-bg-hover-color: #F2F2F2;
     --tab-scroll-up-down-bg-active-color: #FFFFFF;
@@ -949,6 +1122,9 @@
     --verified-identity-font-color: #107C10;
     --toolbarbutton-badge-bg-color: rgba(100, 100, 100, 0.7);
     --toolbarbutton-badge-border-color: rgba(55, 55, 55, 0.6);
+    --panel-separator-color: rgba(145,145,145,0.5);
+    --blue-accent-color: #0078D7;
+    --gray-text-color: GrayText;
 
     /* IMAGE VARIABLES */
     --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize");
@@ -986,6 +1162,21 @@
     --bookmarks-favicon-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MS4ycHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJsaWdodC1mYXZpY29uIj48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMS44IDggOCA4IDEwIDIgMTIgOCAxOC4yIDggMTMgMTIgMTUgMTguMyAxMCAxNC41IDUgMTguMyA3IDEyIDEuOCA4Ii8+PC9nPjwvc3ZnPg==);
     --pocket-button-image: url(chrome://pocket/skin/Toolbar.png);
     --pocket-button-image2x: url(chrome://pocket/skin/Toolbar@2x.png);
+	--panel-arrow-vertical: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIj4gIDxwYXRoIGQ9Ik0gMCwxMCBMIDEwLDAgMjAsMTAgeiIgZmlsbD0iIzkxOTE5MSIvPiAgPHBhdGggZD0iTSAxLDEwIEwgMTAsMSAxOSwxMCB6IiBmaWxsPSIjRjJGMkYyIi8+PC9zdmc+);
+    --menupanel-images: url(chrome://browser/skin/menuPanel.png);
+    --menupanel-images-2x: url(chrome://browser/skin/menuPanel@2x.png);
+    --menupanel-small-images: url(chrome://browser/skin/menuPanel-small.png);
+    --menupanel-small-images-2x: url(chrome://browser/skin/menuPanel-small@2x.png);
+    --pocket-menupanel-image: url(chrome://pocket/skin/menuPanel.png);
+    --pocket-menupanel-image-2x: url(chrome://pocket/skin/menuPanel@2x.png);
+    --panelUI-fxa-icon: url(chrome://browser/skin/sync-horizontalbar.png);
+    --panelUI-fxa-icon-2x: url(chrome://browser/skin/sync-horizontalbar@2x.png);
+    --panelUI-customize-icon: url(chrome://browser/skin/menuPanel-customize.png);
+    --panelUI-customize-icon-2x: url(chrome://browser/skin/menuPanel-customize@2x.png);
+    --panelUI-help-icon: url(chrome://browser/skin/menuPanel-help.png);
+    --panelUI-help-icon-2x: url(chrome://browser/skin/menuPanel-help@2x.png);
+    --panelUI-quit-icon: url(chrome://browser/skin/menuPanel-exit.png);
+    --panelUI-quit-icon-2x: url(chrome://browser/skin/menuPanel-exit@2x.png);
   }
 
 }
