@@ -948,16 +948,19 @@
     background-color: var(--top-level-bg-active-color);
   }
   
-  #mainPopupSet .subviewbutton.panel-subview-footer {
+  #mainPopupSet .subviewbutton.panel-subview-footer,
+  #mainPopupSet .downloadsPanelFooterButton {
     background-color: var(--second-level-bg-color) !important;
     border-top: 1px solid var(--panel-separator-color) !important; 
   }
   
-  #mainPopupSet .subviewbutton.panel-subview-footer:hover {
+  #mainPopupSet .subviewbutton.panel-subview-footer:hover,
+  #mainPopupSet .downloadsPanelFooterButton:hover {
     background-color: var(--second-level-bg-hover-color) !important;
   }
   
-  #mainPopupSet .subviewbutton.panel-subview-footer:hover:active {
+  #mainPopupSet .subviewbutton.panel-subview-footer:hover:active,
+  #mainPopupSet .downloadsPanelFooterButton:hover:active {
     background-color: var(--second-level-bg-active-color) !important;
   }
   
@@ -1000,6 +1003,41 @@
   #mainPopupSet .panel-arrow[side="top"],
   #mainPopupSet .panel-arrow[side="bottom"] {
     list-style-image: var(--panel-arrow-vertical) !important;
+  }
+  
+  #mainPopupSet #downloadsSummary {
+    box-shadow: none !important;
+  }
+  
+  #mainPopupSet #downloadsSummary > .downloadTypeIcon {
+    list-style-image: none !important;   
+    background-image: var(--downloads-button-image) !important;
+    background-size: cover;
+  }
+  
+  #mainPopupSet #downloadsSummary {
+    background-color: hsla(210,4%,10%,.14);
+  }
+  
+  #mainPopupSet #downloadsSummary:hover {
+    background-color: hsla(210,4%,10%,.22);
+  }
+  
+  #mainPopupSet #downloadsSummary:hover:active {
+    background-color: hsla(210,4%,10%,.30);
+  }
+  
+  #mainPopupSet richlistitem[type="download"] {
+    border-bottom: 1px solid var(--panel-separator-color);
+    border-top: none !important;
+  }
+  
+  #mainPopupSet richlistitem[type="download"]:last-child {
+    border-bottom: 1px solid transparent;
+  }
+  
+  #downloadsSummaryDescription {
+    color: var(--hyperlink-text-color);
   }
   
   @media not all and (min-resolution: 1.1dppx) {
@@ -1125,6 +1163,7 @@
     --panel-separator-color: rgba(145,145,145,0.5);
     --blue-accent-color: #0078D7;
     --gray-text-color: GrayText;
+    --hyperlink-text-color: -moz-nativehyperlinktext;
 
     /* IMAGE VARIABLES */
     --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize");
@@ -1162,7 +1201,7 @@
     --bookmarks-favicon-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MS4ycHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJsaWdodC1mYXZpY29uIj48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMS44IDggOCA4IDEwIDIgMTIgOCAxOC4yIDggMTMgMTIgMTUgMTguMyAxMCAxNC41IDUgMTguMyA3IDEyIDEuOCA4Ii8+PC9nPjwvc3ZnPg==);
     --pocket-button-image: url(chrome://pocket/skin/Toolbar.png);
     --pocket-button-image2x: url(chrome://pocket/skin/Toolbar@2x.png);
-	--panel-arrow-vertical: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIj4gIDxwYXRoIGQ9Ik0gMCwxMCBMIDEwLDAgMjAsMTAgeiIgZmlsbD0iIzkxOTE5MSIvPiAgPHBhdGggZD0iTSAxLDEwIEwgMTAsMSAxOSwxMCB6IiBmaWxsPSIjRjJGMkYyIi8+PC9zdmc+);
+    --panel-arrow-vertical: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIj4gIDxwYXRoIGQ9Ik0gMCwxMCBMIDEwLDAgMjAsMTAgeiIgZmlsbD0iIzkxOTE5MSIvPiAgPHBhdGggZD0iTSAxLDEwIEwgMTAsMSAxOSwxMCB6IiBmaWxsPSIjRjJGMkYyIi8+PC9zdmc+);
     --menupanel-images: url(chrome://browser/skin/menuPanel.png);
     --menupanel-images-2x: url(chrome://browser/skin/menuPanel@2x.png);
     --menupanel-small-images: url(chrome://browser/skin/menuPanel-small.png);
