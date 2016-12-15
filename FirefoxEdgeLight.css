@@ -919,38 +919,40 @@
   }
   
   /* MENU & POPUPS */
-  #mainPopupSet .panel-arrowcontent {
+  :-moz-any(#mainPopupSet, #nav-bar) .panel-arrowcontent {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
     --panel-arrowcontent-border: 1px solid var(--urlbar-separator-color) !important;
   }
   
-  #mainPopupSet .panel-subviews {
+  :-moz-any(#mainPopupSet, #nav-bar) .panel-subviews {
     background-color: var(--top-level-bg-color) !important;
     border-left: 1px solid var(--urlbar-separator-color);
   }
   
-  #mainPopupSet .panel-subview-header,
-  #mainPopupSet .PanelUI-subView .subviewbutton[shortcut]::after {
+  :-moz-any(#mainPopupSet, #nav-bar) .panel-subview-header,
+  :-moz-any(#mainPopupSet, #nav-bar)  .subviewbutton[shortcut]::after {
     color: var(--gray-text-color) !important;
   }
   
-  #mainPopupSet toolbarbutton {
+  :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton {
     color: var(--main-font-color) !important;
     border: none !important;
   }
   
   #mainPopupSet toolbarbutton:hover,
+  #nav-bar toolbarbutton:hover,
   #mainPopupSet .identity-popup-expander:hover {
     background-color: var(--top-level-bg-hover-color);
   }
   
   #mainPopupSet toolbarbutton:hover:active,
+  #nav-bar toolbarbutton:hover:active,
   #mainPopupSet .identity-popup-expander:hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
-  #mainPopupSet .subviewbutton.panel-subview-footer,
+  :-moz-any(#mainPopupSet, #nav-bar) .subviewbutton.panel-subview-footer,
   #mainPopupSet .downloadsPanelFooterButton,
   #mainPopupSet #identity-popup-securityView-footer > button {
     color: var(--default-text-color);
@@ -960,6 +962,7 @@
   
   #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover,
   #mainPopupSet .subviewbutton.panel-subview-footer:hover,
+  #nav-bar .subviewbutton.panel-subview-footer:hover,
   #mainPopupSet .downloadsPanelFooterButton:hover,
   #mainPopupSet #identity-popup-securityView-footer > button:hover {
     background-color: var(--second-level-bg-hover-color) !important;
@@ -967,6 +970,7 @@
   
   #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover:active,
   #mainPopupSet .subviewbutton.panel-subview-footer:hover:active,
+  #nav-bar .subviewbutton.panel-subview-footer:hover:active,
   #mainPopupSet .downloadsPanelFooterButton:hover:active,
   #mainPopupSet #identity-popup-securityView-footer > button:hover:active {
     background-color: var(--second-level-bg-active-color) !important;
@@ -996,12 +1000,12 @@
     border-left: 1px solid var(--panel-separator-color);
   }
   
-  #mainPopupSet separator {
+  :-moz-any(#mainPopupSet, #nav-bar) separator {
     background: var(--panel-separator-color) !important;
   }
   
-  #mainPopupSet .panel-arrow[side="top"],
-  #mainPopupSet .panel-arrow[side="bottom"] {
+  :-moz-any(#mainPopupSet, #nav-bar) .panel-arrow[side="top"],
+  :-moz-any(#mainPopupSet, #nav-bar) .panel-arrow[side="bottom"] {
     list-style-image: var(--panel-arrow-vertical) !important;
   }
   
@@ -1060,8 +1064,8 @@
     }
     
     #mainPopupSet #PanelUI-help[panel-multiview-anchor="true"]::after,
-    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"],
-    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
+    :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton[panel-multiview-anchor="true"],
+    :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
       background-color: var(--blue-accent-color) !important;
       background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted.png) !important;
     }
@@ -1104,8 +1108,8 @@
     }
     
     #mainPopupSet #PanelUI-help[panel-multiview-anchor="true"]::after,
-    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"],
-    #mainPopupSet toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
+    :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton[panel-multiview-anchor="true"],
+    :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
       background-color: var(--blue-accent-color) !important;
       background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted@2x.png) !important;
     }
