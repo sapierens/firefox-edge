@@ -917,9 +917,10 @@
       list-style-image: var(--tab-throbber-animation-image2x) !important;
     }
   }
-  
+
   /* MENU & POPUPS */
-  :-moz-any(#mainPopupSet, #nav-bar) .panel-arrowcontent {
+  :-moz-any(#mainPopupSet, #nav-bar) .panel-arrowcontent,
+  #nav-bar arrowscrollbox {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
     --panel-arrowcontent-border: 1px solid var(--urlbar-separator-color) !important;
@@ -931,24 +932,29 @@
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subview-header,
-  :-moz-any(#mainPopupSet, #nav-bar)  .subviewbutton[shortcut]::after {
+  :-moz-any(#mainPopupSet, #nav-bar) .subviewbutton[shortcut]::after,
+  #nav-bar .menu-accel,
+  #nav-bar .menu-iconic-accel {
     color: var(--gray-text-color) !important;
   }
   
-  :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton {
+  :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton,
+  #nav-bar .subviewbutton:not(.panel-subview-footer) {
     color: var(--main-font-color) !important;
     border: none !important;
   }
   
   #mainPopupSet toolbarbutton:hover,
-  #nav-bar toolbarbutton:hover,
-  #mainPopupSet .identity-popup-expander:hover {
+  #nav-bar panel toolbarbutton:hover,
+  #mainPopupSet .identity-popup-expander:hover,
+  #nav-bar .subviewbutton:hover {
     background-color: var(--top-level-bg-hover-color);
   }
   
   #mainPopupSet toolbarbutton:hover:active,
-  #nav-bar toolbarbutton:hover:active,
-  #mainPopupSet .identity-popup-expander:hover:active {
+  #nav-bar panel toolbarbutton:hover:active,
+  #mainPopupSet .identity-popup-expander:hover:active,
+  #nav-bar .subviewbutton:hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
@@ -1054,6 +1060,10 @@
   
   #mainPopupSet .identity-popup-connection-secure {
     color: var(--verified-identity-font-color);
+  }
+  
+  #nav-bar menu.subviewbutton > .menu-right {
+    list-style-image: var(--menu-arrow-image);
   }
   
   @media not all and (min-resolution: 1.1dppx) {
@@ -1233,6 +1243,7 @@
     --panelUI-quit-icon: url(chrome://browser/skin/menuPanel-exit.png);
     --panelUI-quit-icon-2x: url(chrome://browser/skin/menuPanel-exit@2x.png);
     --arrow-subview-forward-image: url(chrome://browser/skin/controlcenter/arrow-subview.svg);
+    --menu-arrow-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImxpZ2h0Ij48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjUgMiAxMSA4IDUgMTQiLz48L2c+PC9zdmc+);
   }
 
 }
