@@ -934,12 +934,16 @@
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subview-header,
   :-moz-any(#mainPopupSet, #nav-bar) .subviewbutton[shortcut]::after,
   #nav-bar .menu-accel,
-  #nav-bar .menu-iconic-accel {
+  #nav-bar .menu-iconic-accel,
+  :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-title, 
+  :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-label, 
+  :-moz-any(#mainPopupSet, #nav-bar) #PanelUI-remotetabs-mobile-promo {
     color: var(--gray-text-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton,
-  #nav-bar .subviewbutton:not(.panel-subview-footer) {
+  #nav-bar .subviewbutton:not(.panel-subview-footer),
+  :-moz-any(#mainPopupSet, #nav-bar) .downloadsPanelFooter {
     color: var(--main-font-color) !important;
     border: none !important;
   }
