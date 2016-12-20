@@ -937,7 +937,8 @@
   #nav-bar .menu-iconic-accel,
   :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-title, 
   :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-label, 
-  :-moz-any(#mainPopupSet, #nav-bar) #PanelUI-remotetabs-mobile-promo {
+  :-moz-any(#mainPopupSet, #nav-bar) #PanelUI-remotetabs-mobile-promo,
+  :-moz-any(#mainPopupSet, #nav-bar) #identity-popup-content-verifier ~ description {
     color: var(--gray-text-color) !important;
   }
   
