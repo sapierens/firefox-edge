@@ -1102,7 +1102,7 @@
   
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker {
     list-style-image: var(--default-dropdown-image) !important;
-    border-left: 2px solid var(--top-level-bg-color) !important;
+    border-left: 1px solid var(--top-level-bg-color) !important;
   }
   
   #mainPopupSet button {
@@ -1129,6 +1129,23 @@
     -moz-appearance: none !important;
     padding: 0 !important;
     border: none !important;
+  }
+  
+  #mainPopupSet textbox {
+    -moz-appearance: none !important;
+    color: var(--main-font-color) !important;
+    background-color: var(--searchbar-bg-color) !important;
+    border: 1px solid var(--tab-separator-color) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #mainPopupSet textbox:hover {
+    background-color: var(--searchbar-bg-hover-color) !important;
+  }
+
+  #mainPopupSet textbox[focused] {
+    background-color: var(--searchbar-bg-active-color) !important;
   }
   
   @media not all and (min-resolution: 1.1dppx) {
