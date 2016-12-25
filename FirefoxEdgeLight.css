@@ -1152,14 +1152,14 @@
     background-color: var(--searchbar-bg-active-color) !important;
   }
   
-  menulist {    
+  :-moz-any(#mainPopupSet, #nav-bar) menulist {    
     -moz-appearance: none !important;
     background-color: transparent !important;
     border: 1px solid var(--tab-separator-color) !important;
     color: var(--main-font-color) !important;
   }
   
-  .menulist-dropmarker {
+  :-moz-any(#mainPopupSet, #nav-bar) .menulist-dropmarker {
     -moz-appearance: none !important;
     list-style-image: var(--menulist-dropdown-image) !important;
     background-color: transparent !important;
@@ -1168,41 +1168,41 @@
     margin-right: 6px !important;
   }
   
-  tree,
-  listbox {
+  :-moz-any(#mainPopupSet, #nav-bar) tree,
+  :-moz-any(#mainPopupSet, #nav-bar) listbox {
     -moz-appearance: none!important;
     background: var(--second-level-bg-color) !important;
     box-shadow: none !important;
     border: 1px solid var(--urlbar-separator-color) !important;
   }
   
-  tree,
-  treechildren,
-  treecol,
-  treecolpicker,
-  treechildren::-moz-tree-cell-text,
-  listitem {
+  :-moz-any(#mainPopupSet, #nav-bar) tree,
+  :-moz-any(#mainPopupSet, #nav-bar) treechildren,
+  :-moz-any(#mainPopupSet, #nav-bar) treecol,
+  :-moz-any(#mainPopupSet, #nav-bar) treecolpicker,
+  :-moz-any(#mainPopupSet, #nav-bar) treechildren::-moz-tree-cell-text,
+  :-moz-any(#mainPopupSet, #nav-bar) listitem {
     color: var(--main-font-color) !important;
   }
   
-  treechildren::-moz-tree-row(hover),
-  listitem:hover {
+  :-moz-any(#mainPopupSet, #nav-bar) treechildren::-moz-tree-row(hover),
+  :-moz-any(#mainPopupSet, #nav-bar) listitem:hover {
     border: none !important;
     background: var(--second-level-alt-bg-hover-color) !important;
   }
   
-  treechildren::-moz-tree-row(selected),
-  listitem[selected="true"] {
+  :-moz-any(#mainPopupSet, #nav-bar) treechildren::-moz-tree-row(selected),
+  :-moz-any(#mainPopupSet, #nav-bar) listitem[selected="true"] {
     border: none !important;
     background: var(--second-level-alt-bg-active-color) !important;
   }
   
-  #editBookmarkPanelStarIcon {
+  :-moz-any(#mainPopupSet, #nav-bar) #editBookmarkPanelStarIcon {
     list-style-image: var(--bookmarks-menu-button-image) !important;
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
-  #editBookmarkPanelStarIcon[unstarred] {
+  :-moz-any(#mainPopupSet, #nav-bar) #editBookmarkPanelStarIcon[unstarred] {
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
   
