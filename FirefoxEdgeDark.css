@@ -1079,7 +1079,8 @@
   
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]),
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button,
-  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker {
+  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker,
+  #mainPopupSet button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1088,7 +1089,8 @@
   
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]):hover,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button:hover,
-  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover {
+  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover,
+  #mainPopupSet button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1096,7 +1098,8 @@
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]):hover:active,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button:hover:active,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover:active,
-  #mainPopupSet .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker {
+  #mainPopupSet .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker,
+  #mainPopupSet button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1106,7 +1109,7 @@
     border-left: 1px solid var(--top-level-bg-color) !important;
   }
   
-  #mainPopupSet button {
+  #mainPopupSet button:not(toolbarbutton) {
     color: var(--main-font-color) !important;
   }
   
@@ -1148,6 +1151,62 @@
   #mainPopupSet textbox[focused] {
     background-color: var(--searchbar-bg-active-color) !important;
   }
+  
+  menulist {    
+    -moz-appearance: none !important;
+    background-color: transparent !important;
+    border: 1px solid var(--tab-separator-color) !important;
+    color: var(--main-font-color) !important;
+  }
+  
+  .menulist-dropmarker {
+    -moz-appearance: none !important;
+    list-style-image: var(--menulist-dropdown-image) !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-right: 6px !important;
+  }
+  
+  tree,
+  listbox {
+    -moz-appearance: none!important;
+    background: var(--second-level-bg-color) !important;
+    box-shadow: none !important;
+    border: 1px solid var(--urlbar-separator-color) !important;
+  }
+  
+  tree,
+  treechildren,
+  treecol,
+  treecolpicker,
+  treechildren::-moz-tree-cell-text,
+  listitem {
+    color: var(--main-font-color) !important;
+  }
+  
+  treechildren::-moz-tree-row(hover),
+  listitem:hover {
+    border: none !important;
+    background: var(--second-level-alt-bg-hover-color) !important;
+  }
+  
+  treechildren::-moz-tree-row(selected),
+  listitem[selected="true"] {
+    border: none !important;
+    background: var(--second-level-alt-bg-active-color) !important;
+  }
+  
+  #editBookmarkPanelStarIcon {
+    list-style-image: var(--bookmarks-menu-button-image) !important;
+    -moz-image-region: rect(0, 60px, 20px, 40px);
+  }
+  
+  #editBookmarkPanelStarIcon[unstarred] {
+    -moz-image-region: rect(0, 20px, 20px, 0);
+  }
+  
+  /* WHERE IS THE DROPMARKER HIDING? LOOK INTO WITH A DOM INSPECTOR? */
   
   @media not all and (min-resolution: 1.1dppx) {
     #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
@@ -1247,6 +1306,8 @@
     --second-level-bg-color: #242424;
     --second-level-bg-hover-color: #1F1F1F;
     --second-level-bg-active-color: #1A1A1A;
+	--second-level-alt-bg-hover-color: #2E2E2E;
+    --second-level-alt-bg-active-color: #444444;
     --tab-scroll-up-down-bg-color: #383838;
     --tab-scroll-up-down-bg-hover-color: #505050;
     --tab-scroll-up-down-bg-active-color: #7C7C7C;
@@ -1330,6 +1391,7 @@
     --panelUI-quit-icon-2x: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAgCAMAAADaHo1mAAAAclBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9eWEHEAAAAJXRSTlMAgAWTV3XqrWRMEAf66cY4JroMfdfAbV1JIjGVD0Ab9OxgLBPWqwbSogAAAgNJREFUeNrdltuSgjAMhksBKVQOggKieID1/V9xO/l3KC0yxb3Zmf1uyPQnyZikQTYneikiZrFdDzxFwNZ5Eb/XPeIvEvCLsAPUF+7UNXFnJ8jjefzodT+bAYr7K+JOXdc+TMwEYzXvha+8TkYAnqmnv1VvVdSnmUCoZzvlJ7d6HqAiI9imDxQ2nyfoyRigJym9fS90gG5PRpps0WVI0apRJ7hVZIQSnYHbqdQByhMsb4veI+xT6gTyCaunDu7o3eN1XoLrkawd36DjB9RyXiJZ4ydwZcfwys0pyWHGbr1A1JvZ5BvMAiOiONir4EDHvltvKVJjr4pGWRikjN4UzELQcebWUe7O1js6FspCic/M4owiu3W0YLT1EU1QFiaOMwtOx3u3jolc6pjdKUHpSFA6Esj1BChB4ShR8WmJEpRoanLDLBo00a0LR5ONMQTrYwrWxxQYY2peJLB+0cD6RQPWReOPaRVorl/TKnDpelVo9KqwlhlYX3ZgfdkBY9lhHRPHqQr5ESe7xKljXRP1bapPjZNQTh8UcBBnXhZC9Q8E2/TB+6HpEs7HTvUXDPqT+BZ/q956b2nnH/03RHyrji1qExh/W5b+F+7UNbG3IGYGQWq6p8Fn+hB6BuGw3B0P7f7wkk912Yez8L1kS3jsZ+l+n2Z+zNlv9KIVYVWFoi2g/xe+AbiNgLU5RIQoAAAAAElFTkSuQmCC);
     --arrow-subview-forward-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMTYgMTYiPiAgPHBvbHlnb24gZmlsbD0iI2ZmZiIgcG9pbnRzPSI1LDMuNSA2LjUsMiAxMi4zNzUsOCA2LjUsMTQgNSwxMi41IDkuMzc1LDgiLz48L3N2Zz4=);
     --menu-arrow-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iNSAyIDExIDggNSAxNCIvPjwvZz48L3N2Zz4=);
+    --menulist-dropdown-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiPjxkZWZzPjxzdHlsZT4uY2xzLTJ7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1taXRlcmxpbWl0OjEwO308L3N0eWxlPjwvZGVmcz48ZyBpZD0iZGFyayI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxIDEgNyA2LjUgMTMgMSIvPjwvZz48L3N2Zz4=);
   }
 
 }

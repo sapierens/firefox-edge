@@ -1079,7 +1079,8 @@
   
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]),
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button,
-  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker {
+  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker,
+  #mainPopupSet button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1088,7 +1089,8 @@
   
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]):hover,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button:hover,
-  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover {
+  #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover,
+  #mainPopupSet button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1096,7 +1098,8 @@
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]):hover:active,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button:hover:active,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover:active,
-  #mainPopupSet .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker {
+  #mainPopupSet .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker,
+  #mainPopupSet button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1106,7 +1109,7 @@
     border-left: 1px solid var(--top-level-bg-color) !important;
   }
   
-  #mainPopupSet button {
+  #mainPopupSet button:not(toolbarbutton) {
     color: var(--main-font-color) !important;
   }
   
@@ -1148,6 +1151,62 @@
   #mainPopupSet textbox[focused] {
     background-color: var(--searchbar-bg-active-color) !important;
   }
+  
+  menulist {    
+    -moz-appearance: none !important;
+    background-color: transparent !important;
+    border: 1px solid var(--tab-separator-color) !important;
+    color: var(--main-font-color) !important;
+  }
+  
+  .menulist-dropmarker {
+    -moz-appearance: none !important;
+    list-style-image: var(--menulist-dropdown-image) !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-right: 6px !important;
+  }
+  
+  tree,
+  listbox {
+    -moz-appearance: none!important;
+    background: var(--second-level-bg-color) !important;
+    box-shadow: none !important;
+    border: 1px solid var(--urlbar-separator-color) !important;
+  }
+  
+  tree,
+  treechildren,
+  treecol,
+  treecolpicker,
+  treechildren::-moz-tree-cell-text,
+  listitem {
+    color: var(--main-font-color) !important;
+  }
+  
+  treechildren::-moz-tree-row(hover),
+  listitem:hover {
+    border: none !important;
+    background: var(--second-level-alt-bg-hover-color) !important;
+  }
+  
+  treechildren::-moz-tree-row(selected),
+  listitem[selected="true"] {
+    border: none !important;
+    background: var(--second-level-alt-bg-active-color) !important;
+  }
+  
+  #editBookmarkPanelStarIcon {
+    list-style-image: var(--bookmarks-menu-button-image) !important;
+    -moz-image-region: rect(0, 60px, 20px, 40px);
+  }
+  
+  #editBookmarkPanelStarIcon[unstarred] {
+    -moz-image-region: rect(0, 20px, 20px, 0);
+  }
+  
+  /* WHERE IS THE DROPMARKER HIDING? LOOK INTO WITH A DOM INSPECTOR? */
   
   @media not all and (min-resolution: 1.1dppx) {
     #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
@@ -1247,6 +1306,8 @@
     --second-level-bg-color: #CCCCCC;
     --second-level-bg-hover-color: #E6E6E6;
     --second-level-bg-active-color: #F9F9F9;
+	--second-level-alt-bg-hover-color: #B3B3B3;
+    --second-level-alt-bg-active-color: #9F9F9F;
     --tab-scroll-up-down-bg-color: #E6E6E6;
     --tab-scroll-up-down-bg-hover-color: #F2F2F2;
     --tab-scroll-up-down-bg-active-color: #FFFFFF;
@@ -1330,6 +1391,7 @@
     --panelUI-quit-icon-2x: url(chrome://browser/skin/menuPanel-exit@2x.png);
     --arrow-subview-forward-image: url(chrome://browser/skin/controlcenter/arrow-subview.svg);
     --menu-arrow-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImxpZ2h0Ij48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjUgMiAxMSA4IDUgMTQiLz48L2c+PC9zdmc+);
+    --menulist-dropdown-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiPjxkZWZzPjxzdHlsZT4uY2xzLTJ7ZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1taXRlcmxpbWl0OjEwO308L3N0eWxlPjwvZGVmcz48ZyBpZD0ibGlnaHQiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMSAxIDcgNi41IDEzIDEiLz48L2c+PC9zdmc+);
   }
 
 }
