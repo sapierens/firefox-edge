@@ -976,7 +976,7 @@
   #nav-bar .subviewbutton.panel-subview-footer:hover,
   #mainPopupSet .downloadsPanelFooterButton:hover,
   #mainPopupSet #identity-popup-securityView-footer > button:hover {
-    background-color: var(--second-level-bg-hover-color) !important;
+    background-color: var(--second-level-alt-bg-hover-color) !important;
   }
   
   #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover:active,
@@ -984,7 +984,7 @@
   #nav-bar .subviewbutton.panel-subview-footer:hover:active,
   #mainPopupSet .downloadsPanelFooterButton:hover:active,
   #mainPopupSet #identity-popup-securityView-footer > button:hover:active {
-    background-color: var(--second-level-bg-active-color) !important;
+    background-color: var(--second-level-alt-bg-active-color) !important;
   }
   
   #mainPopupSet #edit-controls,
@@ -1205,8 +1205,6 @@
   :-moz-any(#mainPopupSet, #nav-bar) #editBookmarkPanelStarIcon[unstarred] {
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
-  
-  /* WHERE IS THE DROPMARKER HIDING? LOOK INTO WITH A DOM INSPECTOR? */
   
   @media not all and (min-resolution: 1.1dppx) {
     #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
