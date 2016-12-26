@@ -1083,8 +1083,8 @@
   #mainPopupSet .popup-notification-button-container button,
   #mainPopupSet #editBookmarkPanelBottomButtons button,
   #mainPopupSet #editBMPanel_newFolderButton,
-  #mainPopupSet .expander-down,
-  #mainPopupSet .expander-up {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-down,
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-up {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1097,8 +1097,8 @@
   #mainPopupSet .popup-notification-button-container button:hover,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover,
   #mainPopupSet #editBMPanel_newFolderButton:hover,
-  #mainPopupSet .expander-down:hover,
-  #mainPopupSet .expander-up:hover {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover,
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1110,8 +1110,8 @@
   #mainPopupSet .popup-notification-button-container button:hover:active,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover:active,
   #mainPopupSet #editBMPanel_newFolderButton:hover:active,
-  #mainPopupSet .expander-down:hover:active,
-  #mainPopupSet .expander-up:hover:active {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover:active,
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1219,13 +1219,13 @@
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
   
-  #mainPopupSet .expander-down {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-down {
     list-style-image: var(--menulist-dropdown-image);
     width: 24px;
     height: 24px;
   }
   
-  #mainPopupSet .expander-up {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-up {
     list-style-image: var(--menulist-dropdown-image);
     -moz-transform: scaleY(-1);
     width: 24px;
