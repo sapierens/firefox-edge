@@ -952,20 +952,24 @@
   #mainPopupSet toolbarbutton:not(.close-icon):hover,
   #nav-bar panel toolbarbutton:not(.close-icon):hover,
   #mainPopupSet .identity-popup-expander:hover,
-  #nav-bar .subviewbutton:hover {
+  #nav-bar .subviewbutton:hover,
+  #mainPopupSet .searchbar-engine-one-off-item:hover {
     background-color: var(--top-level-bg-hover-color);
   }
   
   #mainPopupSet toolbarbutton:not(.close-icon):hover:active,
   #nav-bar panel toolbarbutton:not(.close-icon):hover:active,
   #mainPopupSet .identity-popup-expander:hover:active,
-  #nav-bar .subviewbutton:hover:active {
+  #nav-bar .subviewbutton:hover:active,
+  #mainPopupSet .searchbar-engine-one-off-item:hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .subviewbutton.panel-subview-footer,
   #mainPopupSet .downloadsPanelFooterButton,
-  #mainPopupSet #identity-popup-securityView-footer > button {
+  #mainPopupSet #identity-popup-securityView-footer > button,
+  #mainPopupSet .search-setting-button,
+  #mainPopupSet .addengine-item {
     color: var(--default-text-color);
     background-color: var(--second-level-bg-color) !important;
     border-top: 1px solid var(--panel-separator-color) !important; 
@@ -975,7 +979,9 @@
   #mainPopupSet .subviewbutton.panel-subview-footer:hover,
   #nav-bar .subviewbutton.panel-subview-footer:hover,
   #mainPopupSet .downloadsPanelFooterButton:hover,
-  #mainPopupSet #identity-popup-securityView-footer > button:hover {
+  #mainPopupSet #identity-popup-securityView-footer > button:hover,
+  #mainPopupSet .search-setting-button:hover,
+  #mainPopupSet .addengine-item:hover {
     background-color: var(--second-level-alt-bg-hover-color) !important;
   }
   
@@ -983,7 +989,9 @@
   #mainPopupSet .subviewbutton.panel-subview-footer:hover:active,
   #nav-bar .subviewbutton.panel-subview-footer:hover:active,
   #mainPopupSet .downloadsPanelFooterButton:hover:active,
-  #mainPopupSet #identity-popup-securityView-footer > button:hover:active {
+  #mainPopupSet #identity-popup-securityView-footer > button:hover:active,
+  #mainPopupSet .search-setting-button:hover:active,
+  #mainPopupSet .addengine-item:hover:active {
     background-color: var(--second-level-alt-bg-active-color) !important;
   }
   
@@ -1230,6 +1238,32 @@
     -moz-transform: scaleY(-1);
     width: 24px;
     height: 24px;
+  }
+  
+  #mainPopupSet #PopupSearchAutoComplete {
+    border: 1px solid var(--urlbar-separator-color) !important;
+    border-top: none !important;
+  }
+  
+  #mainPopupSet .search-panel-header:not(.search-setting-button) {
+    background-color: var(--top-level-bg-color) !important;
+    color: var(--gray-text-color);
+    border: none !important;
+  }
+  
+  #mainPopupSet #PopupSearchAutoComplete tree {
+    border: none !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+    border-bottom: 1px solid var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet .search-panel-input-value {
+    color: var(--main-font-color) !important;
+  }
+  
+  #mainPopupSet .search-panel-one-offs {
+    background-color: var(--top-level-bg-color) !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
   }
   
   @media not all and (min-resolution: 1.1dppx) {
