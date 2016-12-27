@@ -949,7 +949,7 @@
     border: none !important;
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):hover,
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):hover,
   #nav-bar panel toolbarbutton:not(.close-icon):hover,
   #mainPopupSet .identity-popup-expander:hover,
   #nav-bar .subviewbutton:hover,
@@ -957,7 +957,7 @@
     background-color: var(--top-level-bg-hover-color);
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):hover:active,
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):hover:active,
   #nav-bar panel toolbarbutton:not(.close-icon):hover:active,
   #mainPopupSet .identity-popup-expander:hover:active,
   #nav-bar .subviewbutton:hover:active,
