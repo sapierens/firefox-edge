@@ -920,7 +920,7 @@
 
   /* MENU & POPUPS */
   :-moz-any(#mainPopupSet, #nav-bar) .panel-arrowcontent,
-  #nav-bar arrowscrollbox {
+  #BMB_bookmarksPopup arrowscrollbox {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
     --panel-arrowcontent-border: 1px solid var(--urlbar-separator-color) !important;
@@ -1074,10 +1074,6 @@
   
   #mainPopupSet .identity-popup-connection-secure {
     color: var(--verified-identity-font-color);
-  }
-  
-  #nav-bar menu.subviewbutton > .menu-right {
-    list-style-image: var(--menu-arrow-image);
   }
   
   #mainPopupSet .popup-notification-menubutton {
@@ -1266,6 +1262,195 @@
     border-top: 1px solid var(--panel-separator-color) !important;
   }
   
+  .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .cui-widget-panel > .panel-arrowcontainer > .panel-arrowcontent {
+    padding: 8px 0;
+  }
+  
+  #BMB_bookmarksPopup menupopup[placespopup="true"] > hbox > .popup-internal-box > .arrowscrollbox-scrollbox > .scrollbox-innerbox {
+    padding-top: 8px;
+  }
+  
+  #BMB_bookmarksPopup menupopup[placespopup="true"][singleitempopup="true"] > hbox > .popup-internal-box > .arrowscrollbox-scrollbox > .scrollbox-innerbox,
+  #BMB_bookmarksToolbarPopup > hbox > .popup-internal-box > .arrowscrollbox-scrollbox > .scrollbox-innerbox,
+  #BMB_unsortedBookmarksPopup > hbox > .popup-internal-box > .arrowscrollbox-scrollbox > .scrollbox-innerbox {
+    padding-bottom: 8px;
+  }
+  
+  /* CONTEXT MENUS */
+  menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
+  splitmenu {
+    -moz-appearance: none !important;
+    background-color: var(--context-menu-bg-color) !important;
+    border: 1px solid var(--context-menu-border-color) !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  menuseparator {
+    -moz-appearance: none !important;
+    border: none !important;
+    border-top: 1px solid var(--context-menu-separator-color) !important;
+    margin: 4px 12px 4px 12px !important;
+    padding: 0 !important;
+  }
+  
+  menu, 
+  menuitem, 
+  menucaption, 
+  .splitmenu-menuitem {
+    -moz-appearance: none !important;
+    color: var(--main-font-color) !important;
+    height: 32px !important;
+  }
+  
+  menu:not(.subviewbutton), 
+  menuitem:not(.subviewbutton), 
+  menucaption:not(.subviewbutton), 
+  .splitmenu-menuitem:not(.subviewbutton) {
+    background-color: var(--context-menu-bg-color) !important;
+  }
+  
+  menu:not(.subviewbutton):hover, 
+  menuitem:not(.subviewbutton):hover, 
+  menucaption:not(.subviewbutton):hover, 
+  .splitmenu-menuitem:not(.subviewbutton):hover {
+    background-color: var(--context-menu-bg-hover-color) !important;
+  }
+  
+  menu:not(.subviewbutton):active, 
+  menuitem:not(.subviewbutton):active, 
+  menucaption:not(.subviewbutton):active, 
+  .splitmenu-menuitem:not(.subviewbutton):active {
+    background-color: var(--context-menu-bg-active-color) !important;
+  }
+  
+  menu[disabled="true"],
+  menuitem[disabled="true"],
+  .splitmenu-menuitem[disabled="true"],
+  menu[_moz-menuactive="true"][disabled="true"],
+  menuitem[_moz-menuactive="true"][disabled="true"],
+  .splitmenu-menuitem[_moz-menuactive="true"][disabled="true"] {
+    color: var(--gray-text-color) !important;
+    text-shadow: none !important;
+  }
+  
+  .menu-right {
+    -moz-appearance: none !important;
+    list-style-image: var(--menu-arrow-image) !important;
+  }
+  
+  menu:not(.subviewbutton) > .menu-right {
+    margin-right: 6px !important;
+  }
+  
+  #context-navigation .menu-iconic-left {
+    list-style-image: none !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+
+  #context-back .menu-iconic-left {  
+    background-image: var(--back-button-image) !important;    
+  }
+
+  #context-back[disabled=true] .menu-iconic-left {
+    opacity: 0.6;
+  }
+
+  #context-forward .menu-iconic-left {
+    background-image: var(--forward-button-image) !important;
+  }
+
+  #context-forward[disabled=true] .menu-iconic-left {
+    opacity: 0.6;
+  }
+
+  #context-reload .menu-iconic-left {
+    background-image: var(--reload-button-image) !important;
+  }
+
+  #context-reload[disabled=true] .menu-iconic-left {
+    opacity: 0.6;
+  }
+
+  #context-stop .menu-iconic-left {
+    background-image: var(--stop-button-image) !important;
+  }
+
+  #context-stop[disabled=true] .menu-iconic-left {
+    opacity: 0.6;
+  }
+
+  #context-bookmarkpage .menu-iconic-left {
+    background-image: -moz-image-rect(var(--bookmarks-menu-button-image), 0, 20, 20, 0) !important;
+  }
+
+  #context-bookmarkpage[disabled=true] .menu-iconic-left {
+    opacity: 0.6;
+  }
+
+  #context-bookmarkpage[starred=true] .menu-iconic-left {
+    background-image: -moz-image-rect(var(--bookmarks-menu-button-image), 0, 60, 20, 40) !important;
+  }
+
+  #context-bookmarkpage[starred=true][disabled=true] .menu-iconic-left {
+    opacity: 0.6;
+  }
+  
+  #context-navigation {
+    padding: 0 !important;
+  }
+  
+  menuitem[type="checkbox"]:not(.subviewbutton) {
+    padding-left: 6px !important;
+  }
+
+  menuitem[checked="true"]:not(.subviewbutton):not([type="radio"]) > .menu-iconic-left {
+    background: var(--contextmenu-checkmark) no-repeat center;
+    margin-right: 7px !important;
+  }
+  
+  menuitem.subviewbutton:not([type="radio"])[checked="true"] {
+    background: var(--contextmenu-checkmark) no-repeat left;
+    background-position-x: 7px !important;
+  }
+  
+  toolbarbutton[checked="true"]:not([type="radio"]):not([disabled="true"]) {
+    -moz-appearance: none !important;
+    background: var(--contextmenu-checkmark) no-repeat left;
+    background-position-x: 3px !important; /* TODO: ADD 4  MORE PIXELS IF REMOVED PADDING IN SUBMENUS */
+  }
+  
+  menuitem[type="radio"] {
+    background: var(--contextmenu-radio) no-repeat left;
+    background-position-x: 5px !important;
+    padding-left: 13px !important;
+  }
+  
+  menuitem[type="checkbox"],
+  menuitem[checked="true"],
+  menuitem[type="radio"],
+  menuitem[type="checkbox"] > .menu-iconic-left,
+  menuitem[checked="true"] > .menu-iconic-left,
+  menuitem[type="radio"] > .menu-iconic-left {
+    -moz-appearance: none !important;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .unified-nav-back[_moz-menuactive] > .menu-iconic-left {
+    list-style-image: var(--contextmenu-backarrow) !important;
+  }
+  
+  .unified-nav-forward[_moz-menuactive] > .menu-iconic-left {
+    list-style-image: var(--contextmenu-forwardarrow) !important;
+  }
+  
   @media not all and (min-resolution: 1.1dppx) {
     #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
     #mainPopupSet :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"],
@@ -1395,6 +1580,11 @@
     --button-bg-color: #555555;
     --button-border-hover-color: #999999;
     --button-bg-active-color: #808080;
+    --context-menu-bg-color: #2B2B2B;
+    --context-menu-bg-hover-color: #404040;
+    --context-menu-bg-active-color: #555555;
+    --context-menu-border-color: #767676;
+    --context-menu-separator-color: #808080;
 	
     /* IMAGE VARIABLES */
     --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize-white");
@@ -1450,6 +1640,10 @@
     --arrow-subview-forward-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMTYgMTYiPiAgPHBvbHlnb24gZmlsbD0iI2ZmZiIgcG9pbnRzPSI1LDMuNSA2LjUsMiAxMi4zNzUsOCA2LjUsMTQgNSwxMi41IDkuMzc1LDgiLz48L3N2Zz4=);
     --menu-arrow-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iNSAyIDExIDggNSAxNCIvPjwvZz48L3N2Zz4=);
     --menulist-dropdown-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiPjxkZWZzPjxzdHlsZT4uY2xzLTJ7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1taXRlcmxpbWl0OjEwO308L3N0eWxlPjwvZGVmcz48ZyBpZD0iZGFyayI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxIDEgNyA2LjUgMTMgMSIvPjwvZz48L3N2Zz4=);
+    --contextmenu-checkmark: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSI5LjI0IiB2aWV3Qm94PSIwIDAgMTUgOS4yNCI+PGRlZnM+PHN0eWxlPi5jbHMtMntmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJkYXJrIj48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjEgNS41IDIuNSA1LjUgNSA4LjUgMTMgMC41IDE0IDAuNSIvPjwvZz48L3N2Zz4=);
+    --contextmenu-radio: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxjaXJjbGUgY2xhc3M9ImNscy0yIiBjeD0iOCIgY3k9IjgiIHI9IjMiLz48L2c+PC9zdmc+);
+    --contextmenu-backarrow: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwNzhkNztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMTEgMiA1IDggMTEgMTQiLz48L2c+PC9zdmc+);
+    --contextmenu-forwardarrow: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwNzhkNztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iNSAyIDExIDggNSAxNCIvPjwvZz48L3N2Zz4=);
   }
 
 }
