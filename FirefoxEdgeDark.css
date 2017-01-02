@@ -1088,11 +1088,13 @@
   #mainPopupSet #editBookmarkPanelBottomButtons button,
   #mainPopupSet #editBMPanel_newFolderButton,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down,
-  :-moz-any(#mainPopupSet, #nav-bar) .expander-up {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-up,
+  .notification-button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
     background-color: var(--button-bg-color) !important;
+    color: var(--main-font-color) !important;
   }
   
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]):hover,
@@ -1102,7 +1104,8 @@
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover,
   #mainPopupSet #editBMPanel_newFolderButton:hover,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover,
-  :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover,
+  .notification-button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1115,7 +1118,8 @@
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover:active,
   #mainPopupSet #editBMPanel_newFolderButton:hover:active,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover:active,
-  :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover:active {
+  :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover:active,
+  .notification-button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1129,7 +1133,8 @@
     color: var(--main-font-color) !important;
   }
   
-  #mainPopupSet .close-icon {
+  #mainPopupSet .close-icon,
+  notification .close-icon {
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
     background-image: none !important;
@@ -1137,11 +1142,13 @@
     width: 20px;
   }
   
-  #mainPopupSet .close-icon:hover {
+  #mainPopupSet .close-icon:hover,
+  notification .close-icon:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
-  #mainPopupSet .close-icon:hover:active {
+  #mainPopupSet .close-icon:hover:active,
+  notification .close-icon:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
@@ -1281,6 +1288,20 @@
     padding-bottom: 8px;
   }
   
+  notification {
+    color: var(--main-font-color) !important;
+    background-color: var(--top-level-bg-color);
+    border-top: none !important;
+    border-bottom: 1px solid var(--navigator-separator-bg-color) !important;
+    height: 32px !important;
+  }
+  
+  .messageCloseButton {
+    -moz-appearance: none !important;
+    padding: 0 !important;
+    margin-bottom: 1px !important;
+  }
+
   /* CONTEXT MENUS */
   menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
   splitmenu {
