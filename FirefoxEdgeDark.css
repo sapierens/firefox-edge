@@ -1433,6 +1433,9 @@
 
   menuitem[checked="true"]:not(.subviewbutton):not([type="radio"]) > .menu-iconic-left {
     background: var(--contextmenu-checkmark) no-repeat center;
+  }
+  
+  menuitem:not(.subviewbutton):not([type="radio"]):not(.menuitem-iconic) > .menu-iconic-left {
     margin-right: 7px !important;
   }
   
