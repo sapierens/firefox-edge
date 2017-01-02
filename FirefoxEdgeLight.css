@@ -1301,6 +1301,18 @@
     padding: 0 !important;
     margin-bottom: 1px !important;
   }
+  
+  /* Tooltip commented out due to it not being applied to some tooltips
+     and causing too big of an inconsistency.
+     A bug in Firefox or Stylish could be the cause.
+     Preserved as a coment for future testing.
+  tooltip {
+    -moz-appearance: none !important;
+    border: 1px solid var(--context-menu-border-color) !important;
+    background-color: var(--context-menu-bg-color) !important;
+    color: var(--main-font-color) !important;
+    padding: 6px 8px !important;
+  }*/
 
   /* CONTEXT MENUS */
   menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
