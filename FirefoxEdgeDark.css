@@ -1089,7 +1089,9 @@
   #mainPopupSet #editBMPanel_newFolderButton,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up,
-  .notification-button {
+  .notification-button,
+  .findbar-find-previous,
+  .findbar-find-next {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1105,7 +1107,12 @@
   #mainPopupSet #editBMPanel_newFolderButton:hover,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover,
-  .notification-button:hover {
+  .notification-button:not([disabled="true"]):hover,
+  .findbar-find-previous:not([disabled="true"]):hover,
+  .findbar-find-next:not([disabled="true"]):hover,
+  .findbar-highlight:not([disabled="true"]):hover,
+  .findbar-case-sensitive:not([disabled="true"]):hover,
+  .findbar-entire-word:not([disabled="true"]):hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1119,7 +1126,15 @@
   #mainPopupSet #editBMPanel_newFolderButton:hover:active,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover:active,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover:active,
-  .notification-button:hover:active {
+  .notification-button:hover:active,
+  .findbar-find-previous:not([disabled="true"]):hover:active,
+  .findbar-find-next:not([disabled="true"]):hover:active,
+  .findbar-highlight:not([disabled="true"])[checked="true"],
+  .findbar-case-sensitive:not([disabled="true"])[checked="true"],
+  .findbar-entire-word:not([disabled="true"])[checked="true"],
+  .findbar-highlight:not([disabled="true"]):hover:active,
+  .findbar-case-sensitive:not([disabled="true"]):hover:active,
+  .findbar-entire-word:not([disabled="true"]):hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1134,7 +1149,9 @@
   }
   
   #mainPopupSet .close-icon,
-  notification .close-icon {
+  notification .close-icon,
+  .findbar-closebutton {
+    -moz-appearance: none !important;
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
     background-image: none !important;
@@ -1143,12 +1160,14 @@
   }
   
   #mainPopupSet .close-icon:hover,
-  notification .close-icon:hover {
+  notification .close-icon:hover,
+  .findbar-closebutton:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
   #mainPopupSet .close-icon:hover:active,
-  notification .close-icon:hover:active {
+  notification .close-icon:hover:active,
+  .findbar-closebutton:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
@@ -1161,18 +1180,18 @@
   #mainPopupSet textbox {
     -moz-appearance: none !important;
     color: var(--main-font-color) !important;
-    background-color: var(--searchbar-bg-color) !important;
+    background-color: var(--searchbar-bg-color);
     border: 1px solid var(--tab-separator-color) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
   }
 
   #mainPopupSet textbox:hover {
-    background-color: var(--searchbar-bg-hover-color) !important;
+    background-color: var(--searchbar-bg-hover-color);
   }
 
   #mainPopupSet textbox[focused] {
-    background-color: var(--searchbar-bg-active-color) !important;
+    background-color: var(--searchbar-bg-active-color);
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) menulist {    
@@ -1313,6 +1332,92 @@
     color: var(--main-font-color) !important;
     padding: 6px 8px !important;
   }*/
+  
+  .browserContainer > findbar {
+    box-shadow: none !important;
+    background-image: none !important;
+    background-color: var(--top-level-bg-color) !important;
+    border-top: 1px solid var(--navigator-separator-bg-color) !important;
+    transition: none !important;
+  }
+  
+  .findbar-container {
+    background-color: var(--top-level-bg-color) !important;
+  }
+  
+  .findbar-closebutton:hover:active {
+    margin-bottom: 1px !important;
+  }
+  
+  .findbar-textbox {
+    -moz-appearance: none !important;
+    border: 1px solid ThreeDShadow;
+    border-radius: 2px 0 0 2px;
+    margin: 0;
+    padding: 1px 5px;
+    width: 14em;
+  }
+  
+  .findbar-textbox {
+    -moz-appearance: none !important;
+    color: var(--main-font-color) !important;
+    background-color: var(--searchbar-bg-color);
+    border: 1px solid var(--tab-separator-color) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  .findbar-textbox.minimal {
+    border-radius: 0 !important;
+  }
+
+  .findbar-textbox:not([status="notfound"]):not([flash="true"]):hover {
+    background-color: var(--searchbar-bg-hover-color);
+  }
+
+  .findbar-textbox:not([status="notfound"]):not([flash="true"])[focused] {
+    background-color: var(--searchbar-bg-active-color);
+  }
+  
+  .findbar-textbox[status="notfound"] {
+    background-color: var(--findbar-notfound-bg-color);
+    color: white;
+  }
+  
+  .findbar-textbox[flash="true"] {
+    background-color: var(--findbar-flash-bg-color);
+    color: black;
+  }
+  
+  .findbar-find-previous,
+  .findbar-find-next {
+    border-radius: 0 !important;
+    background-image: none !important;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .findbar-find-previous {
+    list-style-image: var(--menulist-dropdown-image);
+    -moz-transform: scaleY(-1);
+  }
+  
+  .findbar-find-next {
+    list-style-image: var(--menulist-dropdown-image);
+    margin-left: 1px !important;
+  }
+  
+  .findbar-button > .toolbarbutton-text {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--main-font-color) !important;
+  }
+  
+  .findbar-find-status,
+  .found-matches {
+    color: var(--gray-text-color);
+  }
 
   /* CONTEXT MENUS */
   menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
@@ -1443,20 +1548,20 @@
     padding-left: 6px !important;
   }
 
-  menuitem[checked="true"]:not(.subviewbutton):not([type="radio"]) > .menu-iconic-left {
+  menuitem[checked="true"]:not(.subviewbutton):not([type="radio"]):not(.findbar-button) > .menu-iconic-left {
     background: var(--contextmenu-checkmark) no-repeat center;
   }
   
-  menuitem:not(.subviewbutton):not([type="radio"]):not(.menuitem-iconic) > .menu-iconic-left {
+  menuitem:not(.subviewbutton):not([type="radio"]):not(.menuitem-iconic):not(.findbar-button) > .menu-iconic-left {
     margin-right: 7px !important;
   }
   
-  menuitem.subviewbutton:not([type="radio"])[checked="true"] {
+  menuitem.subviewbutton:not([type="radio"]):not(.findbar-button)[checked="true"] {
     background: var(--contextmenu-checkmark) no-repeat left;
     background-position-x: 7px !important;
   }
   
-  toolbarbutton[checked="true"]:not([type="radio"]):not([disabled="true"]) {
+  toolbarbutton[checked="true"]:not([type="radio"]):not(.findbar-button):not([disabled="true"]) {
     -moz-appearance: none !important;
     background: var(--contextmenu-checkmark) no-repeat left;
     background-position-x: 3px !important; /* TODO: ADD 4  MORE PIXELS IF REMOVED PADDING IN SUBMENUS */
@@ -1529,6 +1634,10 @@
     #mainPopupSet #PanelUI-quit {
       list-style-image: var(--panelUI-quit-icon);
     }
+    
+    .find-status-icon[status="pending"] {
+      list-style-image: var(--tab-throbber-animation-image);
+    }
   }
   
   @media (min-resolution: 1.1dppx) {
@@ -1572,6 +1681,10 @@
 
     #mainPopupSet #PanelUI-quit {
       list-style-image: var(--panelUI-quit-icon-2x);
+    }
+    
+    .find-status-icon[status="pending"] {
+      list-style-image: var(--tab-throbber-animation-image2x);
     }
   }
   
@@ -1621,6 +1734,8 @@
     --context-menu-bg-active-color: #555555;
     --context-menu-border-color: #767676;
     --context-menu-separator-color: #808080;
+    --findbar-notfound-bg-color: #F66;
+    --findbar-flash-bg-color: yellow;
 	
     /* IMAGE VARIABLES */
     --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize-white");
