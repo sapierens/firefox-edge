@@ -969,7 +969,8 @@
   #mainPopupSet .downloadsPanelFooterButton,
   #mainPopupSet #identity-popup-securityView-footer > button,
   #mainPopupSet .search-setting-button,
-  #mainPopupSet .addengine-item {
+  #mainPopupSet .addengine-item,
+  .click-to-play-plugins-notification-button-container {
     color: var(--default-text-color);
     background-color: var(--second-level-bg-color) !important;
     border-top: 1px solid var(--panel-separator-color) !important; 
@@ -1085,8 +1086,10 @@
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker,
   #mainPopupSet .popup-notification-button-container button,
+  #notification-popup button,
   #mainPopupSet #editBookmarkPanelBottomButtons button,
   #mainPopupSet #editBMPanel_newFolderButton,
+  .click-to-play-plugins-notification-button-container button,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up,
   .notification-button,
@@ -1103,8 +1106,10 @@
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button:hover,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover,
   #mainPopupSet .popup-notification-button-container button:hover,
+  #notification-popup button:hover,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover,
   #mainPopupSet #editBMPanel_newFolderButton:hover,
+  .click-to-play-plugins-notification-button-container button:hover,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover,
   .notification-button:not([disabled="true"]):hover,
@@ -1122,8 +1127,10 @@
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover:active,
   #mainPopupSet .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker,
   #mainPopupSet .popup-notification-button-container button:hover:active,
+  #notification-popup button:hover:active,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover:active,
   #mainPopupSet #editBMPanel_newFolderButton:hover:active,
+  .click-to-play-plugins-notification-button-container button:hover:active,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-down:hover:active,
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up:hover:active,
   .notification-button:hover:active,
