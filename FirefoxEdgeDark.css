@@ -1425,6 +1425,12 @@
   .found-matches {
     color: var(--gray-text-color);
   }
+  
+  .statuspanel-label {
+    background: var(--context-menu-bg-color);
+    border: 1px none var(--context-menu-border-color);
+    color: var(--main-font-color);
+  }
 
   /* CONTEXT MENUS */
   menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
