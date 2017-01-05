@@ -1331,8 +1331,8 @@
   /* Tooltip commented out due to it not being applied to some tooltips
      and causing too big of an inconsistency.
      A bug in Firefox or Stylish could be the cause.
-     Preserved as a coment for future testing.
-  tooltip {
+     Preserved as a coment for future testing.*/
+  /*tooltip {
     -moz-appearance: none !important;
     border: 1px solid var(--context-menu-border-color) !important;
     background-color: var(--context-menu-bg-color) !important;
@@ -1426,11 +1426,14 @@
     color: var(--gray-text-color);
   }
   
-  .statuspanel-label {
+  /* Status panel has been commented out because it contrasts too much
+     with  most of websites (on the dark version).
+     A user that uses dark version and mainly browses dark-themed websites might want to remove the comment.*/
+  /*.statuspanel-label {
     background: var(--context-menu-bg-color);
     border: 1px none var(--context-menu-border-color);
     color: var(--main-font-color);
-  }
+  }*/
 
   /* CONTEXT MENUS */
   menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
