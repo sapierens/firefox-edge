@@ -26,7 +26,8 @@
     border-width: 2px !important;
   }
 
-  #titlebar-min {
+  #titlebar-min,
+  #minimize-button {
     list-style-image: var(--titlebar-min-image) !important;
     padding-bottom: 6px !important;
   }
@@ -35,22 +36,29 @@
     list-style-image: var(--titlebar-max-image) !important;
   }
 
-  #main-window[sizemode="maximized"] #titlebar-max {
+  #main-window[sizemode="maximized"] #titlebar-max,
+  #restore-button {
     list-style-image: var(--titlebar-restore-image) !important;
   }
 
   #titlebar-close,
-  #titlebar-close:hover {
+  #titlebar-close:hover,
+  #close-button,
+  #close-button:hover {
     list-style-image: var(--titlebar-close-image) !important;
   }
 
   #titlebar-min:hover,
-  #titlebar-max:hover {
+  #titlebar-max:hover,
+  #minimize-button:hover,
+  #restore-button:hover {
     background-color: var(--titlebar-min-max-hover-bg-color) !important;
   }
 
   #titlebar-min:hover:active,
-  #titlebar-max:hover:active {
+  #titlebar-max:hover:active,
+  #minimize-button:hover:active,
+  #restore-button:hover:active {
     background-color: var(--titlebar-min-max-active-bg-color) !important;
   }
 
