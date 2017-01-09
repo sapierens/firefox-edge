@@ -11,6 +11,20 @@
   #main-menubar {
     color: var(--main-font-color) !important;
   }
+  
+  #main-menubar > menu {
+    background-color: var(--second-level-bg-color) !important;
+  }
+  
+  #main-menubar > menu:hover {
+    background-color: var(--second-level-bg-hover-color) !important;
+  }
+  
+  #main-menubar > menu:hover:active,
+  #main-menubar > menu[open="true"] {
+    background-color: var(--second-level-bg-active-color) !important;
+    border-width: 2px !important;
+  }
 
   #titlebar-min {
     list-style-image: var(--titlebar-min-image) !important;
@@ -1436,6 +1450,8 @@
   }*/
 
   /* CONTEXT MENUS */
+  #bookmarksMenuPopup,
+  #goPopup,
   menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
   splitmenu {
     -moz-appearance: none !important;
