@@ -941,8 +941,7 @@
   }
 
   /* MENU & POPUPS */
-  :-moz-any(#mainPopupSet, #nav-bar) .panel-arrowcontent,
-  #BMB_bookmarksPopup arrowscrollbox {
+  :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup) .panel-arrowcontent {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
     --panel-arrowcontent-border: 1px solid var(--urlbar-separator-color) !important;
