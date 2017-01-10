@@ -1239,31 +1239,31 @@
     margin-right: 6px !important;
   }
   
-  :-moz-any(#mainPopupSet, #nav-bar) tree,
-  :-moz-any(#mainPopupSet, #nav-bar) listbox {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) tree,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listbox {
     -moz-appearance: none!important;
     background: var(--second-level-bg-color) !important;
     box-shadow: none !important;
     border: 1px solid var(--urlbar-separator-color) !important;
   }
   
-  :-moz-any(#mainPopupSet, #nav-bar) tree,
-  :-moz-any(#mainPopupSet, #nav-bar) treechildren,
-  :-moz-any(#mainPopupSet, #nav-bar) treecol,
-  :-moz-any(#mainPopupSet, #nav-bar) treecolpicker,
-  :-moz-any(#mainPopupSet, #nav-bar) treechildren::-moz-tree-cell-text,
-  :-moz-any(#mainPopupSet, #nav-bar) listitem {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) tree,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treecol,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treecolpicker,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-cell-text,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem {
     color: var(--main-font-color) !important;
   }
   
-  :-moz-any(#mainPopupSet, #nav-bar) treechildren::-moz-tree-row(hover),
-  :-moz-any(#mainPopupSet, #nav-bar) listitem:hover {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(hover),
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem:hover {
     border: none !important;
     background: var(--second-level-alt-bg-hover-color) !important;
   }
   
-  :-moz-any(#mainPopupSet, #nav-bar) treechildren::-moz-tree-row(selected),
-  :-moz-any(#mainPopupSet, #nav-bar) listitem[selected="true"] {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(selected),
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem[selected="true"] {
     border: none !important;
     background: var(--second-level-alt-bg-active-color) !important;
   }
