@@ -86,8 +86,11 @@
   .tabbrowser-tab {
     color: var(--inactive-font-color) !important;
     background-color: var(--second-level-bg-color) !important;
-    margin-bottom: 1px !important;
     border: none !important;
+  }
+  
+  .tab-content {
+    padding-bottom: 1px !important;
   }
 
   .tabbrowser-tab .tab-stack {
@@ -388,6 +391,23 @@
 
   .tabbrowser-tab:not([pinned]):not([fadein]) {
     margin-top: 14px;
+  }
+  
+  /* TAB ATTENTION ANIMATION */
+  @keyframes tab-attention {  
+    0% { background-color: rgba(255, 185, 0, 0; }
+    40% { background-color: rgba(255, 185, 0, 1); }
+    100% { background-color: rgba(255, 185, 0, 0); }
+  }
+  
+  .tabbrowser-tab:-moz-any([image], [pinned]) > .tab-stack > .tab-content[attention]:not([visuallyselected="true"]),
+  .tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([visuallyselected="true"]) {
+    background-image: none !important;
+    -moz-animation: tab-attention 1.5s cubic-bezier(.20,.42,.60,.57) infinite;
+  }
+
+  .tab-label[attention]:not([visuallyselected="true"]) {
+    font-weight: normal !important;
   }
 
   /* NAV. BAR */
