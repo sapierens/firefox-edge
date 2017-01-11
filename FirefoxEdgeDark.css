@@ -1333,6 +1333,10 @@
     border-left: none;
   }
   
+  #mainPopupSet .searchbar-engine-one-off-item:not(.last-row) {
+    border-bottom: 1px solid var(--panel-separator-color);
+  }
+  
   .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
     margin-left: 0;
     margin-right: 0;
