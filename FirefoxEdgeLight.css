@@ -1476,6 +1476,35 @@
     border: 1px none var(--context-menu-border-color);
     color: var(--main-font-color);
   }*/
+  
+  #widget-overflow-scroller {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  #widget-overflow-list {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .widget-overflow-list > .toolbarbutton-1:not(:first-child),
+  .widget-overflow-list > toolbaritem:not(:first-child) {
+    margin-top: 0 !important;
+  }
+  
+  #nav-bar-overflow-button {
+    list-style-image: var(--tab-scroll-up-down-button-image) !important;
+    -moz-image-region: auto !important;
+    transform: scaleX(-1);
+    
+  }
+  
+  #nav-bar-overflow-button > .toolbarbutton-icon {
+    width: 15px !important;
+    height: 17px !important;
+    padding: 0 !important;
+    margin: 1px 1px 0 0 !important;
+  }
 
   /* CONTEXT MENUS */
   #bookmarksMenuPopup,
