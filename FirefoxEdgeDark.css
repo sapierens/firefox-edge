@@ -431,6 +431,16 @@
   #urlbar > toolbarbutton {
     -moz-box-ordinal-group: 0;
   }
+  
+  :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
+    list-style-image: var(--navbar-toolbarbutton-images);
+  }
+  
+  @media (min-resolution: 1.1dppx) {
+    :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
+    list-style-image: var(--navbar-toolbarbutton-images2x);
+    }
+  }
 
   /* BACK BUTTON */
   #back-button {
@@ -1911,6 +1921,8 @@
     --contextmenu-backarrow: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwNzhkNztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMTEgMiA1IDggMTEgMTQiLz48L2c+PC9zdmc+);
     --contextmenu-forwardarrow: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwNzhkNztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iNSAyIDExIDggNSAxNCIvPjwvZz48L3N2Zz4=);
     --tab-drop-indicator: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxMS4wNiIgdmlld0JveD0iMCAwIDExIDExLjA2Ij48ZGVmcz48c3R5bGU+LmNscy0yLC5jbHMtM3tmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fS5jbHMtMntzdHJva2Utd2lkdGg6MS41cHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJkYXJrIj48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjEgNS41NiA1LjUgMS4wNiAxMCA1LjU2Ii8+PGxpbmUgY2xhc3M9ImNscy0zIiB4MT0iNS41IiB5MT0iMTEuMDYiIHgyPSI1LjUiIHkyPSIxLjU2Ii8+PC9nPjwvc3ZnPg==);
+    --navbar-toolbarbutton-images: url(chrome://browser/skin/Toolbar-inverted.png);
+    --navbar-toolbarbutton-images2x: url(chrome://browser/skin/Toolbar-inverted@2x.png);
   }
 
 }
