@@ -3,7 +3,21 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul") {
 
-  /* MAIN WINDOW & TITLEBAR BUTTONS  */  
+  /* MAIN WINDOW & TITLEBAR BUTTONS  */
+  #titlebar-min,
+  #titlebar-max,
+  #main-window[sizemode="maximized"] #titlebar-max,
+  #titlebar-close,
+  #minimize-button,
+  #restore-button,
+  #close-button {
+    -moz-appearance: none !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 46px !important;
+    height: 32px !important;
+  }
+  
   #main-window {
     background-color: var(--second-level-bg-color) !important;
   }
@@ -28,24 +42,28 @@
 
   #titlebar-min,
   #minimize-button {
-    list-style-image: var(--titlebar-min-image) !important;
-    padding-bottom: 6px !important;
+    list-style-image: none !important;
+    background: var(--titlebar-min-image) no-repeat center;
+    background-position-y: 11px;
   }
 
   #titlebar-max {
-    list-style-image: var(--titlebar-max-image) !important;
+    list-style-image: none !important;
+    background: var(--titlebar-max-image) no-repeat center;
   }
 
   #main-window[sizemode="maximized"] #titlebar-max,
   #restore-button {
-    list-style-image: var(--titlebar-restore-image) !important;
+    list-style-image: none !important;
+    background: var(--titlebar-restore-image) no-repeat center;
   }
 
   #titlebar-close,
   #titlebar-close:hover,
   #close-button,
   #close-button:hover {
-    list-style-image: var(--titlebar-close-image) !important;
+    list-style-image: none !important;
+    background: var(--titlebar-close-image) no-repeat center;
   }
 
   #titlebar-min:hover,
@@ -61,6 +79,16 @@
   #restore-button:hover:active {
     background-color: var(--titlebar-min-max-active-bg-color) !important;
   }
+  
+  #titlebar-close:hover,
+  #close-button:hover {
+    background-color: var(--titlebar-close-hover-bg-color);
+  }
+  
+  #titlebar-close:hover:active,
+  #close-button:hover:active {
+    background-color: var(--titlebar-close-active-bg-color);
+  }
 
   .titlebar-button {
     height: 32px !important;
@@ -70,6 +98,10 @@
   #main-window[sizemode="normal"] #TabsToolbar {
     margin-top: -1px !important;
     margin-left: -1px !important;
+  }
+  
+  #titlebar-buttonbox {
+    -moz-appearance: none !important;
   }
 
   #navigator-toolbox::after {
@@ -438,7 +470,7 @@
   
   @media (min-resolution: 1.1dppx) {
     :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
-    list-style-image: var(--navbar-toolbarbutton-images2x);
+      list-style-image: var(--navbar-toolbarbutton-images2x);
     }
   }
 
@@ -1817,6 +1849,8 @@
     /* COLOR VARIABLES */
     --titlebar-min-max-hover-bg-color: #B3B3B3;
     --titlebar-min-max-active-bg-color: #9F9F9F;
+    --titlebar-close-hover-bg-color: #E81123;
+    --titlebar-close-active-bg-color: #F06F79;
     --top-level-bg-color: #F2F2F2;
     --top-level-bg-hover-color: #DADADA;
     --top-level-bg-active-color: #C2C2C2;
