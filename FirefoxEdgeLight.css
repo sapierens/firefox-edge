@@ -110,6 +110,7 @@
 
   /* TABS */
   #TabsToolbar {
+    -moz-appearance: none !important;
     height: 33px !important;
     background-color: var(--second-level-bg-color) !important;
     margin-bottom: 0 !important;
