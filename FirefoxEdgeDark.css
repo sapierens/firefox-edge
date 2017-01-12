@@ -1673,6 +1673,8 @@
   .menu-right {
     -moz-appearance: none !important;
     list-style-image: var(--menu-arrow-image) !important;
+    width: inherit !important;
+    height: inherit !important;
   }
   
   menu:not(.subviewbutton) > .menu-right {
