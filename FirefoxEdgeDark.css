@@ -1748,6 +1748,10 @@
     margin-right: 7px !important;
   }
   
+  menuitem:not(.subviewbutton):not([type="radio"]):not([type="checkbox"]):not(.menuitem-iconic):not(.findbar-button) > .menu-iconic-left {
+    margin-left: 6px !important;
+  }
+  
   menuitem.subviewbutton:not([type="radio"]):not(.findbar-button)[checked="true"] {
     background: var(--contextmenu-checkmark) no-repeat left;
     background-position-x: 7px !important;
