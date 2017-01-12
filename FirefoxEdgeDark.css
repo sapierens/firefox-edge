@@ -961,12 +961,15 @@
     color: var(--main-font-color) !important;
   }
 
-  toolbarbutton.bookmark-item:hover:not(.subviewbutton):not([disabled="true"]):not([open]) {
+  toolbarbutton.bookmark-item:hover:not(.subviewbutton):not([disabled="true"]):not([open]),
+  toolbarbutton.chevron:hover:not([disabled="true"]):not([open]) {
     background: var(--top-level-bg-hover-color) !important;
   }
 
   toolbarbutton.bookmark-item:hover:active:not(.subviewbutton):not([disabled="true"]):not([open]),
-  toolbarbutton.bookmark-item:not(.subviewbutton):not([disabled="true"])[open] {
+  toolbarbutton.bookmark-item:not(.subviewbutton):not([disabled="true"])[open],
+  toolbarbutton.chevron:hover:active:not([disabled="true"]):not([open]),
+  toolbarbutton.chevron:not([disabled="true"])[open] {
     background: var(--top-level-bg-active-color) !important;
   }
 
@@ -979,6 +982,9 @@
   }
 
   toolbarbutton.chevron {
+    -moz-appearance: none !important;
+    padding: 0 !important;
+    border: none !important;
     list-style-image: var(--bookmarks-chevron-image) !important;
     width: 44px !important;
   }
