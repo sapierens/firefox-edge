@@ -1599,7 +1599,6 @@
     list-style-image: var(--tab-scroll-up-down-button-image) !important;
     -moz-image-region: auto !important;
     transform: scaleX(-1);
-    
   }
   
   #nav-bar-overflow-button > .toolbarbutton-icon {
@@ -1607,6 +1606,43 @@
     height: 17px !important;
     padding: 0 !important;
     margin: 1px 1px 0 0 !important;
+  }
+  
+  /* AUTOREPEATER BUTTONS */
+  .autorepeatbutton-up,
+  .scrollbutton-up,
+  .autorepeatbutton-up[disabled="true"],
+  .scrollbutton-up[disabled="true"],
+  .autorepeatbutton-down,
+  .scrollbutton-down,
+  .autorepeatbutton-down[disabled="true"],
+  .scrollbutton-down[disabled="true"] {
+    list-style-image: var(--menulist-dropdown-image);
+    border: none !important;
+  }
+  
+  .autorepeatbutton-up,
+  .scrollbutton-up {
+    transform: scaleY(-1);
+  }
+
+  .autorepeatbutton-up[disabled="true"],
+  .scrollbutton-up[disabled="true"],
+  .autorepeatbutton-down[disabled="true"],
+  .scrollbutton-down[disabled="true"] {
+    opacity: 0.6;
+  }
+  
+  autorepeatbutton {
+    border: none !important;
+    padding: 4px;
+  }
+  
+  .autorepeatbutton-up > .autorepeatbutton-icon,
+  .scrollbutton-up > .toolbarbutton-icon,
+  .autorepeatbutton-down > .autorepeatbutton-icon,
+  .scrollbutton-down > .toolbarbutton-icon {
+    -moz-appearance: none !important;
   }
 
   /* CONTEXT MENUS */
