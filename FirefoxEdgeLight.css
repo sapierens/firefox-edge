@@ -951,7 +951,8 @@
     background-color: var(--top-level-bg-color) !important;
     background-image: none !important;
     height: 33px !important;
-    border-top: 1px solid var(--navigator-separator-bg-color);
+    border-top: 1px solid var(--navigator-separator-bg-color) !important;
+    padding: 0 !important;
   }
 
   toolbarbutton.bookmark-item:not(.subviewbutton) {
