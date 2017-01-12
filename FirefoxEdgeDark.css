@@ -2,7 +2,7 @@
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul") {
-
+  
   /* MAIN WINDOW & TITLEBAR BUTTONS  */
   #titlebar-min,
   #titlebar-max,
@@ -44,7 +44,6 @@
   #minimize-button {
     list-style-image: none !important;
     background: var(--titlebar-min-image) no-repeat center;
-    background-position-y: 11px;
   }
 
   #titlebar-max {
@@ -218,8 +217,8 @@
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
     background-image: none !important;
-    height: 20px;
-    width: 20px;
+    height: 20px !important;
+    width: 20px !important;
   }
   
   .tabbrowser-tab .close-icon:hover {
@@ -445,6 +444,13 @@
   /* TAB DRAG & DROP INDICATOR */
   .tab-drop-indicator {
     list-style-image: var(--tab-drop-indicator) !important;
+  }
+  
+  /* CLOSE ICON */
+  .close-icon > .button-icon,
+  .close-icon > .button-box > .button-icon,
+  .close-icon > .toolbarbutton-icon {
+    width: 20px !important;
   }
 
   /* NAV. BAR */
