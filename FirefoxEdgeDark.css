@@ -1585,7 +1585,8 @@
   #bookmarksMenuPopup,
   #goPopup,
   menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
-  splitmenu {
+  splitmenu,
+  #PlacesToolbar menupopup {
     -moz-appearance: none !important;
     background-color: var(--context-menu-bg-color) !important;
     border: 1px solid var(--context-menu-border-color) !important;
