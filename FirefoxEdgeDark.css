@@ -44,6 +44,7 @@
   #minimize-button {
     list-style-image: none !important;
     background: var(--titlebar-min-image) no-repeat center;
+    background-position-y: 11px;
   }
 
   #titlebar-max {
