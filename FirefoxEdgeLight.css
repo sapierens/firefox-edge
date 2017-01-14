@@ -937,7 +937,7 @@
   }
   
   /* TOOLBAR BUTTON BADGE */
-  #nav-bar .toolbarbutton-badge {
+  .toolbarbutton-badge {
     background-color: var(--toolbarbutton-badge-bg-color) !important;
     border-radius: 50% !important;
     border: 1px solid var(--toolbarbutton-badge-border-color) !important;
