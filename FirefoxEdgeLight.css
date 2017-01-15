@@ -586,6 +586,12 @@
   #urlbar-go-button {
     visibility: collapse !important;
   }
+  
+  /* HOME BUTTON */
+  #home-button {
+    list-style-image: var(--home-button-image) !important;
+    -moz-image-region: auto !important;
+  }
 
   /* URLBAR */
   #urlbar {
@@ -2026,6 +2032,7 @@
     --tab-drop-indicator: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxMSIgdmlld0JveD0iMCAwIDExIDExIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImxpZ2h0Ij48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjEgNS41IDUuNSAxIDEwIDUuNSIvPjxsaW5lIGNsYXNzPSJjbHMtMiIgeDE9IjUuNSIgeTE9IjExIiB4Mj0iNS41IiB5Mj0iMS41Ii8+PC9nPjwvc3ZnPg==);
     --navbar-toolbarbutton-images: url(chrome://browser/skin/Toolbar.png);
     --navbar-toolbarbutton-images2x: url(chrome://browser/skin/Toolbar@2x.png);
+    --home-button-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE5IDE3Ij48ZGVmcz48c3R5bGU+LmNscy0yLC5jbHMtM3tmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fS5jbHMtMntzdHJva2Utd2lkdGg6MS4xcHg7fS5jbHMtM3tzdHJva2Utd2lkdGg6MS4ycHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJsaWdodCI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxIDEwIDkuNSAxIDE4IDEwIi8+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIzIDggMyAxNiA3LjUgMTYgNy41IDEwLjUgMTEuNSAxMC41IDExLjUgMTYgMTYgMTYgMTYgOCIvPjwvZz48L3N2Zz4=);
   }
 
 }
