@@ -1059,6 +1059,13 @@
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subviews {
     background-color: var(--top-level-bg-color) !important;
     border-left: 1px solid var(--urlbar-separator-color);
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  
+  #PanelUI-popup .panel-subview-body {
+    margin: 0 -4px 0 -4px !important;
+    padding: 0 !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subview-header,
@@ -1666,7 +1673,8 @@
   menu, 
   menuitem, 
   menucaption, 
-  .splitmenu-menuitem {
+  .splitmenu-menuitem,
+  toolbarbutton.subviewbutton {
     -moz-appearance: none !important;
     color: var(--main-font-color) !important;
     height: 32px !important;
@@ -1796,7 +1804,7 @@
   toolbarbutton[checked="true"]:not([type="radio"]):not(.findbar-button):not([disabled="true"]) {
     -moz-appearance: none !important;
     background: var(--contextmenu-checkmark) no-repeat left;
-    background-position-x: 3px !important; /* TODO: ADD 4  MORE PIXELS IF REMOVED PADDING IN SUBMENUS */
+    background-position-x: 7px !important;
   }
   
   menuitem[type="radio"] {
