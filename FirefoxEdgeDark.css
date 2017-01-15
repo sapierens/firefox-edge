@@ -750,11 +750,11 @@
   }
 
   /* BOOKMARKS BUTTON */
-  #bookmarks-menu-button {
+  :-moz-any(#nav-bar, #mainPopupSet) #bookmarks-menu-button {
     list-style-image: var(--bookmarks-menu-button-image);
   }
 
-  #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  :-moz-any(#nav-bar, #mainPopupSet) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
     list-style-image: var(--bookmarks-menu-button-dropmarker-image);
   }
 
@@ -1844,6 +1844,8 @@
     :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
       background-color: var(--blue-accent-color) !important;
       background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted.png) !important;
+      background-position: right 10px center, 0;
+      background-repeat: no-repeat;
     }
     
     #mainPopupSet #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
@@ -1892,6 +1894,8 @@
     :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button {
       background-color: var(--blue-accent-color) !important;
       background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted@2x.png) !important;
+      background-position: right 10px center, 0;
+      background-repeat: no-repeat;
     }
     
     #mainPopupSet #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
