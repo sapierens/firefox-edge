@@ -588,7 +588,7 @@
   }
   
   /* HOME BUTTON */
-  #home-button {
+  :-moz-any(#nav-bar, #mainPopupSet) #home-button {
     list-style-image: var(--home-button-image) !important;
     -moz-image-region: auto !important;
   }
