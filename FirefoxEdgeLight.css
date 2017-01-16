@@ -1059,13 +1059,11 @@
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subviews {
     background-color: var(--top-level-bg-color) !important;
     border-left: 1px solid var(--urlbar-separator-color);
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
   }
   
   #PanelUI-popup .panel-subview-body {
     margin: 0 -4px 0 -4px !important;
-    padding: 0 !important;
+    padding: 4px 0 4px 0 !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subview-header,
