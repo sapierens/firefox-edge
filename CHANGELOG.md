@@ -1,5 +1,19 @@
 # Changelog
 
+**[v1.5.0 January 17th, 2017]**
+
+* Added styling for all popup and context menus.
+* Added a Microsoft Edge like tab "attention required" animation.
+* Added a Microsoft Edge like home button image.
+* Added a more fitting toolbar button overflow image.
+* Added a more fitting drag & drop image for tabs.
+* All default firefox button icons will now be in light version on the dark theme.
+* Fixed some bookmarks toolbar issues on Linux and Windows.
+* Fixed bugged minimize, maximize, restore and close buttons on Windows versions 7 and lower.
+* Fixed close icons being too small and blurry on Windows version 7 and lower.
+* Fixed a mismatching tab background color on Linux.
+* Multiple other minor fixes & improvements.
+
 **[v1.4.0 December 6th, 2016]**
 
 * The theme is now high-dpi compatible (no more blurry/double images).
