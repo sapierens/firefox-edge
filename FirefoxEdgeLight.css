@@ -428,7 +428,7 @@
   
   /* TAB ATTENTION ANIMATION */
   @keyframes tab-attention {  
-    0% { background-color: rgba(255, 185, 0, 0; }
+    0% { background-color: rgba(255, 185, 0, 0); }
     40% { background-color: rgba(255, 185, 0, 1); }
     100% { background-color: rgba(255, 185, 0, 0); }
   }
