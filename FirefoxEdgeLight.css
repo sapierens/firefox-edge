@@ -1053,7 +1053,7 @@
   #BMB_bookmarksPopup .arrowscrollbox-scrollbox {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
-    --panel-arrowcontent-border: 1px solid var(--urlbar-separator-color) !important;
+    --panel-arrowcontent-border-color: var(--urlbar-separator-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subviews {
