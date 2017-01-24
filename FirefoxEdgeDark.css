@@ -1155,6 +1155,14 @@
     border-left: 1px solid var(--panel-separator-color);
   }
   
+  #PanelUI-fxa-status,
+  #PanelUI-fxa-icon,
+  #PanelUI-help,
+  #PanelUI-customize,
+  #PanelUI-quit {
+    outline: none !important;
+  }
+  
   :-moz-any(#mainPopupSet, #nav-bar) separator {
     background: var(--panel-separator-color) !important;
   }
