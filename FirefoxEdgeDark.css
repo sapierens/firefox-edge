@@ -699,6 +699,20 @@
   #reader-mode-button[readeractive] {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
+  
+  /* URLBAR ZOOM BUTTON */
+  #urlbar-zoom-button {
+    -moz-appearance: none !important;
+    background-color: var(--top-level-bg-hover-color);
+  }
+
+  #urlbar-zoom-button:hover {
+    background-color: var(--top-level-bg-active-color);
+  }
+
+  #urlbar-zoom-button:hover:active {
+    background-color: var(--tab-scroll-up-down-bg-active-color);
+  }
 
   /* SEARCH TEXTBOX */
   .searchbar-textbox {
