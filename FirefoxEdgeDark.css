@@ -652,6 +652,47 @@
   #identity-box > #identity-icon {
     margin-left: -4px !important;
   }
+  
+  #identity-icon {
+    list-style-image: var(--identity-icon-image);
+  }
+
+  #identity-box:hover > #identity-icon:not(.no-hover),
+  #identity-box[open=true] > #identity-icon {
+    list-style-image: var(--identity-icon-hover-image);
+  }
+
+  #identity-box.grantedPermissions > #identity-icon {
+    list-style-image: var(--identity-icon-notice-image);
+  }
+
+  #identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover),
+  #identity-box.grantedPermissions[open=true] > #identity-icon {
+    list-style-image: var(--identity-icon-notice-hover-image);
+  }
+
+  #tracking-protection-icon {
+    list-style-image: var(--tracking-protection-enabled-image);
+  }
+
+  #tracking-protection-icon[state="loaded-tracking-content"] {
+    list-style-image: var(--tracking-protection-disabled-image);
+  }
+
+  #urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+    list-style-image: var(--connection-mixed-passive-image);
+  }
+
+  #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
+  #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
+    list-style-image: var(--connection-mixed-active-image);
+  }
+
+  #urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+  #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+  #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
+    list-style-image: var(--connection-mixed-passive-image);
+  }
 
   .urlbar-textbox-container {
     margin-left: 16px !important;
@@ -2109,6 +2150,15 @@
     --navbar-toolbarbutton-images: url(chrome://browser/skin/Toolbar-inverted.png);
     --navbar-toolbarbutton-images2x: url(chrome://browser/skin/Toolbar-inverted@2x.png);
     --home-button-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxNy4wOSIgdmlld0JveD0iMCAwIDE5IDE3LjA5Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MS41cHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJkYXJrIj48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjEgMTAuMDkgOS41IDEuMDkgMTggMTAuMDkiLz48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjMgOC4wOSAzIDE2LjA5IDcuNSAxNi4wOSA3LjUgMTAuNTkgMTEuNSAxMC41OSAxMS41IDE2LjA5IDE2IDE2LjA5IDE2IDguMDkiLz48L2c+PC9zdmc+);
+    --identity-icon-image: url(chrome://browser/skin/identity-icon.svg#normal-white);
+    --identity-icon-hover-image: url(chrome://browser/skin/identity-icon.svg#hover-white);
+    --identity-icon-notice-image: url(chrome://browser/skin/identity-icon.svg#notice-white);
+    --identity-icon-notice-hover-image: url(chrome://browser/skin/identity-icon.svg#notice-hover-white);
+    --tracking-protection-enabled-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled-white);
+    --tracking-protection-disabled-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled-white);
+    --connection-mixed-passive-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-white);
+    --connection-mixed-active-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-white);
+    --connection-mixed-passive-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-white);
   }
 
 }
