@@ -1229,7 +1229,8 @@
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up,
   .notification-button,
   .findbar-find-previous,
-  .findbar-find-next {
+  .findbar-find-next,
+  tabmodalprompt button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1252,7 +1253,8 @@
   .findbar-find-next:not([disabled="true"]):hover,
   .findbar-highlight:not([disabled="true"]):hover,
   .findbar-case-sensitive:not([disabled="true"]):hover,
-  .findbar-entire-word:not([disabled="true"]):hover {
+  .findbar-entire-word:not([disabled="true"]):hover,
+  tabmodalprompt button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1276,7 +1278,8 @@
   .findbar-entire-word:not([disabled="true"])[checked="true"],
   .findbar-highlight:not([disabled="true"]):hover:active,
   .findbar-case-sensitive:not([disabled="true"]):hover:active,
-  .findbar-entire-word:not([disabled="true"]):hover:active {
+  .findbar-entire-word:not([disabled="true"]):hover:active,
+  tabmodalprompt button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1645,6 +1648,45 @@
   .autorepeatbutton-up > .autorepeatbutton-icon,
   .autorepeatbutton-down > .autorepeatbutton-icon {
     -moz-appearance: none !important;
+  }
+  
+  /* WINDOW'S ALERT BOX */
+  tabmodalprompt {
+    background-color: rgba(0, 0, 0, .6);
+    font-family: sans-serif; /* use content font not system UI font */
+  }
+
+  .mainContainer {
+    color: var(--main-font-color);
+    background-color: var(--top-level-bg-color);
+    border-radius: 0;
+    border: 1px solid var(--blue-accent-color);
+  }
+
+  .topContainer {
+    padding: 40px 25px;
+  }
+
+  .buttonContainer {
+    padding: 12px 20px 15px 200px;
+    background-color: transparent;
+    border-top: none;
+  }
+  
+  tabmodalprompt .buttonContainer button {
+    width: 200px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  tabmodalprompt .info\.title {
+    font-size: 19px;
+    font-weight: normal;
+  }
+  
+  tabmodalprompt .info\.body {
+    font-size: 15px;
+    font-weight: normal;
   }
 
   /* CONTEXT MENUS */
