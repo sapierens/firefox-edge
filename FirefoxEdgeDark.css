@@ -1107,6 +1107,7 @@
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
     --panel-arrowcontent-border-color: var(--urlbar-separator-color) !important;
+    border-radius: 0 !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subviews {
