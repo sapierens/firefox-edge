@@ -1248,6 +1248,35 @@
     background-color: hsla(210,4%,10%,.30);
   }
   
+    #mainPopupSet .download-state {
+    -moz-appearance: none !important;
+    background: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  #mainPopupSet .download-state:not(:last-child):hover {
+    border-bottom: 1px solid var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet .download-state:last-child:hover {
+    border-bottom: 1px solid transparent !important;
+    background-color: hsla(210,4%,10%,.08) !important;
+    cursor: pointer !important;
+  }
+  
+  #mainPopupSet .download-state:hover {
+    background-color: hsla(210,4%,10%,.08) !important;
+    color: inherit !important;
+  }
+  
+  #mainPopupSet .download-state:hover:active {
+    background-color: hsla(210,4%,10%,.15) !important;
+  }
+  
   #mainPopupSet richlistitem[type="download"] {
     border-bottom: 1px solid var(--panel-separator-color);
     border-top: none !important;
