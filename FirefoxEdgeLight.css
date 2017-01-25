@@ -352,12 +352,8 @@
     order: 2 !important;
   }
 
-  .tabbrowser-tab:not([visuallyselected]) > .tab-stack >.tab-content > .tab-icon-sound {
-    opacity: 0.65;
-  }
-
-  .tabbrowser-tab:not([visuallyselected]):hover > .tab-stack >.tab-content > .tab-icon-sound {
-    opacity: 0.8;
+  .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound {
+    opacity: 1;
   }
 
   /* REPLACE PINNED TAB'S FAVICON WITH AUDIO ICON */  
