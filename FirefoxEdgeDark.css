@@ -1161,7 +1161,8 @@
   .click-to-play-plugins-notification-button-container {
     color: var(--default-text-color);
     background-color: var(--second-level-bg-color) !important;
-    border-top: 1px solid var(--panel-separator-color) !important; 
+    border-top: 1px solid var(--panel-separator-color) !important;
+    outline: none !important;
   }
   
   #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover,
