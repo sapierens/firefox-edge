@@ -1103,6 +1103,13 @@
       list-style-image: var(--tab-throbber-animation-image2x) !important;
     }
   }
+  
+  /* INVERSION & BRIGHTENING OF IMAGES */
+  .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(#web-notifications-notification-icon),
+  .messageImage,
+  .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]) {
+    filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
+  }
 
   /* MENU & POPUPS */
   :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel) .panel-arrowcontent,
@@ -2117,6 +2124,10 @@
     --context-menu-separator-color: #919191;
     --findbar-notfound-bg-color: #F66;
     --findbar-flash-bg-color: yellow;
+
+    /* NUMERICAL VARIABLES */
+    --image-inversion-percentage: 0%;
+    --image-brightness: 1.0;
 
     /* IMAGE VARIABLES */
     --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize");
