@@ -2169,7 +2169,7 @@
     --menupanel-images: url(chrome://browser/skin/menuPanel.svg);
     --menupanel-small-images: url(chrome://browser/skin/menuPanel-small.svg);
     --pocket-menupanel-image: url(chrome://pocket/skin/menuPanel.png);
-	--pocket-menupanel-image-2x: url(chrome://pocket/skin/menuPanel@2x.png);
+    --pocket-menupanel-image-2x: url(chrome://pocket/skin/menuPanel@2x.png);
     --panelUI-fxa-icon: url(chrome://browser/skin/sync-horizontalbar.png);
     --panelUI-fxa-icon-2x: url(chrome://browser/skin/sync-horizontalbar@2x.png);
     --panelUI-customize-icon: url(chrome://browser/skin/menuPanel-customize.png);
