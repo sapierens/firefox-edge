@@ -12,6 +12,7 @@
   #restore-button,
   #close-button {
     -moz-appearance: none !important;
+    display: -moz-box !important;
     border: none !important;
     padding: 0 !important;
     width: 46px !important;
@@ -20,6 +21,7 @@
   
   #main-window {
     background-color: var(--second-level-bg-color) !important;
+    -moz-appearance: none !important;
   }
 
   #main-menubar {
@@ -102,6 +104,7 @@
   
   #titlebar-buttonbox {
     -moz-appearance: none !important;
+    margin-inline-end: 0 !important;
   }
 
   #navigator-toolbox::after {
