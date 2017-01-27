@@ -1770,14 +1770,14 @@
   }
 
   .buttonContainer {
-    padding: 12px 20px 15px 200px;
+    padding: 12px 20px 15px;
     background-color: transparent;
     border-top: none;
   }
   
   tabmodalprompt .buttonContainer button {
-    width: 200px;
-    height: 32px;
+    min-width: 200px;
+    min-height: 32px;
     font-size: 14px;
   }
   
