@@ -2004,19 +2004,19 @@
     
     #mainPopupSet #PanelUI-fxa-label,
     #mainPopupSet #PanelUI-fxa-icon {
-      list-style-image: var(--panelUI-fxa-icon);
+      list-style-image: var(--panelui-fxa-icon);
     }
     
     #mainPopupSet #PanelUI-customize {
-      list-style-image: var(--panelUI-customize-icon);
+      list-style-image: var(--panelui-customize-icon);
     }
     
     #mainPopupSet #PanelUI-help {
-      list-style-image: var(--panelUI-help-icon);
+      list-style-image: var(--panelui-help-icon);
     }
 
     #mainPopupSet #PanelUI-quit {
-      list-style-image: var(--panelUI-quit-icon);
+      list-style-image: var(--panelui-quit-icon);
     }
     
     .find-status-icon[status="pending"] {
@@ -2054,19 +2054,19 @@
     
     #mainPopupSet #PanelUI-fxa-label,
     #mainPopupSet #PanelUI-fxa-icon {
-      list-style-image: var(--panelUI-fxa-icon-2x);
+      list-style-image: var(--panelui-fxa-icon-2x);
     }
     
     #mainPopupSet #PanelUI-customize {
-      list-style-image: var(--panelUI-customize-icon-2x);
+      list-style-image: var(--panelui-customize-icon-2x);
     }
     
     #mainPopupSet #PanelUI-help {
-      list-style-image: var(--panelUI-help-icon-2x);
+      list-style-image: var(--panelui-help-icon-2x);
     }
 
     #mainPopupSet #PanelUI-quit {
-      list-style-image: var(--panelUI-quit-icon-2x);
+      list-style-image: var(--panelui-quit-icon-2x);
     }
     
     .find-status-icon[status="pending"] {
@@ -2170,14 +2170,14 @@
     --menupanel-small-images: url(chrome://browser/skin/menuPanel-small.svg);
     --pocket-menupanel-image: url(chrome://pocket/skin/menuPanel.png);
     --pocket-menupanel-image-2x: url(chrome://pocket/skin/menuPanel@2x.png);
-    --panelUI-fxa-icon: url(chrome://browser/skin/sync-horizontalbar.png);
-    --panelUI-fxa-icon-2x: url(chrome://browser/skin/sync-horizontalbar@2x.png);
-    --panelUI-customize-icon: url(chrome://browser/skin/menuPanel-customize.png);
-    --panelUI-customize-icon-2x: url(chrome://browser/skin/menuPanel-customize@2x.png);
-    --panelUI-help-icon: url(chrome://browser/skin/menuPanel-help.png);
-    --panelUI-help-icon-2x: url(chrome://browser/skin/menuPanel-help@2x.png);
-    --panelUI-quit-icon: url(chrome://browser/skin/menuPanel-exit.png);
-    --panelUI-quit-icon-2x: url(chrome://browser/skin/menuPanel-exit@2x.png);
+    --panelui-fxa-icon: url(chrome://browser/skin/sync-horizontalbar.png);
+    --panelui-fxa-icon-2x: url(chrome://browser/skin/sync-horizontalbar@2x.png);
+    --panelui-customize-icon: url(chrome://browser/skin/menuPanel-customize.png);
+    --panelui-customize-icon-2x: url(chrome://browser/skin/menuPanel-customize@2x.png);
+    --panelui-help-icon: url(chrome://browser/skin/menuPanel-help.png);
+    --panelui-help-icon-2x: url(chrome://browser/skin/menuPanel-help@2x.png);
+    --panelui-quit-icon: url(chrome://browser/skin/menuPanel-exit.png);
+    --panelui-quit-icon-2x: url(chrome://browser/skin/menuPanel-exit@2x.png);
     --arrow-subview-forward-image: url(chrome://browser/skin/controlcenter/arrow-subview.svg);
     --menu-arrow-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImxpZ2h0Ij48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjUgMiAxMSA4IDUgMTQiLz48L2c+PC9zdmc+);
     --menulist-dropdown-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiPjxkZWZzPjxzdHlsZT4uY2xzLTJ7ZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1taXRlcmxpbWl0OjEwO308L3N0eWxlPjwvZGVmcz48ZyBpZD0ibGlnaHQiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMSAxIDcgNi41IDEzIDEiLz48L2c+PC9zdmc+);
