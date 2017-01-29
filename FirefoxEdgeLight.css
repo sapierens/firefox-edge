@@ -1,4 +1,4 @@
-/*    Firefox Edge v1.5.0    */
+/*    Firefox Edge v1.6.0    */
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul") {
@@ -12,6 +12,7 @@
   #restore-button,
   #close-button {
     -moz-appearance: none !important;
+    display: -moz-box !important;
     border: none !important;
     padding: 0 !important;
     width: 46px !important;
@@ -20,6 +21,7 @@
   
   #main-window {
     background-color: var(--second-level-bg-color) !important;
+    -moz-appearance: none !important;
   }
 
   #main-menubar {
@@ -102,10 +104,11 @@
   
   #titlebar-buttonbox {
     -moz-appearance: none !important;
+    margin-inline-end: 0 !important;
   }
 
   #navigator-toolbox::after {
-    background-color: var(--navigator-separator-bg-color) !important;
+    border-bottom: 1px solid var(--navigator-separator-bg-color) !important;
   }
 
   /* TABS */
@@ -203,6 +206,7 @@
       var(--tab-separator-color) 6px,
       var(--tab-separator-color) calc(100% - 6px),
       transparent calc(100% - 6px));
+    border: none !important;
     opacity: 1.0;
   }
 
@@ -213,6 +217,7 @@
       var(--tab-separator-color) 0px,
       var(--tab-separator-color) 100%,
       transparent 100%);
+    border: none !important;
   }
 
   .tabbrowser-tab .close-icon {
@@ -350,12 +355,8 @@
     order: 2 !important;
   }
 
-  .tabbrowser-tab:not([visuallyselected]) > .tab-stack >.tab-content > .tab-icon-sound {
-    opacity: 0.65;
-  }
-
-  .tabbrowser-tab:not([visuallyselected]):hover > .tab-stack >.tab-content > .tab-icon-sound {
-    opacity: 0.8;
+  .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound {
+    opacity: 1;
   }
 
   /* REPLACE PINNED TAB'S FAVICON WITH AUDIO ICON */  
@@ -650,6 +651,47 @@
   #identity-box > #identity-icon {
     margin-left: -4px !important;
   }
+  
+  #identity-icon {
+    list-style-image: var(--identity-icon-image);
+  }
+
+  #identity-box:hover > #identity-icon:not(.no-hover),
+  #identity-box[open=true] > #identity-icon {
+    list-style-image: var(--identity-icon-hover-image);
+  }
+
+  #identity-box.grantedPermissions > #identity-icon {
+    list-style-image: var(--identity-icon-notice-image);
+  }
+
+  #identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover),
+  #identity-box.grantedPermissions[open=true] > #identity-icon {
+    list-style-image: var(--identity-icon-notice-hover-image);
+  }
+
+  #tracking-protection-icon {
+    list-style-image: var(--tracking-protection-enabled-image);
+  }
+
+  #tracking-protection-icon[state="loaded-tracking-content"] {
+    list-style-image: var(--tracking-protection-disabled-image);
+  }
+
+  #urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+    list-style-image: var(--connection-mixed-passive-image);
+  }
+
+  #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
+  #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
+    list-style-image: var(--connection-mixed-active-image);
+  }
+
+  #urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+  #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+  #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
+    list-style-image: var(--connection-mixed-passive-image);
+  }
 
   .urlbar-textbox-container {
     margin-left: 16px !important;
@@ -698,6 +740,20 @@
   #reader-mode-button:hover:active,
   #reader-mode-button[readeractive] {
     -moz-image-region: rect(0, 40px, 20px, 20px);
+  }
+  
+  /* URLBAR ZOOM BUTTON */
+  #urlbar-zoom-button {
+    -moz-appearance: none !important;
+    background-color: var(--top-level-bg-hover-color);
+  }
+
+  #urlbar-zoom-button:hover {
+    background-color: var(--top-level-bg-active-color);
+  }
+
+  #urlbar-zoom-button:hover:active {
+    background-color: var(--tab-scroll-up-down-bg-active-color);
   }
 
   /* SEARCH TEXTBOX */
@@ -1047,13 +1103,21 @@
       list-style-image: var(--tab-throbber-animation-image2x) !important;
     }
   }
+  
+  /* INVERSION & BRIGHTENING OF IMAGES */
+  .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(#web-notifications-notification-icon),
+  .messageImage:not([value="popup-blocked"]),
+  .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]) {
+    filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
+  }
 
   /* MENU & POPUPS */
   :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel) .panel-arrowcontent,
   #BMB_bookmarksPopup .arrowscrollbox-scrollbox {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
-    --panel-arrowcontent-border: 1px solid var(--urlbar-separator-color) !important;
+    --panel-arrowcontent-border-color: var(--urlbar-separator-color) !important;
+    border-radius: 0 !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subviews {
@@ -1108,7 +1172,8 @@
   .click-to-play-plugins-notification-button-container {
     color: var(--default-text-color);
     background-color: var(--second-level-bg-color) !important;
-    border-top: 1px solid var(--panel-separator-color) !important; 
+    border-top: 1px solid var(--panel-separator-color) !important;
+    outline: none !important;
   }
   
   #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover,
@@ -1155,6 +1220,14 @@
     border-left: 1px solid var(--panel-separator-color);
   }
   
+  #PanelUI-fxa-status,
+  #PanelUI-fxa-icon,
+  #PanelUI-help,
+  #PanelUI-customize,
+  #PanelUI-quit {
+    outline: none !important;
+  }
+  
   :-moz-any(#mainPopupSet, #nav-bar) separator {
     background: var(--panel-separator-color) !important;
   }
@@ -1184,6 +1257,35 @@
   
   #mainPopupSet #downloadsSummary:hover:active {
     background-color: hsla(210,4%,10%,.30);
+  }
+  
+    #mainPopupSet .download-state {
+    -moz-appearance: none !important;
+    background: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  #mainPopupSet .download-state:not(:last-child):hover {
+    border-bottom: 1px solid var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet .download-state:last-child:hover {
+    border-bottom: 1px solid transparent !important;
+    background-color: hsla(210,4%,10%,.08) !important;
+    cursor: pointer !important;
+  }
+  
+  #mainPopupSet .download-state:hover {
+    background-color: hsla(210,4%,10%,.08) !important;
+    color: inherit !important;
+  }
+  
+  #mainPopupSet .download-state:hover:active {
+    background-color: hsla(210,4%,10%,.15) !important;
   }
   
   #mainPopupSet richlistitem[type="download"] {
@@ -1229,7 +1331,8 @@
   :-moz-any(#mainPopupSet, #nav-bar) .expander-up,
   .notification-button,
   .findbar-find-previous,
-  .findbar-find-next {
+  .findbar-find-next,
+  tabmodalprompt button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1252,7 +1355,8 @@
   .findbar-find-next:not([disabled="true"]):hover,
   .findbar-highlight:not([disabled="true"]):hover,
   .findbar-case-sensitive:not([disabled="true"]):hover,
-  .findbar-entire-word:not([disabled="true"]):hover {
+  .findbar-entire-word:not([disabled="true"]):hover,
+  tabmodalprompt button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1276,7 +1380,8 @@
   .findbar-entire-word:not([disabled="true"])[checked="true"],
   .findbar-highlight:not([disabled="true"]):hover:active,
   .findbar-case-sensitive:not([disabled="true"]):hover:active,
-  .findbar-entire-word:not([disabled="true"]):hover:active {
+  .findbar-entire-word:not([disabled="true"]):hover:active,
+  tabmodalprompt button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1646,6 +1751,45 @@
   .autorepeatbutton-down > .autorepeatbutton-icon {
     -moz-appearance: none !important;
   }
+  
+  /* WINDOW'S ALERT BOX */
+  tabmodalprompt {
+    background-color: rgba(0, 0, 0, .6);
+    font-family: sans-serif; /* use content font not system UI font */
+  }
+
+  .mainContainer {
+    color: var(--main-font-color);
+    background-color: var(--top-level-bg-color);
+    border-radius: 0;
+    border: 1px solid var(--blue-accent-color);
+  }
+
+  .topContainer {
+    padding: 40px 25px;
+  }
+
+  .buttonContainer {
+    padding: 12px 20px 15px;
+    background-color: transparent;
+    border-top: none;
+  }
+  
+  tabmodalprompt .buttonContainer button {
+    min-width: 200px;
+    min-height: 32px;
+    font-size: 14px;
+  }
+  
+  tabmodalprompt .info\.title {
+    font-size: 19px;
+    font-weight: normal;
+  }
+  
+  tabmodalprompt .info\.body {
+    font-size: 15px;
+    font-weight: normal;
+  }
 
   /* CONTEXT MENUS */
   #bookmarksMenuPopup,
@@ -1884,7 +2028,7 @@
     #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
     #mainPopupSet :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"],
     #mainPopupSet toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
-      list-style-image: var(--menupanel-images-2x);
+      list-style-image: var(--menupanel-images);
     }
     
     #mainPopupSet #PanelUI-help[panel-multiview-anchor="true"]::after,
@@ -1900,7 +2044,7 @@
     #mainPopupSet #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
     #mainPopupSet toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton,
     #mainPopupSet toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton {
-      list-style-image: var(--menupanel-small-images-2x);
+      list-style-image: var(--menupanel-small-images);
     }
     
     #mainPopupSet #pocket-button[cui-areatype="menu-panel"],
@@ -1981,6 +2125,10 @@
     --findbar-notfound-bg-color: #F66;
     --findbar-flash-bg-color: yellow;
 
+    /* NUMERICAL VARIABLES */
+    --image-inversion-percentage: 0%;
+    --image-brightness: 1.0;
+
     /* IMAGE VARIABLES */
     --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize");
     --titlebar-max-image: url("chrome://browser/skin/caption-buttons.svg#maximize");
@@ -2018,10 +2166,8 @@
     --pocket-button-image: url(chrome://pocket/skin/Toolbar.png);
     --pocket-button-image2x: url(chrome://pocket/skin/Toolbar@2x.png);
     --panel-arrow-vertical: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIj4gIDxwYXRoIGQ9Ik0gMCwxMCBMIDEwLDAgMjAsMTAgeiIgZmlsbD0iIzkxOTE5MSIvPiAgPHBhdGggZD0iTSAxLDEwIEwgMTAsMSAxOSwxMCB6IiBmaWxsPSIjRjJGMkYyIi8+PC9zdmc+);
-    --menupanel-images: url(chrome://browser/skin/menuPanel.png);
-    --menupanel-images-2x: url(chrome://browser/skin/menuPanel@2x.png);
-    --menupanel-small-images: url(chrome://browser/skin/menuPanel-small.png);
-    --menupanel-small-images-2x: url(chrome://browser/skin/menuPanel-small@2x.png);
+    --menupanel-images: url(chrome://browser/skin/menuPanel.svg);
+    --menupanel-small-images: url(chrome://browser/skin/menuPanel-small.svg);
     --pocket-menupanel-image: url(chrome://pocket/skin/menuPanel.png);
     --pocket-menupanel-image-2x: url(chrome://pocket/skin/menuPanel@2x.png);
     --panelUI-fxa-icon: url(chrome://browser/skin/sync-horizontalbar.png);
@@ -2043,6 +2189,15 @@
     --navbar-toolbarbutton-images: url(chrome://browser/skin/Toolbar.png);
     --navbar-toolbarbutton-images2x: url(chrome://browser/skin/Toolbar@2x.png);
     --home-button-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE5IDE3Ij48ZGVmcz48c3R5bGU+LmNscy0yLC5jbHMtM3tmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fS5jbHMtMntzdHJva2Utd2lkdGg6MS4xcHg7fS5jbHMtM3tzdHJva2Utd2lkdGg6MS4ycHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJsaWdodCI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxIDEwIDkuNSAxIDE4IDEwIi8+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIzIDggMyAxNiA3LjUgMTYgNy41IDEwLjUgMTEuNSAxMC41IDExLjUgMTYgMTYgMTYgMTYgOCIvPjwvZz48L3N2Zz4=);
+    --identity-icon-image: url(chrome://browser/skin/identity-icon.svg#normal-black);
+    --identity-icon-hover-image: url(chrome://browser/skin/identity-icon.svg#hover-black);
+    --identity-icon-notice-image: url(chrome://browser/skin/identity-icon.svg#notice-black);
+    --identity-icon-notice-hover-image: url(chrome://browser/skin/identity-icon.svg#notice-hover-black);
+    --tracking-protection-enabled-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled-black);
+    --tracking-protection-disabled-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled-black);
+    --connection-mixed-passive-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-black);
+    --connection-mixed-active-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-black);
+    --connection-mixed-passive-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-black);
   }
 
 }

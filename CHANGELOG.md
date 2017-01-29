@@ -1,5 +1,13 @@
 # Changelog
 
+**[v1.6.0 January 29th, 2017]**
+
+* Updated the theme to be more compatible with Firefox 51, which in turn fixes a bunch of bugs.
+* Added window alert box's styling.
+* Styled download panel's hover and click background to be consistent across all Windows and Linux installations.
+* Fixed missing minimize, maximize, restore and close buttons on some Windows 8 and earlier installations.
+* Removed rounded popup borders on Windows 7 and earlier.
+
 **[v1.5.0 January 17th, 2017]**
 
 * Added styling for all popup and context menus.

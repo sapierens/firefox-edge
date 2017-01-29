@@ -4,7 +4,7 @@
 
 Firefox Edge is a theme for Mozilla Firefox that closely replicates the look of Microsoft Edge (both light & dark themes) without losing any features of Firefox.
 
-*Firefox Edge has been tested on Windows 10 and Firefox 50.*
+*Firefox Edge has been tested on Windows 7/8/10, Linux Mint and Firefox 51.*
 
 ## Installation
 1. Install the [Stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/) addon for Firefox
