@@ -21,7 +21,6 @@
   
   #main-window {
     background-color: var(--second-level-bg-color) !important;
-    -moz-appearance: none !important;
   }
 
   #main-menubar {
@@ -114,7 +113,7 @@
   /* TABS */
   #TabsToolbar {
     -moz-appearance: none !important;
-    height: 33px !important;
+    height: 32px !important;
     background-color: var(--second-level-bg-color) !important;
     margin-bottom: 0 !important;
   }
@@ -463,6 +462,7 @@
     height: 44px !important;
     box-shadow: none !important;
     padding: 0 !important;
+    margin-top: 0 !important;
   }
   
   #TabsToolbar:not([collapsed="true"]) + #nav-bar {
