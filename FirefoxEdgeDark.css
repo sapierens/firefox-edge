@@ -1018,7 +1018,7 @@
     padding: 0 !important;
   }
 
-  toolbarbutton.bookmark-item:not(.subviewbutton) {
+  #PersonalToolbar toolbarbutton.bookmark-item:not(.subviewbutton) {
     padding: 2px 6px !important;
     border: none !important;
     border-radius: 0 !important;
@@ -1027,16 +1027,19 @@
     color: var(--main-font-color) !important;
   }
 
-  toolbarbutton.bookmark-item:hover:not(.subviewbutton):not([disabled="true"]):not([open]),
-  toolbarbutton.chevron:hover:not([disabled="true"]):not([open]) {
+  #PersonalToolbar toolbarbutton:hover:not(.subviewbutton):not(#bookmarks-menu-button):not([disabled="true"]):not([open]) {
     background: var(--top-level-bg-hover-color) !important;
   }
 
-  toolbarbutton.bookmark-item:hover:active:not(.subviewbutton):not([disabled="true"]):not([open]),
-  toolbarbutton.bookmark-item:not(.subviewbutton):not([disabled="true"])[open],
-  toolbarbutton.chevron:hover:active:not([disabled="true"]):not([open]),
-  toolbarbutton.chevron:not([disabled="true"])[open] {
+  #PersonalToolbar toolbarbutton:hover:active:not(.subviewbutton):not(#bookmarks-menu-button):not([disabled="true"]):not([open]),
+  #PersonalToolbar toolbarbutton:not(.subviewbutton):not(#bookmarks-menu-button):not([disabled="true"])[open] {
     background: var(--top-level-bg-active-color) !important;
+  }
+  
+  #browser-panel #PersonalToolbar #bookmarks-menu-button toolbarbutton:hover,
+  #browser-panel #PersonalToolbar #bookmarks-menu-button toolbarbutton:hover:active,
+  #browser-panel #PersonalToolbar #bookmarks-menu-button toolbarbutton[open] {
+    background: transparent !important;
   }
 
   #PlacesToolbarDropIndicator {
@@ -1071,6 +1074,12 @@
     padding: 0 !important;
     list-style-image: var(--default-dropdown-image);
     margin-left: 3px !important;
+  }
+  
+  #PersonalToolbar toolbarbutton:not(.bookmark-item) {
+    -moz-appearance: none !important;
+    padding: 0 8px !important;
+    border: none !important;
   }
   
   /* POCKET BUTTON */
