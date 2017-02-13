@@ -961,14 +961,14 @@
     min-height: 44px !important;
   }
   
-  :-moz-any(#back-button, #forward-button):not([disabled]):hover,
+  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker {
     background-color: var(--top-level-bg-hover-color) !important;
   }
   
-  :-moz-any(#back-button, #forward-button):not([disabled]):hover:active,
+  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled]):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover:active {
     background-color: var(--top-level-bg-active-color) !important;
@@ -1005,9 +1005,12 @@
     border-radius: 50% !important;
     border: 1px solid var(--toolbarbutton-badge-border-color) !important;
     box-shadow: none !important;
+    min-width: 16px !important;
+  }
+  
+  #nav-bar .toolbarbutton-badge {
     margin: 8px 0 0 !important;
     margin-inline-end: -8px !important;
-    min-width: 16px !important;
   }
 
   /* BOOKMARKS TOOLBAR */
