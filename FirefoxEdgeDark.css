@@ -487,7 +487,7 @@
   #back-button {
     list-style-image: var(--back-button-image);
     -moz-image-region: auto !important;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
     padding: 0 !important;
     padding-inline-start: 0 !important;
     padding-inline-end: 0 !important;
@@ -496,6 +496,7 @@
   #back-button > .toolbarbutton-icon {
     padding: 0 !important;
     max-width: 36px !important;
+    background-color: transparent !important;
   }
 
   /* FORWARD BUTTON */
@@ -960,24 +961,24 @@
     min-height: 44px !important;
   }
   
-  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled]):hover,
-  #nav-bar .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover,
-  #nav-bar .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover,
-  #nav-bar .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker {
+  :-moz-any(#back-button, #forward-button):not([disabled]):hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker {
     background-color: var(--top-level-bg-hover-color) !important;
   }
   
-  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled]):hover:active,
-  #nav-bar .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover:active,
-  #nav-bar .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover:active {
+  :-moz-any(#back-button, #forward-button):not([disabled]):hover:active,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover:active,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
   
-  #nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
-  #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-  #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
-  #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-stack,
-  #nav-bar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1 > .toolbarbutton-icon,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1 > .toolbarbutton-badge-stack,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {
     border: none !important;
     background: none !important;
     box-shadow: none !important;
@@ -1027,31 +1028,21 @@
     color: var(--main-font-color) !important;
   }
 
-  #PersonalToolbar toolbarbutton:hover:not(.subviewbutton):not(#bookmarks-menu-button):not([disabled="true"]):not([open]) {
+  #PersonalToolbar .bookmark-item:hover:not([open]) {
     background: var(--top-level-bg-hover-color) !important;
   }
+  
+  .bookmark-item {
+    list-style-image: var(--bookmarks-favicon-image);
+  }
 
-  #PersonalToolbar toolbarbutton:hover:active:not(.subviewbutton):not(#bookmarks-menu-button):not([disabled="true"]):not([open]),
-  #PersonalToolbar toolbarbutton:not(.subviewbutton):not(#bookmarks-menu-button):not([disabled="true"])[open] {
+  #PersonalToolbar .bookmark-item:hover:active,
+  #PersonalToolbar .bookmark-item[open] {
     background: var(--top-level-bg-active-color) !important;
-  }
-  
-  #browser-panel #PersonalToolbar #bookmarks-menu-button toolbarbutton:hover,
-  #browser-panel #PersonalToolbar #bookmarks-menu-button toolbarbutton:hover:active,
-  #browser-panel #PersonalToolbar #bookmarks-menu-button toolbarbutton[open] {
-    background: transparent !important;
-  }
-  
-  #PersonalToolbar #bookmarks-menu-button {
-    padding-left: 0 !important;
   }
 
   #PlacesToolbarDropIndicator {
     list-style-image: var(--bookmarks-drop-indicator-image) !important;
-  }
-
-  .bookmark-item {
-    list-style-image: var(--bookmarks-favicon-image);
   }
 
   toolbarbutton.chevron {
@@ -1084,6 +1075,14 @@
     -moz-appearance: none !important;
     padding: 0 8px !important;
     border: none !important;
+  }
+  
+  #PersonalToolbar toolbarbutton[type="menu-button"]:not(.bookmark-item) {
+    padding-left: 0 !important;
+  }
+  
+  #PersonalToolbar .toolbarbutton-menubutton-dropmarker {
+    width: 16px !important;
   }
   
   /* POCKET BUTTON */
