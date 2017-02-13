@@ -1041,6 +1041,10 @@
   #browser-panel #PersonalToolbar #bookmarks-menu-button toolbarbutton[open] {
     background: transparent !important;
   }
+  
+  #PersonalToolbar #bookmarks-menu-button {
+    padding-left: 0 !important;
+  }
 
   #PlacesToolbarDropIndicator {
     list-style-image: var(--bookmarks-drop-indicator-image) !important;
