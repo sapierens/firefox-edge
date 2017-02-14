@@ -1030,17 +1030,19 @@
     box-shadow: none !important;
     color: var(--main-font-color) !important;
   }
-
-  #PersonalToolbar .bookmark-item:hover:not([open]) {
-    background: var(--top-level-bg-hover-color) !important;
-  }
   
   .bookmark-item {
     list-style-image: var(--bookmarks-favicon-image);
   }
 
+  #PersonalToolbar .bookmark-item:hover:not([open]),
+  #PersonalToolbar toolbarbutton.chevron:hover:not([open]) {
+    background: var(--top-level-bg-hover-color) !important;
+  }
+
   #PersonalToolbar .bookmark-item:hover:active,
-  #PersonalToolbar .bookmark-item[open] {
+  #PersonalToolbar .bookmark-item[open],
+  #PersonalToolbar toolbarbutton.chevron[open] {
     background: var(--top-level-bg-active-color) !important;
   }
 
