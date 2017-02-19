@@ -180,6 +180,7 @@
     -moz-margin-start: 0 !important;
     background: transparent !important;
     width: 32px !important;
+    margin: 0 !important;
   }
 
   .tabs-newtab-button .toolbarbutton-icon,
