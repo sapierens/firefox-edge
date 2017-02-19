@@ -51,7 +51,9 @@
   }
 
   #titlebar-min,
-  #minimize-button {
+  #minimize-button,
+  toolbar[brighttext] #titlebar-min,
+  toolbar[brighttext] #minimize-button {
     list-style-image: none !important;
     background: var(--titlebar-min-image) no-repeat center;
     background-position-y: 11px;
@@ -89,12 +91,12 @@
   #restore-button:hover:active {
     background-color: var(--titlebar-min-max-active-bg-color) !important;
   }
-  
+
   #titlebar-close:hover,
   #close-button:hover {
     background-color: var(--titlebar-close-hover-bg-color);
   }
-  
+
   #titlebar-close:hover:active,
   #close-button:hover:active {
     background-color: var(--titlebar-close-active-bg-color);
@@ -227,6 +229,11 @@
       transparent 100%);
     border: none !important;
   }
+  
+  #TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::before,
+  #TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::after {
+    opacity: 1;
+  }
 
   .tabbrowser-tab .close-icon {
     list-style-image: var(--tab-close-button-image);
@@ -262,7 +269,9 @@
   }
 
   .tabbrowser-arrowscrollbox > .scrollbutton-up, 
-  .tabbrowser-arrowscrollbox > .scrollbutton-down {
+  .tabbrowser-arrowscrollbox > .scrollbutton-down,
+  #TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-up,
+  #TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-down {
     list-style-image: var(--tab-scroll-up-down-button-image);
     -moz-image-region: rect(0, 15px, 17px, 0) !important;
     background-image: none !important;
@@ -270,6 +279,8 @@
     width: 34px !important;
     position: unset !important;
     transition: none !important;
+    margin: 0 !important;
+    padding-top: 1px !important;
   }
 
   .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):hover, 
@@ -303,7 +314,8 @@
     display: none !important;
   }
 
-  #alltabs-button {
+  #alltabs-button,
+  #TabsToolbar[brighttext] > #alltabs-button {
     list-style-image: var(--default-dropdown-image);
     background-color: transparent !important; 
     background-image: none !important;
@@ -482,12 +494,14 @@
     -moz-box-ordinal-group: 0;
   }
   
-  :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
+  :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu),
+  toolbar[brighttext] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
     list-style-image: var(--navbar-toolbarbutton-images);
   }
   
   @media (min-resolution: 1.1dppx) {
-    :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
+    :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu),
+    toolbar[brighttext] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
       list-style-image: var(--navbar-toolbarbutton-images2x);
     }
   }
@@ -820,7 +834,8 @@
     list-style-image: var(--bookmarks-menu-button-image);
   }
 
-  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar)[brighttext] #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
     list-style-image: var(--bookmarks-menu-button-dropmarker-image);
   }
 
@@ -1002,7 +1017,9 @@
   }
   
   .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-  .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+  toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+  toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
     -moz-appearance: none !important;
     padding: 0 !important;
     list-style-image: var(--default-dropdown-image);
@@ -1059,7 +1076,8 @@
     list-style-image: var(--bookmarks-drop-indicator-image) !important;
   }
 
-  toolbarbutton.chevron {
+  toolbar toolbarbutton.chevron,
+  toolbar[brighttext] toolbarbutton.chevron {
     -moz-appearance: none !important;
     padding: 0 !important;
     border: none !important;
@@ -1422,7 +1440,8 @@
   
   #mainPopupSet .close-icon,
   notification .close-icon,
-  .findbar-closebutton {
+  .findbar-closebutton,
+  #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]) {
     -moz-appearance: none !important;
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
@@ -1433,13 +1452,15 @@
   
   #mainPopupSet .close-icon:hover,
   notification .close-icon:hover,
-  .findbar-closebutton:hover {
+  .findbar-closebutton:hover,
+  #TabsToolbar[brighttext] .tab-close-button:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
   #mainPopupSet .close-icon:hover:active,
   notification .close-icon:hover:active,
-  .findbar-closebutton:hover:active {
+  .findbar-closebutton:hover:active,
+  #TabsToolbar[brighttext] .tab-close-button:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
