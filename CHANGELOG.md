@@ -1,5 +1,19 @@
 # Changelog
 
+**[v1.7.0 February 19th, 2017]**
+
+* Added styling for buttons placed on bookmarks toolbar.
+* Restored top border on Windows 10 installations.
+* Fixed a bunch of issues with some Windows themes.
+* Fixed broken bookmarks button when placed on bookmarks toolbar.
+* Fixed popup styling that's activated from bookmarks toolbar.
+* Fixed badge icon placement on menu panel.
+* Fixed downloads panel context-menu styling.
+* Desktop popup notification icon has been added to image color inversion.
+* Addon installation complete icon has been excluded from image color inversion.
+* Greasemonkey popup icon has been excluded from image color inversion.
+* Multiple other minor fixes & improvements.
+
 **[v1.6.0 January 29th, 2017]**
 
 * Updated the theme to be more compatible with Firefox 51, which in turn fixes a bunch of bugs.
