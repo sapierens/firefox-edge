@@ -22,6 +22,15 @@
   #main-window {
     background-color: var(--second-level-bg-color) !important;
   }
+  
+  @media (-moz-os-version: windows-xp),
+         (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7),
+         (-moz-os-version: windows-win8) {
+    #main-window {
+      -moz-appearance: none !important;
+    }
+  }
 
   #main-menubar {
     color: var(--main-font-color) !important;
