@@ -1010,6 +1010,15 @@
     box-shadow: none !important;
   }
   
+  #PanelUI-popup .toolbarbutton-1:not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker {
+    background-color: var(--top-level-bg-active-color) !important;
+  }
+  
+  #PanelUI-popup .toolbarbutton-1:hover:active > .toolbarbutton-menubutton-dropmarker,
+  #PanelUI-popup .toolbarbutton-1[open] > .toolbarbutton-menubutton-dropmarker{
+    background-color: var(--tab-scroll-up-down-bg-active-color) !important;
+  }
+  
   #nav-bar .toolbarbutton-1:not(:hover):not(:active):not([open]) > .toolbarbutton-menubutton-dropmarker::before {
     height: 18px !important;
     margin-inline-end: -1px !important;
