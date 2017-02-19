@@ -1123,6 +1123,7 @@
   
   /* INVERSION & BRIGHTENING OF IMAGES */
   .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(#web-notifications-notification-icon),
+  .notification-anchor-icon.desktop-notification-icon,
   .messageImage:not([value="popup-blocked"]),
   .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]) {
     filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
