@@ -4,6 +4,7 @@
 
 * Added styling for buttons placed on bookmarks toolbar.
 * Restored top border on Windows 10 installations.
+* Fixed missing close, restore and minimize buttons on Windows 8 and lower.
 * Fixed a bunch of issues with some Windows themes.
 * Fixed broken bookmarks button when placed on bookmarks toolbar.
 * Fixed popup styling that's activated from bookmarks toolbar.
