@@ -1851,14 +1851,19 @@
   /* CONTEXT MENUS */
   #bookmarksMenuPopup,
   #goPopup,
-  menupopup:not(#BMB_bookmarksPopup):not([placespopup="true"]),
-  splitmenu,
+  menupopup:not(#BMB_bookmarksPopup),
   #PlacesToolbar menupopup {
     -moz-appearance: none !important;
     background-color: var(--context-menu-bg-color) !important;
     border: 1px solid var(--context-menu-border-color) !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
+  }
+  
+  #BMB_bookmarksPopup menupopup {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 6px !important;
   }
 
   menuseparator {
