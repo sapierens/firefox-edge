@@ -1974,6 +1974,14 @@
     text-shadow: none !important;
   }
   
+  #menu_firebug_firebugInspect:hover {
+    filter: none !important;
+  }
+
+  #menu_firebug_firebugInspect:active {
+    filter: none !important;
+  }
+  
   .menu-right {
     -moz-appearance: none !important;
     list-style-image: var(--menu-arrow-image) !important;
