@@ -1030,14 +1030,14 @@
   }
   
   #nav-bar :-moz-any(#back-button, #forward-button):not([disabled="true"]):hover,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([disabled="true"]):not([type="menu-button"]):not(#back-button):not(#forward-button):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker {
     background-color: var(--top-level-bg-hover-color) !important;
   }
   
   #nav-bar :-moz-any(#back-button, #forward-button):not([disabled="true"]):hover:active,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover:active,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([disabled="true"]):not([type="menu-button"]):not(#back-button):not(#forward-button):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
@@ -1246,6 +1246,11 @@
   :-moz-any(#mainPopupSet, #nav-bar) .downloadsPanelFooter {
     color: var(--main-font-color) !important;
     border: none !important;
+  }
+  
+  :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton[disabled="true"],
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not(.panel-subview-footer)[disabled="true"] {
+    color: var(--gray-text-color) !important;
   }
   
   #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled="true"]):hover,
