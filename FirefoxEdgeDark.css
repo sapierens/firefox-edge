@@ -1202,7 +1202,7 @@
   }
   
   /* INVERSION & BRIGHTENING OF IMAGES */
-  .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(#web-notifications-notification-icon):not(#plugins-notification-icon),
+  .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(#web-notifications-notification-icon):not(.plugin-blocked),
   .notification-anchor-icon.desktop-notification-icon,
   .blocked-permission-icon,
   .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]),
