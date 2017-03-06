@@ -874,12 +874,12 @@
   }
 
   /* BOOKMARKS BUTTON */
-  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar) #bookmarks-menu-button {
+  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar, #TabsToolbar) #bookmarks-menu-button {
     list-style-image: var(--bookmarks-menu-button-image);
   }
 
-  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
-  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar)[brighttext] #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar, #TabsToolbar) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+  :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar, #TabsToolbar)[brighttext] #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
     list-style-image: var(--bookmarks-menu-button-dropmarker-image);
   }
 
