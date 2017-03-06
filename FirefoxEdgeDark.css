@@ -1204,6 +1204,7 @@
   /* INVERSION & BRIGHTENING OF IMAGES */
   .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(#web-notifications-notification-icon):not(#plugins-notification-icon),
   .notification-anchor-icon.desktop-notification-icon,
+  .blocked-permission-icon,
   .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]),
   .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]):not([popupid="addon-install-restart"]):not([popupid="greasemonkey-notification"]) {
     filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
@@ -1421,6 +1422,7 @@
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker,
   #mainPopupSet .popup-notification-button-container button,
   #notification-popup button,
+  #tracking-protection-content button,
   #mainPopupSet #editBookmarkPanelBottomButtons button,
   #mainPopupSet #editBMPanel_newFolderButton,
   .click-to-play-plugins-notification-button-container button,
@@ -1442,6 +1444,7 @@
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover,
   #mainPopupSet .popup-notification-button-container button:hover,
   #notification-popup button:hover,
+  #tracking-protection-content button:hover,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover,
   #mainPopupSet #editBMPanel_newFolderButton:hover,
   .click-to-play-plugins-notification-button-container button:hover,
@@ -1464,6 +1467,7 @@
   #mainPopupSet .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker,
   #mainPopupSet .popup-notification-button-container button:hover:active,
   #notification-popup button:hover:active,
+  #tracking-protection-content button:hover:active,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover:active,
   #mainPopupSet #editBMPanel_newFolderButton:hover:active,
   .click-to-play-plugins-notification-button-container button:hover:active,
