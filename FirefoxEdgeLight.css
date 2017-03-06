@@ -2086,13 +2086,10 @@
     padding-left: 13px !important;
   }
   
-  menuitem[type="radio"][checked] {
+  menuitem[type="radio"][checked="true"] {
     background: var(--contextmenu-radio) no-repeat left;
   }
   
-  menuitem[type="checkbox"],
-  menuitem[checked="true"],
-  menuitem[type="radio"],
   menuitem[type="checkbox"] > .menu-iconic-left,
   menuitem[checked="true"] > .menu-iconic-left,
   menuitem[type="radio"] > .menu-iconic-left {
