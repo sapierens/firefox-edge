@@ -1235,30 +1235,31 @@
   :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-title, 
   :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-label, 
   :-moz-any(#mainPopupSet, #nav-bar) #PanelUI-remotetabs-mobile-promo,
-  :-moz-any(#mainPopupSet, #nav-bar) #identity-popup-content-verifier ~ description {
+  :-moz-any(#mainPopupSet, #nav-bar) #identity-popup-content-verifier ~ description,
+  :-moz-any(#mainPopupSet, #nav-bar) .subviewbutton[disabled] {
     color: var(--gray-text-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton,
-  #nav-bar .subviewbutton:not(.panel-subview-footer),
+  #nav-bar .subviewbutton:not(.panel-subview-footer):not([disabled]),
   :-moz-any(#mainPopupSet, #nav-bar) .downloadsPanelFooter {
     color: var(--main-font-color) !important;
     border: none !important;
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):hover,
-  #nav-bar panel toolbarbutton:not(.close-icon):hover,
-  #mainPopupSet .identity-popup-expander:hover,
-  #nav-bar .subviewbutton:hover,
-  #mainPopupSet .searchbar-engine-one-off-item:hover {
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled]):hover,
+  #nav-bar panel toolbarbutton:not(.close-icon):not([disabled]):hover,
+  #mainPopupSet .identity-popup-expander:not([disabled]):hover,
+  #nav-bar .subviewbutton:not([disabled]):hover,
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled]):hover {
     background-color: var(--top-level-bg-hover-color);
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):hover:active,
-  #nav-bar panel toolbarbutton:not(.close-icon):hover:active,
-  #mainPopupSet .identity-popup-expander:hover:active,
-  #nav-bar .subviewbutton:hover:active,
-  #mainPopupSet .searchbar-engine-one-off-item:hover:active {
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled]):hover:active,
+  #nav-bar panel toolbarbutton:not(.close-icon):not([disabled]):hover:active,
+  #mainPopupSet .identity-popup-expander:not([disabled]):hover:active,
+  #nav-bar .subviewbutton:not([disabled]):hover:active,
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled]):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
@@ -1934,26 +1935,33 @@
     background-color: var(--context-menu-bg-color) !important;
   }
   
-  menu:not(.subviewbutton):hover, 
-  menuitem:not(.subviewbutton):hover, 
-  menucaption:not(.subviewbutton):hover, 
-  .splitmenu-menuitem:not(.subviewbutton):hover {
+  menu:not(.subviewbutton):not([disabled]):hover, 
+  menuitem:not(.subviewbutton):not([disabled]):hover, 
+  menucaption:not(.subviewbutton):not([disabled]):hover, 
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled]):hover {
     background-color: var(--context-menu-bg-hover-color) !important;
   }
   
-  menu:not(.subviewbutton):active, 
-  menuitem:not(.subviewbutton):active, 
-  menucaption:not(.subviewbutton):active, 
-  .splitmenu-menuitem:not(.subviewbutton):active {
+  menu:not(.subviewbutton):not([disabled]):active, 
+  menuitem:not(.subviewbutton):not([disabled]):active, 
+  menucaption:not(.subviewbutton):not([disabled]):active, 
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled]):active {
     background-color: var(--context-menu-bg-active-color) !important;
   }
   
-  menu[disabled="true"],
-  menuitem[disabled="true"],
-  .splitmenu-menuitem[disabled="true"],
-  menu[_moz-menuactive="true"][disabled="true"],
-  menuitem[_moz-menuactive="true"][disabled="true"],
-  .splitmenu-menuitem[_moz-menuactive="true"][disabled="true"] {
+  menu:not(.subviewbutton)[disabled]:hover, 
+  menuitem:not(.subviewbutton)[disabled]:hover, 
+  menucaption:not(.subviewbutton)[disabled]:hover, 
+  .splitmenu-menuitem:not(.subviewbutton)[disabled]:hover {
+    background-color: var(--second-level-alt-bg-hover-color) !important;
+  }
+  
+  menu[disabled],
+  menuitem[disabled],
+  .splitmenu-menuitem[disabled],
+  menu[_moz-menuactive][disabled],
+  menuitem[_moz-menuactive][disabled],
+  .splitmenu-menuitem[_moz-menuactive][disabled] {
     color: var(--gray-text-color) !important;
     text-shadow: none !important;
   }
