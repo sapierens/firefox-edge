@@ -495,7 +495,7 @@
     margin-left: 3px !important;
   }
   
-  #TabsToolbar .toolbarbutton-1:not([type="menu-button"]),
+  #TabsToolbar .toolbarbutton-1,
   #TabsToolbar .toolbarbutton-menubutton-button {
     -moz-appearance: none !important;
     padding: 0 8px !important;
@@ -1262,7 +1262,7 @@
     background-color: var(--top-level-bg-active-color);
   }
   
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .subviewbutton.panel-subview-footer,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer,
   #mainPopupSet .downloadsPanelFooterButton,
   #mainPopupSet #identity-popup-securityView-footer > button,
   #mainPopupSet .search-setting-button,
@@ -1275,7 +1275,7 @@
   }
   
   #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .subviewbutton.panel-subview-footer:hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer:hover,
   #mainPopupSet .downloadsPanelFooterButton:hover,
   #mainPopupSet #identity-popup-securityView-footer > button:hover,
   #mainPopupSet .search-setting-button:hover,
@@ -1284,7 +1284,7 @@
   }
   
   #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover:active,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .subviewbutton.panel-subview-footer:hover:active,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer:hover:active,
   #mainPopupSet .downloadsPanelFooterButton:hover:active,
   #mainPopupSet #identity-popup-securityView-footer > button:hover:active,
   #mainPopupSet .search-setting-button:hover:active,
@@ -1328,8 +1328,8 @@
     background: var(--panel-separator-color) !important;
   }
   
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .panel-arrow[side="top"],
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .panel-arrow[side="bottom"] {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .panel-arrow[side="top"],
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .panel-arrow[side="bottom"] {
     list-style-image: var(--panel-arrow-vertical) !important;
   }
   
