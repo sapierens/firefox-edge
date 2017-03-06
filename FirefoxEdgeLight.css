@@ -285,24 +285,24 @@
     padding-top: 1px !important;
   }
 
-  .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):hover, 
-  .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):hover {
+  .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled="true"]):hover, 
+  .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled="true"]):hover {
     background-color: var(--tab-scroll-up-down-bg-hover-color) !important;
   }
 
-  .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):hover:active, 
-  .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):hover:active {
+  .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled="true"]):hover:active, 
+  .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled="true"]):hover:active {
     background-color: var(--tab-scroll-up-down-bg-active-color) !important;
   }
 
-  .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled],
-  .tabbrowser-arrowscrollbox > .scrollbutton-down[disabled] {
+  .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled="true"],
+  .tabbrowser-arrowscrollbox > .scrollbutton-down[disabled="true"] {
     background-color: var(--tab-scroll-up-down-bg-disabled-color) !important;
     opacity: 1.0;
   }
   
-  .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled]  > .toolbarbutton-icon,
-  .tabbrowser-arrowscrollbox > .scrollbutton-down[disabled]  > .toolbarbutton-icon {
+  .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled="true"]  > .toolbarbutton-icon,
+  .tabbrowser-arrowscrollbox > .scrollbutton-down[disabled="true"]  > .toolbarbutton-icon {
     opacity: 0.5;
   }
 
@@ -618,11 +618,11 @@
     visibility: visible !important;
   }
 
-  #urlbar-reload-button:not([disabled]):hover {
+  #urlbar-reload-button:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color) !important;
   }
 
-  #urlbar-reload-button:not([disabled]):hover:active {
+  #urlbar-reload-button:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
 
@@ -644,11 +644,11 @@
     width: 16px;
   }
 
-  #urlbar-stop-button:not([disabled]):hover {
+  #urlbar-stop-button:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color) !important;
   }
 
-  #urlbar-stop-button:not([disabled]):hover:active {
+  #urlbar-stop-button:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
 
@@ -912,7 +912,7 @@
     margin-left: 1px !important;
   }
 
-  #bookmarks-menu-button[cui-areatype="toolbar"]:not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker:not([disabled]) > .dropmarker-icon,
+  #bookmarks-menu-button[cui-areatype="toolbar"]:not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]) > .dropmarker-icon,
   #bookmarks-menu-button[cui-areatype="toolbar"][open] > .toolbarbutton-menubutton-dropmarker:not([disabled=true]) > .dropmarker-icon {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
@@ -1029,14 +1029,14 @@
     min-height: 44px !important;
   }
   
-  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled]):hover,
+  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled="true"]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker {
     background-color: var(--top-level-bg-hover-color) !important;
   }
   
-  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled]):hover:active,
+  #nav-bar :-moz-any(#back-button, #forward-button):not([disabled="true"]):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([type="menu-button"]):not(#back-button):not(#forward-button):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar) .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover:active {
     background-color: var(--top-level-bg-active-color) !important;
@@ -1237,30 +1237,30 @@
   :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-label, 
   :-moz-any(#mainPopupSet, #nav-bar) #PanelUI-remotetabs-mobile-promo,
   :-moz-any(#mainPopupSet, #nav-bar) #identity-popup-content-verifier ~ description,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton[disabled] {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton[disabled="true"] {
     color: var(--gray-text-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not(.panel-subview-footer):not([disabled]),
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not(.panel-subview-footer):not([disabled="true"]),
   :-moz-any(#mainPopupSet, #nav-bar) .downloadsPanelFooter {
     color: var(--main-font-color) !important;
     border: none !important;
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled]):hover,
-  #nav-bar panel toolbarbutton:not(.close-icon):not([disabled]):hover,
-  #mainPopupSet .identity-popup-expander:not([disabled]):hover,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled]):hover,
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled]):hover {
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled="true"]):hover,
+  #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover,
+  #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover,
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color);
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled]):hover:active,
-  #nav-bar panel toolbarbutton:not(.close-icon):not([disabled]):hover:active,
-  #mainPopupSet .identity-popup-expander:not([disabled]):hover:active,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled]):hover:active,
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled]):hover:active {
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled="true"]):hover:active,
+  #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover:active,
+  #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover:active,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active,
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
@@ -1943,33 +1943,33 @@
     background-color: var(--context-menu-bg-color) !important;
   }
   
-  menu:not(.subviewbutton):not([disabled]):hover, 
-  menuitem:not(.subviewbutton):not([disabled]):hover, 
-  menucaption:not(.subviewbutton):not([disabled]):hover, 
-  .splitmenu-menuitem:not(.subviewbutton):not([disabled]):hover {
+  menu:not(.subviewbutton):not([disabled="true"]):hover, 
+  menuitem:not(.subviewbutton):not([disabled="true"]):hover, 
+  menucaption:not(.subviewbutton):not([disabled="true"]):hover, 
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"]):hover {
     background-color: var(--context-menu-bg-hover-color) !important;
   }
   
-  menu:not(.subviewbutton):not([disabled]):active, 
-  menuitem:not(.subviewbutton):not([disabled]):active, 
-  menucaption:not(.subviewbutton):not([disabled]):active, 
-  .splitmenu-menuitem:not(.subviewbutton):not([disabled]):active {
+  menu:not(.subviewbutton):not([disabled="true"]):active, 
+  menuitem:not(.subviewbutton):not([disabled="true"]):active, 
+  menucaption:not(.subviewbutton):not([disabled="true"]):active, 
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"]):active {
     background-color: var(--context-menu-bg-active-color) !important;
   }
   
-  menu:not(.subviewbutton)[disabled]:hover, 
-  menuitem:not(.subviewbutton)[disabled]:hover, 
-  menucaption:not(.subviewbutton)[disabled]:hover, 
-  .splitmenu-menuitem:not(.subviewbutton)[disabled]:hover {
+  menu:not(.subviewbutton)[disabled="true"]:hover, 
+  menuitem:not(.subviewbutton)[disabled="true"]:hover, 
+  menucaption:not(.subviewbutton)[disabled="true"]:hover, 
+  .splitmenu-menuitem:not(.subviewbutton)[disabled="true"]:hover {
     background-color: var(--second-level-alt-bg-hover-color) !important;
   }
   
-  menu[disabled],
-  menuitem[disabled],
-  .splitmenu-menuitem[disabled],
-  menu[_moz-menuactive][disabled],
-  menuitem[_moz-menuactive][disabled],
-  .splitmenu-menuitem[_moz-menuactive][disabled] {
+  menu[disabled="true"],
+  menuitem[disabled="true"],
+  .splitmenu-menuitem[disabled="true"],
+  menu[_moz-menuactive][disabled="true"],
+  menuitem[_moz-menuactive][disabled="true"],
+  .splitmenu-menuitem[_moz-menuactive][disabled="true"] {
     color: var(--gray-text-color) !important;
     text-shadow: none !important;
   }
