@@ -2082,9 +2082,12 @@
   }
   
   menuitem[type="radio"] {
-    background: var(--contextmenu-radio) no-repeat left;
     background-position-x: 5px !important;
     padding-left: 13px !important;
+  }
+  
+  menuitem[type="radio"][checked] {
+    background: var(--contextmenu-radio) no-repeat left;
   }
   
   menuitem[type="checkbox"],
