@@ -1229,19 +1229,19 @@
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subview-header,
-  :-moz-any(#mainPopupSet, #nav-bar) .subviewbutton[shortcut]::after,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton[shortcut]::after,
   #nav-bar .menu-accel,
   #nav-bar .menu-iconic-accel,
   :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-title, 
   :-moz-any(#mainPopupSet, #nav-bar) .PanelUI-remotetabs-instruction-label, 
   :-moz-any(#mainPopupSet, #nav-bar) #PanelUI-remotetabs-mobile-promo,
   :-moz-any(#mainPopupSet, #nav-bar) #identity-popup-content-verifier ~ description,
-  :-moz-any(#mainPopupSet, #nav-bar) .subviewbutton[disabled] {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton[disabled] {
     color: var(--gray-text-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) toolbarbutton,
-  #nav-bar .subviewbutton:not(.panel-subview-footer):not([disabled]),
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not(.panel-subview-footer):not([disabled]),
   :-moz-any(#mainPopupSet, #nav-bar) .downloadsPanelFooter {
     color: var(--main-font-color) !important;
     border: none !important;
@@ -1250,7 +1250,7 @@
   #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled]):hover,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled]):hover,
   #mainPopupSet .identity-popup-expander:not([disabled]):hover,
-  #nav-bar .subviewbutton:not([disabled]):hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled]):hover,
   #mainPopupSet .searchbar-engine-one-off-item:not([disabled]):hover {
     background-color: var(--top-level-bg-hover-color);
   }
@@ -1258,7 +1258,7 @@
   #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled]):hover:active,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled]):hover:active,
   #mainPopupSet .identity-popup-expander:not([disabled]):hover:active,
-  #nav-bar .subviewbutton:not([disabled]):hover:active,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled]):hover:active,
   #mainPopupSet .searchbar-engine-one-off-item:not([disabled]):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
