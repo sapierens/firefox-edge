@@ -477,6 +477,48 @@
   .close-icon > .toolbarbutton-icon {
     width: 20px !important;
   }
+  
+  /* TOOLBARBUTTON ON TABS TOOLBAR */
+  #TabsToolbar .toolbarbutton-menu-dropmarker,
+  #TabsToolbar .toolbarbutton-1,
+  #TabsToolbar .toolbarbutton-menubutton-button,
+  #TabsToolbar .toolbarbutton-menubutton-dropmarker {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  
+  #TabsToolbar .toolbarbutton-menu-dropmarker {
+    -moz-appearance: none !important;
+    padding: 0 !important;
+    list-style-image: var(--default-dropdown-image);
+    margin-left: 3px !important;
+  }
+  
+  #TabsToolbar .toolbarbutton-1:not([type="menu-button"]),
+  #TabsToolbar .toolbarbutton-menubutton-button {
+    -moz-appearance: none !important;
+    padding: 0 8px !important;
+  }
+  
+  #TabsToolbar .toolbarbutton-1[type="menu-button"] {
+    padding-left: 0 !important;
+  }
+  
+  #TabsToolbar .toolbarbutton-menubutton-dropmarker {
+    width: 16px !important;
+  }
+  
+  #TabsToolbar .toolbarbutton-1:not([type="menu-button"]):hover,
+  #TabsToolbar .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover,
+  #TabsToolbar .toolbarbutton-1:not([id="bookmarks-menu-button"]):not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker {
+    background-color: var(--second-level-alt-bg-hover-color) !important;
+  }
+  
+  #TabsToolbar .toolbarbutton-1:not([type="menu-button"]):hover:active,
+  #TabsToolbar .toolbarbutton-1:not([id="bookmarks-menu-button"]) > .toolbarbutton-menubutton-button:hover:active {
+    background-color: var(--second-level-alt-bg-active-color) !important;
+  }
 
   /* NAV. BAR */
   #nav-bar {
@@ -1096,7 +1138,7 @@
     width: 44px !important;
   }
   
-  #PlacesToolbar toolbarseparator {
+  #PersonalToolbar toolbarseparator {
     -moz-appearance: none !important;
     border: none !important;
     margin: 0 6px 0 6px !important;
@@ -1107,7 +1149,7 @@
     min-width: 1px !important;
   }
   
-  #PlacesToolbar .toolbarbutton-menu-dropmarker {
+  #PersonalToolbar .toolbarbutton-menu-dropmarker {
     -moz-appearance: none !important;
     padding: 0 !important;
     list-style-image: var(--default-dropdown-image);
