@@ -1441,7 +1441,8 @@
   .notification-button,
   .findbar-find-previous,
   .findbar-find-next,
-  tabmodalprompt button {
+  tabmodalprompt button,
+  menupopup button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1466,7 +1467,8 @@
   .findbar-highlight:not([disabled="true"]):hover,
   .findbar-case-sensitive:not([disabled="true"]):hover,
   .findbar-entire-word:not([disabled="true"]):hover,
-  tabmodalprompt button:hover {
+  tabmodalprompt button:hover,
+  menupopup button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1492,7 +1494,8 @@
   .findbar-highlight:not([disabled="true"]):hover:active,
   .findbar-case-sensitive:not([disabled="true"]):hover:active,
   .findbar-entire-word:not([disabled="true"]):hover:active,
-  tabmodalprompt button:hover:active {
+  tabmodalprompt button:hover:active,
+  menupopup button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
