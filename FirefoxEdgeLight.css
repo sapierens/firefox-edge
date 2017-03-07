@@ -972,7 +972,7 @@
   
   #downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
     background: var(--downloads-button-image) center no-repeat;
-    background-size: 20px;
+    background-size: 16px;
   }
 
   #downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
