@@ -1,5 +1,23 @@
 # Changelog
 
+**[v1.8.0 March 7th, 2017]**
+
+* Improved compatibility with Firefox 52.
+* Added styling for buttons that are placed on tabs toolbar.
+* Added styling to all download progress bars and made them more Edge like.
+* Improved interaction with disabled elements.
+* Button styling is now applied also to buttons on popup menus.
+* Fixed broken radio menu items on context menus.
+* Fixed a couple of identity popup bugs.
+* Fixed checked menu hover/active appearance.
+* Fixed text being dark on voulnerable plugin notification in Light theme.
+* Fixed broken bookmarks button when placed on tabs toolbar.
+* Fixed popup styling that's activated from tabs toolbar.
+* Fixed wrong background color for some menu popups.
+* Fixed inconsistent dropdown icons on main menu panel.
+* Fixed a broken download button's image when a download is finished and the button is placed on menu popup.
+* Multiple other minor fixes & improvements.
+
 **[v1.7.0 February 19th, 2017]**
 
 * Added styling for buttons placed on bookmarks toolbar.
