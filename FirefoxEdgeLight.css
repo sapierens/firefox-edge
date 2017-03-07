@@ -1276,7 +1276,7 @@
   }
   
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer,
-  #mainPopupSet .downloadsPanelFooterButton,
+  #mainPopupSet #downloadsFooter,
   #mainPopupSet #identity-popup-securityView-footer > button,
   #mainPopupSet .search-setting-button,
   #mainPopupSet .addengine-item,
@@ -1303,6 +1303,10 @@
   #mainPopupSet .search-setting-button:hover:active,
   #mainPopupSet .addengine-item:hover:active {
     background-color: var(--second-level-alt-bg-active-color) !important;
+  }
+  
+  #mainPopupSet .downloadsPanelFooterButton {
+    outline: none !important;
   }
   
   #mainPopupSet #edit-controls,
@@ -1348,6 +1352,7 @@
   
   #mainPopupSet #downloadsSummary {
     box-shadow: none !important;
+    background-color: var(--second-level-bg-color) !important;
   }
   
   #mainPopupSet #downloadsSummary > .downloadTypeIcon {
@@ -1356,19 +1361,7 @@
     background-size: cover;
   }
   
-  #mainPopupSet #downloadsSummary {
-    background-color: hsla(210,4%,10%,.14);
-  }
-  
-  #mainPopupSet #downloadsSummary:hover {
-    background-color: hsla(210,4%,10%,.22);
-  }
-  
-  #mainPopupSet #downloadsSummary:hover:active {
-    background-color: hsla(210,4%,10%,.30);
-  }
-  
-    #mainPopupSet richlistitem.download-state {
+  #mainPopupSet richlistitem.download-state {
     -moz-appearance: none !important;
     background: none !important;
     border-left: none !important;
@@ -1378,32 +1371,16 @@
     outline: none !important;
   }
   
-  #mainPopupSet richlistitem.download-state:not(:last-child):hover {
-    border-bottom: 1px solid var(--panel-separator-color) !important;
+  richlistitem[type="download"][state="1"][exists] .downloadMainArea:hover,
+  richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover,
+  richlistitem[type="download"][verdict]:hover {
+    background-color: var(--top-level-bg-hover-color);
   }
-  
-  #mainPopupSet richlistitem.download-state:last-child:hover {
-    border-bottom: 1px solid transparent !important;
-    background-color: hsla(210,4%,10%,.08) !important;
-    cursor: pointer !important;
-  }
-  
-  #mainPopupSet richlistitem.download-state:hover {
-    background-color: hsla(210,4%,10%,.08) !important;
-    color: inherit !important;
-  }
-  
-  #mainPopupSet richlistitem.download-state:hover:active {
-    background-color: hsla(210,4%,10%,.15) !important;
-  }
-  
-  #mainPopupSet richlistitem[type="download"] {
-    border-bottom: 1px solid var(--panel-separator-color);
-    border-top: none !important;
-  }
-  
-  #mainPopupSet richlistitem[type="download"]:last-child {
-    border-bottom: 1px solid transparent;
+
+  richlistitem[type="download"][state="1"][exists] > .downloadMainArea:hover:active,
+  richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover:active,
+  richlistitem[type="download"][verdict]:hover:active {
+    background-color: var(--top-level-bg-active-color);
   }
   
   #mainPopupSet #downloadsSummaryDescription,
