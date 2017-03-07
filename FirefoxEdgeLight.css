@@ -963,7 +963,7 @@
 
   #downloads-indicator-counter {
     margin: 0 !important;
-    height: 10px !important;
+    margin-bottom: 1px !important;
     color: var(--inactive-font-color) !important;
     text-shadow: none !important;
     font-size: 10px !important;
@@ -972,26 +972,7 @@
   
   #downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
     background: var(--downloads-button-image) center no-repeat;
-    background-size: 16px;
-  }
-
-  #downloads-indicator-progress {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-
-  #downloads-indicator-progress > .progress-bar {
-    background-color: var(--downloads-indicator-bg-color) !important;
-    background-image: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-  }
-
-  #downloads-indicator-progress > .progress-remainder {
-    background-color: var(--downloads-indicator-remainder-color) !important;
-    background-image: none !important;
-    border: none !important;
-    border-radius: 0 !important;
+    background-size: 20px;
   }
 
   #downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
@@ -1004,6 +985,35 @@
 
   #downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
     background-image: var(--downloads-button-finish-notification-image);
+  }
+  
+  /* PROGRESS METER */
+  progressmeter {
+    -moz-appearance: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: 4px !important;
+    height: 4px !important;
+  }
+
+  progressmeter > .progress-bar {
+    -moz-appearance: none !important;
+    background-color: var(--downloads-indicator-bg-color) !important;
+    background-image: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  progressmeter[paused="true"] > .progress-bar {
+    background-color: var(--downloads-indicator-paused-bg-color) !important;
+  }
+
+  progressmeter > .progress-remainder {
+    background-color: var(--downloads-indicator-remainder-color) !important;
+    background-image: none !important;
+    border: none !important;
+    border-radius: 0 !important;
   }
 
   /* MENU BUTTON */
