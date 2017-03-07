@@ -1222,6 +1222,7 @@
     color: var(--main-font-color) !important;
     --arrowpanel-border-color: var(--urlbar-separator-color) !important;
     border-radius: 0 !important;
+    box-shadow: none !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) .panel-subviews {
