@@ -1075,7 +1075,12 @@
   toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
     -moz-appearance: none !important;
     padding: 0 !important;
-    list-style-image: var(--default-dropdown-image);
+    list-style-image: var(--default-dropdown-image) !important;
+  }
+  
+  .panelUI-grid .toolbarbutton-1[type="menu"] {
+    background-image: var(--default-dropdown-image);
+    background-position: right 4px top 22px;
   }
   
   /* TOOLBAR BUTTON BADGE */
