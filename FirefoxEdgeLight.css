@@ -573,7 +573,7 @@
   /* FORWARD BUTTON */
   #urlbar-wrapper {
     clip-path: none !important;
-    margin-left: 4px !important;
+    margin-left: 0 !important;
   }
 
   #urlbar-wrapper > #forward-button {
@@ -602,7 +602,7 @@
     -moz-image-region: auto !important;
     border: none !important;
     background-color: var(--top-level-bg-color) !important;
-    margin-inline-start: 4px !important;
+    margin-inline-start: 0 !important;
     margin-top: -2px !important;
     margin-bottom: -2px !important;
     padding: 0 !important;
