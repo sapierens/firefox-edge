@@ -409,13 +409,17 @@
 
   .tab-icon-image {
     -moz-box-ordinal-group: 1;
-  } 
+  }
+  
+  .tab-sharing-icon-overlay {
+    -moz-box-ordinal-group: 1;
+  }
 
   .tab-icon-overlay {
     -moz-box-ordinal-group: 1;
   }
 
-  .tab-text {
+  .tab-label-container {
     -moz-box-ordinal-group: 3;
   }
 
