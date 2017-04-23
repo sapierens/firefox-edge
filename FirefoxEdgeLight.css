@@ -31,6 +31,28 @@
       -moz-appearance: none !important;
     }
   }
+  
+  @media (-moz-windows-default-theme: 0) {
+  /* more opacity for high-contrast themes */
+  .fieldtext {
+    fill-opacity: .1;
+  }
+}
+
+.highlighttext {
+  fill: #FF0000 !important;
+  fill-opacity: 1;
+}
+
+.black {
+  fill: #FF0000 !important;
+  fill-opacity: .6;
+}
+
+.white {
+  fill: #FF0000 !important;
+  fill-opacity: .7;
+}
 
   #main-menubar {
     color: var(--main-font-color) !important;
@@ -175,40 +197,40 @@
   }
 
   .tabs-newtab-button,
-  #new-tab-button {
+  #TabsToolbar #new-tab-button {
     -moz-margin-end: 0 !important;
     -moz-margin-start: 0 !important;
     background: transparent !important;
-    width: 32px !important;
+    width: 31px !important;
     margin: 0 !important;
+    padding: 0 !important;
   }
 
   .tabs-newtab-button .toolbarbutton-icon,
-  #new-tab-button  .toolbarbutton-icon {
+  #TabsToolbar #new-tab-button .toolbarbutton-icon {
     list-style-image: var(--new-tab-button-image) !important;
     padding-top: 2px !important;
   }
 
-  .tabs-newtab-button .toolbarbutton-icon {
+  .tabs-newtab-button .toolbarbutton-icon,
+  #TabsToolbar #new-tab-button .toolbarbutton-icon {
     margin-left: 3px !important;
   }
 
-  #new-tab-button  .toolbarbutton-icon {
-    margin-left: 1px !important;
-  }
-
   .tabs-newtab-button:hover,
-  #new-tab-button:hover {
-    background: var(--new-tab-hover-bg-color) !important;
+  #TabsToolbar #new-tab-button:hover {
+    background: var(--top-level-bg-color) !important;
   }
 
   .tabs-newtab-button:hover:active,
-  #new-tab-button:hover:active {
+  #TabsToolbar #new-tab-button:hover:active {
     background: var(--tab-button-bg-active-color) !important;
   }
 
-  #new-tab-button {
+  .tabs-newtab-button,
+  #TabsToolbar #new-tab-button {
     padding-right: 0px !important;
+    margin-left: 1px !important;
   }
 
   .tabbrowser-tab::after,
@@ -316,19 +338,24 @@
     display: none !important;
   }
 
-  #alltabs-button,
+  #TabsToolbar #alltabs-button,
   #TabsToolbar[brighttext] > #alltabs-button {
-    list-style-image: var(--default-dropdown-image);
+    list-style-image: var(--wide-dropdown-image);
     background-color: transparent !important; 
     background-image: none !important;
+    width: 32px !important;
+    padding: 0 !important;
+    opacity: .7 !important;
   }
 
-  #alltabs-button:hover {
-    background-color: var(--alltabs-bg-hover-color) !important;
+  #TabsToolbar #alltabs-button:hover {
+    background-color: var(--top-level-bg-color) !important;
+    opacity: .9 !important;
   }
 
-  #alltabs-button:hover:active {
-    background-color: var(--alltabs-bg-active-color) !important;
+  #TabsToolbar #alltabs-button:hover:active {
+    background-color: var(--tab-button-bg-active-color) !important;
+    opacity: 1 !important;
   }
 
   .tab-icon-image {
@@ -2335,6 +2362,7 @@
     --connection-mixed-passive-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-black);
     --connection-mixed-active-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-black);
     --connection-mixed-passive-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-black);
+	--wide-dropdown-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMy43MSIgaGVpZ2h0PSI3LjU2IiB2aWV3Qm94PSIwIDAgMTMuNzEgNy41NiI+PGRlZnM+PHN0eWxlPi5he2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PHBvbHlsaW5lIGNsYXNzPSJhIiBwb2ludHM9IjAuMzUgMC4zNSA2Ljg1IDYuODUgMTMuMzUgMC4zNSIvPjwvc3ZnPg==);
   }
 
 }
