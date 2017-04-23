@@ -636,7 +636,7 @@
     -moz-image-region: auto !important;
     border: none !important;
     background-color: var(--top-level-bg-color) !important;
-    margin-inline-start: 4px !important;
+    margin-inline-start: 0px !important;
     margin-top: -2px !important;
     margin-bottom: -2px !important;
     padding: 0 !important;
