@@ -22,37 +22,6 @@
   #main-window {
     background-color: var(--second-level-bg-color) !important;
   }
-  
-  @media (-moz-os-version: windows-xp),
-         (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7),
-         (-moz-os-version: windows-win8) {
-    #main-window {
-      -moz-appearance: none !important;
-    }
-  }
-  
-  @media (-moz-windows-default-theme: 0) {
-  /* more opacity for high-contrast themes */
-  .fieldtext {
-    fill-opacity: .1;
-  }
-}
-
-.highlighttext {
-  fill: #FF0000 !important;
-  fill-opacity: 1;
-}
-
-.black {
-  fill: #FF0000 !important;
-  fill-opacity: .6;
-}
-
-.white {
-  fill: #FF0000 !important;
-  fill-opacity: .7;
-}
 
   #main-menubar {
     color: var(--main-font-color) !important;
