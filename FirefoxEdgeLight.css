@@ -31,28 +31,6 @@
       -moz-appearance: none !important;
     }
   }
-  
-  @media (-moz-windows-default-theme: 0) {
-  /* more opacity for high-contrast themes */
-  .fieldtext {
-    fill-opacity: .1;
-  }
-}
-
-.highlighttext {
-  fill: #FF0000 !important;
-  fill-opacity: 1;
-}
-
-.black {
-  fill: #FF0000 !important;
-  fill-opacity: .6;
-}
-
-.white {
-  fill: #FF0000 !important;
-  fill-opacity: .7;
-}
 
   #main-menubar {
     color: var(--main-font-color) !important;
