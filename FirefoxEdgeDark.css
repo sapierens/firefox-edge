@@ -1226,7 +1226,7 @@
   }
   
   /* INVERSION & BRIGHTENING OF IMAGES */
-  .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(#web-notifications-notification-icon):not(.plugin-blocked),
+  .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(.plugin-blocked),
   .notification-anchor-icon.desktop-notification-icon,
   .blocked-permission-icon,
   .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]):not([value="reset-profile-notification"]),
@@ -2272,7 +2272,7 @@
     --toolbarbutton-badge-border-color: rgba(55, 55, 55, 0.6);
     --panel-separator-color: rgba(136,136,136,0.5);
     --blue-accent-color: #0078D7;
-	--blue-accent-color-hover: #1E9DFF;
+    --blue-accent-color-hover: #1E9DFF;
     --gray-text-color: #AEAEAE;
     --hyperlink-text-color: #2D89EF;
     --button-bg-color: #555555;
