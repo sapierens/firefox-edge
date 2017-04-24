@@ -22,6 +22,37 @@
   #main-window {
     background-color: var(--second-level-bg-color) !important;
   }
+  
+  @media (-moz-os-version: windows-xp),
+         (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7),
+         (-moz-os-version: windows-win8) {
+    #main-window {
+      -moz-appearance: none !important;
+    }
+  }
+  
+  @media (-moz-windows-default-theme: 0) {
+  /* more opacity for high-contrast themes */
+  .fieldtext {
+    fill-opacity: .1;
+  }
+}
+
+.highlighttext {
+  fill: #FF0000 !important;
+  fill-opacity: 1;
+}
+
+.black {
+  fill: #FF0000 !important;
+  fill-opacity: .6;
+}
+
+.white {
+  fill: #FF0000 !important;
+  fill-opacity: .7;
+}
 
   #main-menubar {
     color: var(--main-font-color) !important;
@@ -1418,8 +1449,8 @@
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]),
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker,
-  #mainPopupSet .popup-notification-button-container button,
-  #notification-popup button,
+  #mainPopupSet .popup-notification-button-container button[anonid="secondarybutton"],
+  #notification-popup button:not([anonid="button"]),
   #tracking-protection-content button,
   #mainPopupSet #editBookmarkPanelBottomButtons button,
   #mainPopupSet #editBMPanel_newFolderButton,
@@ -1441,8 +1472,8 @@
   #mainPopupSet .popup-notification-menubutton:not([type="menu-button"]):hover,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button:hover,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover,
-  #mainPopupSet .popup-notification-button-container button:hover,
-  #notification-popup button:hover,
+  #mainPopupSet .popup-notification-button-container button[anonid="secondarybutton"]:hover,
+  #notification-popup button:not([anonid="button"]):hover,
   #tracking-protection-content button:hover,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover,
   #mainPopupSet #editBMPanel_newFolderButton:hover,
@@ -1465,8 +1496,8 @@
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-button:hover:active,
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker:hover:active,
   #mainPopupSet .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker,
-  #mainPopupSet .popup-notification-button-container button:hover:active,
-  #notification-popup button:hover:active,
+  #mainPopupSet .popup-notification-button-container button[anonid="secondarybutton"]:hover:active,
+  #notification-popup button:not([anonid="button"]):hover:active,
   #tracking-protection-content button:hover:active,
   #mainPopupSet #editBookmarkPanelBottomButtons button:hover:active,
   #mainPopupSet #editBMPanel_newFolderButton:hover:active,
@@ -1486,6 +1517,24 @@
   menupopup button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
+  }
+  
+  #mainPopupSet .popup-notification-button-container button[anonid="button"] {
+    -moz-appearance: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: var(--blue-accent-color) !important;
+    color: var(--main-font-color) !important;
+  }
+  
+  #mainPopupSet .popup-notification-button-container button[anonid="button"]:hover {
+    box-shadow: inset 0px 0px 0px 2px var(--blue-accent-color-hover) !important;
+    background-color: var(--blue-accent-color) !important;
+  }
+  
+  #mainPopupSet .popup-notification-button-container button[anonid="button"]:hover:active {
+    box-shadow: none !important;
+    background-color: var(--blue-accent-color-hover) !important;
   }
   
   #mainPopupSet .popup-notification-menubutton > .button-menubutton-dropmarker {
@@ -2245,6 +2294,7 @@
     --toolbarbutton-badge-border-color: rgba(55, 55, 55, 0.6);
     --panel-separator-color: rgba(136,136,136,0.5);
     --blue-accent-color: #0078D7;
+	--blue-accent-color-hover: #1E9DFF;
     --gray-text-color: #AEAEAE;
     --hyperlink-text-color: #2D89EF;
     --button-bg-color: #555555;
