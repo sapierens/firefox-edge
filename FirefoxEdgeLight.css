@@ -1234,7 +1234,7 @@
   
   /* INVERSION & BRIGHTENING OF IMAGES */
   .notification-anchor-icon:not(#default-notification-icon):not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(.plugin-blocked),
-  .notification-anchor-icon.desktop-notification-icon,
+  .desktop-notification-icon,
   .blocked-permission-icon,
   .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]):not([value="reset-profile-notification"]):not([value="process-hang"]),
   .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]):not([popupid="addon-install-restart"]):not([popupid="greasemonkey-notification"]):not([popupid="addon-install-blocked"]) {
@@ -1933,6 +1933,43 @@
     font-size: 15px;
     font-weight: normal;
   }
+  
+  /* NOTIFICATION POPUP ICONS */
+  #identity-popup-securityView,
+  #identity-popup-security-content {
+    background-image: var(--conn-not-secure-image);
+  }
+  
+  #identity-popup[ciphers=weak] #identity-popup-securityView,
+  #identity-popup[ciphers=weak] #identity-popup-security-content,
+  #identity-popup[mixedcontent~=passive-loaded][isbroken] #identity-popup-securityView,
+  #identity-popup[mixedcontent~=passive-loaded][isbroken] #identity-popup-security-content {
+    background-image: var(--connection-degraded-image);
+  }
+  
+  #identity-popup[connection=secure-cert-user-overridden] #identity-popup-securityView,
+  #identity-popup[connection=secure-cert-user-overridden] #identity-popup-security-content {
+    background-image:  var(--connection-mixed-passive-loaded-image);
+  }
+  
+  #identity-popup[loginforms=insecure] #identity-popup-securityView,
+  #identity-popup[loginforms=insecure] #identity-popup-security-content,
+  #identity-popup[mixedcontent~=active-loaded][isbroken] #identity-popup-securityView,
+  #identity-popup[mixedcontent~=active-loaded][isbroken] #identity-popup-security-content {
+    background-image: var(--mcb-disabled-image);
+  }
+  
+  #tracking-protection-content {
+    background-image: var(--tracking-protection-enabled-image);
+  }
+
+  #tracking-protection-content[state="loaded-tracking-content"]  {
+    background-image: var(--tracking-protection-disabled-image);
+  }
+  
+  #identity-popup-permissions-content {
+    background-image: var(--permissions-image);
+  }
 
   /* CONTEXT MENUS */
   #bookmarksMenuPopup,
@@ -2367,6 +2404,13 @@
     --connection-mixed-active-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-black);
     --connection-mixed-passive-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-black);
 	--wide-dropdown-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMy43MSIgaGVpZ2h0PSI3LjU2IiB2aWV3Qm94PSIwIDAgMTMuNzEgNy41NiI+PGRlZnM+PHN0eWxlPi5he2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PHBvbHlsaW5lIGNsYXNzPSJhIiBwb2ludHM9IjAuMzUgMC4zNSA2Ljg1IDYuODUgMTMuMzUgMC4zNSIvPjwvc3ZnPg==);
+    --conn-not-secure-image: url(chrome://browser/skin/controlcenter/conn-not-secure.svg);
+	--connection-degraded-image: url(chrome://browser/skin/controlcenter/connection.svg#connection-degraded);
+    --connection-mixed-passive-loaded-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
+    --mcb-disabled-image: url(chrome://browser/skin/controlcenter/mcb-disabled.svg);
+	--tracking-protection-enabled-image: url(chrome://browser/skin/controlcenter/tracking-protection.svg#enabled);
+	--tracking-protection-disabled-image: url(chrome://browser/skin/controlcenter/tracking-protection.svg#disabled);
+    --permissions-image: url(chrome://browser/skin/controlcenter/permissions.svg);
   }
 
 }
