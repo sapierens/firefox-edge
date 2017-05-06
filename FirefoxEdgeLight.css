@@ -71,11 +71,15 @@
   }
 
   #titlebar-close,
-  #titlebar-close:hover,
-  #close-button,
-  #close-button:hover {
+  #close-button {
     list-style-image: none !important;
     background: var(--titlebar-close-image) no-repeat center;
+  }
+  
+  #titlebar-close:hover,
+  #close-button:hover {
+    list-style-image: none !important;
+    background: url("chrome://browser/skin/caption-buttons.svg#close-white") no-repeat center;
   }
 
   #titlebar-min:hover,
