@@ -1,5 +1,14 @@
 # Changelog
 
+**[v1.9.0 May 7th, 2017]**
+
+* Improved compatibility with Firefox 53.
+* Added white versions of the identity popup icons for the dark theme.
+* Minor visual improvements to better match the latest version of Microsoft Edge.
+* Improved tab separators, so they all stay the same width on high DPI setups.
+* Fixed some of the identity popup text being too dark on the dark theme.
+* Multiple other minor fixes & improvements.
+
 **[v1.8.0 March 7th, 2017]**
 
 * Improved compatibility with Firefox 52.
