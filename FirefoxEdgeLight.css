@@ -183,7 +183,7 @@
     -moz-margin-end: 0 !important;
     -moz-margin-start: 0 !important;
     background: transparent !important;
-    width: 31px !important;
+    width: 32px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -209,10 +209,12 @@
     background: var(--tab-button-bg-active-color) !important;
   }
 
-  .tabs-newtab-button,
-  #TabsToolbar #new-tab-button {
-    padding-right: 0px !important;
-    margin-left: 1px !important;
+  .tabs-newtab-button {
+    border-left: 1px solid var(--second-level-bg-color) !important;
+  }
+  
+  #TabsToolbar > #new-tab-button {
+    border-right: 1px solid var(--second-level-bg-color) !important;
   }
 
   .tabbrowser-tab::after,
