@@ -8,10 +8,11 @@ Firefox Edge is a theme for Mozilla Firefox that closely replicates the look of 
 
 ## Installation
 1. Install the [Stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/) addon for Firefox
-2. Head to [Firefox Edge](https://userstyles.org/styles/135593/firefox-edge) userstyles page
-3. Choose either **Light** or **Dark** from the **Theme** option
-4. Choose either **Enable** or **Disable** from the **Popup Styling** option
-5. Click on **Install with Stylish** to preview or install the theme
+2. Head to the [Firefox Edge](https://userstyles.org/styles/135593/firefox-edge) userstyles page
+3. Click on **Advanced Style Settings** to open settings.
+4. Choose either **Light** or **Dark** from the **Theme** option
+5. Choose either **Enable** or **Disable** from the **Popup Styling** option
+6. Click on **Install with Stylish** to preview or install the theme
 
 *Note: After installing the theme you might need to restart Firefox to correct any visual bugs.*
 
