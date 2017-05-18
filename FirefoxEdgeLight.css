@@ -1452,7 +1452,8 @@
   .findbar-find-previous,
   .findbar-find-next,
   tabmodalprompt button,
-  menupopup button {
+  menupopup button,
+  #identity-popup-securityView-body button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1478,7 +1479,8 @@
   .findbar-case-sensitive:not([disabled="true"]):hover,
   .findbar-entire-word:not([disabled="true"]):hover,
   tabmodalprompt button:hover,
-  menupopup button:hover {
+  menupopup button:hover,
+  #identity-popup-securityView-body button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1505,7 +1507,8 @@
   .findbar-case-sensitive:not([disabled="true"]):hover:active,
   .findbar-entire-word:not([disabled="true"]):hover:active,
   tabmodalprompt button:hover:active,
-  menupopup button:hover:active {
+  menupopup button:hover:active,
+  #identity-popup-securityView-body button:hover:active {
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
