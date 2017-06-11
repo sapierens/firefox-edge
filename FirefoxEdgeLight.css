@@ -1,9 +1,10 @@
 /*    Firefox Edge v1.9.0    */
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-@-moz-document url("chrome://browser/content/browser.xul") {
+@-moz-document url("chrome://browser/content/browser.xul"),
+               url("chrome://browser/content/bookmarks/bookmarksPanel.xul") {
   
-  /* MAIN WINDOW & TITLEBAR BUTTONS  */
+  /* MAIN WINDOW & TITLEBAR BUTTONS */
   #titlebar-min,
   #titlebar-max,
   #main-window[sizemode="maximized"] #titlebar-max,
@@ -1543,26 +1544,33 @@
   #mainPopupSet .close-icon,
   notification .close-icon,
   .findbar-closebutton,
-  #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]) {
+  #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]),
+  #browser-panel .close-icon,
+  #search-box .textbox-search-clear {
     -moz-appearance: none !important;
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
     background-image: none !important;
     height: 20px;
     width: 20px;
+    padding: 0;
   }
   
   #mainPopupSet .close-icon:hover,
   notification .close-icon:hover,
   .findbar-closebutton:hover,
-  #TabsToolbar[brighttext] .tab-close-button:hover {
+  #TabsToolbar[brighttext] .tab-close-button:hover,
+  #browser-panel .close-icon:hover,
+  #search-box .textbox-search-clear:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
   #mainPopupSet .close-icon:hover:active,
   notification .close-icon:hover:active,
   .findbar-closebutton:hover:active,
-  #TabsToolbar[brighttext] .tab-close-button:hover:active {
+  #TabsToolbar[brighttext] .tab-close-button:hover:active,
+  #browser-panel .close-icon:hover:active,
+  #search-box .textbox-search-clear:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
@@ -1572,7 +1580,7 @@
     border: none !important;
   }
   
-  #mainPopupSet textbox {
+  :-moz-any(#mainPopupSet, #sidebar-search-container) textbox {
     -moz-appearance: none !important;
     color: var(--main-font-color) !important;
     background-color: var(--searchbar-bg-color);
@@ -1581,11 +1589,11 @@
     box-shadow: none !important;
   }
 
-  #mainPopupSet textbox:hover {
+  :-moz-any(#mainPopupSet, #sidebar-search-container) textbox:hover {
     background-color: var(--searchbar-bg-hover-color);
   }
 
-  #mainPopupSet textbox[focused] {
+  :-moz-any(#mainPopupSet, #sidebar-search-container) textbox[focused] {
     background-color: var(--searchbar-bg-active-color);
   }
   
@@ -1605,9 +1613,22 @@
     padding: 0 !important;
     margin-right: 6px !important;
   }
+                 
+  #bookmarksPanel treechildren::-moz-tree-row {
+    height: 32px !important;
+  }
+                 
+  #bookmarksPanel treechildren::-moz-tree-separator {
+    border-bottom: 1px solid var(--context-menu-separator-color) !important;
+    border-top: none !important;
+    margin-left: -11px;
+    margin-right: 12px;
+  }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) tree,
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listbox {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listbox,
+  #bookmarksPanel tree,
+  #bookmarksPanel listbox {
     -moz-appearance: none!important;
     background: var(--second-level-bg-color) !important;
     box-shadow: none !important;
@@ -1619,18 +1640,24 @@
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treecol,
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treecolpicker,
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-cell-text,
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem,
+  #bookmarksPanel tree,
+  #bookmarksPanel treechildren::-moz-tree-cell-text {
     color: var(--main-font-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(hover),
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem:hover {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem:hover,
+  #bookmarksPanel treechildren::-moz-tree-row(hover),
+  #bookmarksPanel listitem:hover {
     border: none !important;
     background: var(--second-level-alt-bg-hover-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(selected),
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem[selected="true"] {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem[selected="true"],
+  #bookmarksPanel treechildren::-moz-tree-row(selected),
+  #bookmarksPanel listitem[selected="true"] {
     border: none !important;
     background: var(--second-level-alt-bg-active-color) !important;
   }
@@ -1989,6 +2016,39 @@
   
   .identity-popup-permission-remove-button > .button-box > .button-icon {
     fill: var(--gray-text-color);
+  }
+                 
+  /* SIDEBAR BOX */
+  sidebarheader {
+    height: 25px;
+    background-color: var(--top-level-bg-color);
+    border-bottom: 1px solid var(--panel-separator-color) !important;
+    border-top: none;
+    color: var(--main-font-color);
+  }
+                 
+  .sidebar-splitter {
+    border-inline-end: 1px solid var(--navigator-separator-bg-color);
+  }
+                 
+  #bookmarksPanel {
+    background-color: var(--top-level-bg-color);
+    color: var(--main-font-color);
+  }
+                 
+  #bookmarksPanel tree {
+    border: none !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+  }
+                 
+  .textbox-search-icon {
+    list-style-image: var(--searchbar-search-button-image);
+    -moz-image-region: rect(0, 20px, 20px, 0);
+  }
+                 
+  .textbox-search-clear {
+    list-style-image: url(chrome://global/skin/icons/Search-close.png);
+    -moz-image-region: rect(0, 16px, 16px, 0);
   }
 
   /* CONTEXT MENUS */
