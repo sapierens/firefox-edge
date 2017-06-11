@@ -2,7 +2,8 @@
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul"),
-               url("chrome://browser/content/bookmarks/bookmarksPanel.xul") {
+               url("chrome://browser/content/bookmarks/bookmarksPanel.xul"),
+               url("chrome://browser/content/history/history-panel.xul") {
   
   /* MAIN WINDOW & TITLEBAR BUTTONS */
   #titlebar-min,
@@ -1105,7 +1106,8 @@
   .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
   .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
   toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-  toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+  #sidebar-search-container button dropmarker {
     -moz-appearance: none !important;
     padding: 0 !important;
     list-style-image: var(--default-dropdown-image);
@@ -1454,7 +1456,8 @@
   .findbar-find-next,
   tabmodalprompt button,
   menupopup button,
-  #identity-popup-securityView-body button {
+  #identity-popup-securityView-body button,
+  #sidebar-search-container button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1481,7 +1484,8 @@
   .findbar-entire-word:not([disabled="true"]):hover,
   tabmodalprompt button:hover,
   menupopup button:hover,
-  #identity-popup-securityView-body button:hover {
+  #identity-popup-securityView-body button:hover,
+  #sidebar-search-container button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1509,7 +1513,9 @@
   .findbar-entire-word:not([disabled="true"]):hover:active,
   tabmodalprompt button:hover:active,
   menupopup button:hover:active,
-  #identity-popup-securityView-body button:hover:active {
+  #identity-popup-securityView-body button:hover:active,
+  #sidebar-search-container button:hover:active,
+  #sidebar-search-container button[open="true"]{
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1614,11 +1620,11 @@
     margin-right: 6px !important;
   }
                  
-  #bookmarksPanel treechildren::-moz-tree-row {
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row {
     height: 32px !important;
   }
                  
-  #bookmarksPanel treechildren::-moz-tree-separator {
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-separator {
     border-bottom: 1px solid var(--context-menu-separator-color) !important;
     border-top: none !important;
     margin-left: -11px;
@@ -1627,8 +1633,8 @@
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) tree,
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listbox,
-  #bookmarksPanel tree,
-  #bookmarksPanel listbox {
+  :-moz-any(#bookmarksPanel, #history-panel) tree,
+  :-moz-any(#bookmarksPanel, #history-panel) listbox {
     -moz-appearance: none!important;
     background: var(--second-level-bg-color) !important;
     box-shadow: none !important;
@@ -1641,23 +1647,23 @@
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treecolpicker,
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-cell-text,
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem,
-  #bookmarksPanel tree,
-  #bookmarksPanel treechildren::-moz-tree-cell-text {
+  :-moz-any(#bookmarksPanel, #history-panel) tree,
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-cell-text {
     color: var(--main-font-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(hover),
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem:hover,
-  #bookmarksPanel treechildren::-moz-tree-row(hover),
-  #bookmarksPanel listitem:hover {
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row(hover),
+  :-moz-any(#bookmarksPanel, #history-panel) listitem:hover {
     border: none !important;
     background: var(--second-level-alt-bg-hover-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(selected),
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem[selected="true"],
-  #bookmarksPanel treechildren::-moz-tree-row(selected),
-  #bookmarksPanel listitem[selected="true"] {
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row(selected),
+  :-moz-any(#bookmarksPanel, #history-panel) listitem[selected="true"] {
     border: none !important;
     background: var(--second-level-alt-bg-active-color) !important;
   }
@@ -2027,16 +2033,21 @@
     color: var(--main-font-color);
   }
                  
+  #viewButton {
+    height: 27px;
+  }
+                 
   .sidebar-splitter {
     border-inline-end: 1px solid var(--navigator-separator-bg-color);
   }
                  
-  #bookmarksPanel {
+  #bookmarksPanel,
+  #history-panel {
     background-color: var(--top-level-bg-color);
     color: var(--main-font-color);
   }
                  
-  #bookmarksPanel tree {
+  :-moz-any(#bookmarksPanel, #history-panel) tree {
     border: none !important;
     border-top: 1px solid var(--panel-separator-color) !important;
   }
