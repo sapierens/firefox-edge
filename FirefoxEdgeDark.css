@@ -1302,7 +1302,7 @@
     color: var(--gray-text-color) !important;
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled="true"]):hover,
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not(#PanelUI-fxa-label):not([disabled="true"]):hover,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover,
@@ -1310,7 +1310,7 @@
     background-color: var(--top-level-bg-hover-color);
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled="true"]):hover:active,
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not(#PanelUI-fxa-label):not([disabled="true"]):hover:active,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover:active,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active,
@@ -1330,21 +1330,23 @@
     outline: none !important;
   }
   
-  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover,
+  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):not(#PanelUI-fxa-label):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer:hover,
   #mainPopupSet .downloadsPanelFooterButton:hover,
   #mainPopupSet #identity-popup-securityView-footer > button:hover,
   #mainPopupSet .search-setting-button:hover,
-  #mainPopupSet .addengine-item:hover {
+  #mainPopupSet .addengine-item:hover,
+  #PanelUI-fxa-status:hover:not([disabled]) {
     background-color: var(--second-level-alt-bg-hover-color) !important;
   }
   
-  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover:active,
+  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):not(#PanelUI-fxa-label):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer:hover:active,
   #mainPopupSet .downloadsPanelFooterButton:hover:active,
   #mainPopupSet #identity-popup-securityView-footer > button:hover:active,
   #mainPopupSet .search-setting-button:hover:active,
-  #mainPopupSet .addengine-item:hover:active {
+  #mainPopupSet .addengine-item:hover:active,
+  #PanelUI-fxa-status:hover:active:not([disabled]) {
     background-color: var(--second-level-alt-bg-active-color) !important;
   }
   
@@ -1383,7 +1385,7 @@
   #PanelUI-quit {
     outline: none !important;
   }
-  
+
   :-moz-any(#mainPopupSet, #nav-bar) separator {
     background: var(--panel-separator-color) !important;
   }
