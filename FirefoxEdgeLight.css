@@ -3,7 +3,8 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul"),
                url("chrome://browser/content/bookmarks/bookmarksPanel.xul"),
-               url("chrome://browser/content/history/history-panel.xul") {
+               url("chrome://browser/content/history/history-panel.xul"),
+               url("chrome://browser/content/syncedtabs/sidebar.xhtml") {
   
   /* MAIN WINDOW & TITLEBAR BUTTONS */
   #titlebar-min,
@@ -1009,6 +1010,14 @@
 
   #downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
     background-image: var(--downloads-button-finish-notification-image);
+  }
+                 
+  #downloads-indicator-progress-icon {
+    background: var(--downloads-button-finish-notification-image) bottom no-repeat;
+  }
+                 
+  #downloads-button:not([progress]) #downloads-indicator-progress-icon {
+    visibility: hidden;
   }
   
   /* PROGRESS METER */
