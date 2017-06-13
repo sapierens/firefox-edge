@@ -1628,7 +1628,8 @@
     margin-right: 6px !important;
   }
                  
-  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row {
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row {
     height: 32px !important;
   }
                  
