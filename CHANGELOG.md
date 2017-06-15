@@ -1,5 +1,14 @@
 # Changelog
 
+**[v1.10.0 June 15th, 2017]**
+
+* Improved compatibility with Firefox 54.
+* Added bookmarks & history sidebar styling.
+* Added button styling to the security popup.
+* Fixed some minor issues with the new-tab button.
+* Fixed the sync identity button's styling on the main menu popup.
+* Multiple other minor fixes & improvements.
+
 **[v1.9.0 May 7th, 2017]**
 
 * Improved compatibility with Firefox 53.
