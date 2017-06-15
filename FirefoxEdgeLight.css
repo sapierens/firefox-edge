@@ -1,9 +1,11 @@
-/*    Firefox Edge v1.9.0    */
+/*    Firefox Edge v1.10.0    */
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-@-moz-document url("chrome://browser/content/browser.xul") {
+@-moz-document url("chrome://browser/content/browser.xul"),
+               url("chrome://browser/content/bookmarks/bookmarksPanel.xul"),
+               url("chrome://browser/content/history/history-panel.xul") {
   
-  /* MAIN WINDOW & TITLEBAR BUTTONS  */
+  /* MAIN WINDOW & TITLEBAR BUTTONS */
   #titlebar-min,
   #titlebar-max,
   #main-window[sizemode="maximized"] #titlebar-max,
@@ -183,7 +185,7 @@
     -moz-margin-end: 0 !important;
     -moz-margin-start: 0 !important;
     background: transparent !important;
-    width: 31px !important;
+    width: 32px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -209,10 +211,12 @@
     background: var(--tab-button-bg-active-color) !important;
   }
 
-  .tabs-newtab-button,
-  #TabsToolbar #new-tab-button {
-    padding-right: 0px !important;
-    margin-left: 1px !important;
+  .tabs-newtab-button {
+    border-left: 1px solid var(--second-level-bg-color) !important;
+  }
+  
+  #TabsToolbar > #new-tab-button {
+    border-right: 1px solid var(--second-level-bg-color) !important;
   }
 
   .tabbrowser-tab::after,
@@ -1006,6 +1010,14 @@
   #downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
     background-image: var(--downloads-button-finish-notification-image);
   }
+                 
+  #downloads-indicator-progress-icon {
+    background: var(--downloads-button-finish-notification-image) bottom no-repeat;
+  }
+                 
+  #downloads-button:not([progress]) #downloads-indicator-progress-icon {
+    visibility: hidden;
+  }
   
   /* PROGRESS METER */
   progressmeter {
@@ -1102,7 +1114,8 @@
   .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
   .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
   toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-  toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+  #sidebar-search-container button dropmarker {
     -moz-appearance: none !important;
     padding: 0 !important;
     list-style-image: var(--default-dropdown-image);
@@ -1289,7 +1302,7 @@
     color: var(--gray-text-color) !important;
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled="true"]):hover,
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not(#PanelUI-fxa-label):not([disabled="true"]):hover,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover,
@@ -1297,7 +1310,7 @@
     background-color: var(--top-level-bg-hover-color);
   }
   
-  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not([disabled="true"]):hover:active,
+  #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not(#PanelUI-fxa-label):not([disabled="true"]):hover:active,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover:active,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active,
@@ -1317,21 +1330,23 @@
     outline: none !important;
   }
   
-  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover,
+  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):not(#PanelUI-fxa-label):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer:hover,
   #mainPopupSet .downloadsPanelFooterButton:hover,
   #mainPopupSet #identity-popup-securityView-footer > button:hover,
   #mainPopupSet .search-setting-button:hover,
-  #mainPopupSet .addengine-item:hover {
+  #mainPopupSet .addengine-item:hover,
+  #PanelUI-fxa-status:hover:not([disabled]) {
     background-color: var(--second-level-alt-bg-hover-color) !important;
   }
   
-  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):hover:active,
+  #mainPopupSet #PanelUI-footer toolbarbutton:not(#PanelUI-quit):not(#PanelUI-fxa-label):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton.panel-subview-footer:hover:active,
   #mainPopupSet .downloadsPanelFooterButton:hover:active,
   #mainPopupSet #identity-popup-securityView-footer > button:hover:active,
   #mainPopupSet .search-setting-button:hover:active,
-  #mainPopupSet .addengine-item:hover:active {
+  #mainPopupSet .addengine-item:hover:active,
+  #PanelUI-fxa-status:hover:active:not([disabled]) {
     background-color: var(--second-level-alt-bg-active-color) !important;
   }
   
@@ -1370,7 +1385,7 @@
   #PanelUI-quit {
     outline: none !important;
   }
-  
+
   :-moz-any(#mainPopupSet, #nav-bar) separator {
     background: var(--panel-separator-color) !important;
   }
@@ -1450,7 +1465,9 @@
   .findbar-find-previous,
   .findbar-find-next,
   tabmodalprompt button,
-  menupopup button {
+  menupopup button,
+  #identity-popup-securityView-body button,
+  #sidebar-search-container button {
     -moz-appearance: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -1476,7 +1493,9 @@
   .findbar-case-sensitive:not([disabled="true"]):hover,
   .findbar-entire-word:not([disabled="true"]):hover,
   tabmodalprompt button:hover,
-  menupopup button:hover {
+  menupopup button:hover,
+  #identity-popup-securityView-body button:hover,
+  #sidebar-search-container button:hover {
     box-shadow: inset 0px 0px 0px 2px var(--button-border-hover-color) !important;
     background-color: var(--button-bg-color) !important;
   }
@@ -1503,7 +1522,10 @@
   .findbar-case-sensitive:not([disabled="true"]):hover:active,
   .findbar-entire-word:not([disabled="true"]):hover:active,
   tabmodalprompt button:hover:active,
-  menupopup button:hover:active {
+  menupopup button:hover:active,
+  #identity-popup-securityView-body button:hover:active,
+  #sidebar-search-container button:hover:active,
+  #sidebar-search-container button[open="true"]{
     box-shadow: none !important;
     background-color: var(--button-bg-active-color) !important;
   }
@@ -1538,26 +1560,33 @@
   #mainPopupSet .close-icon,
   notification .close-icon,
   .findbar-closebutton,
-  #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]) {
+  #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]),
+  #browser-panel .close-icon,
+  #search-box .textbox-search-clear {
     -moz-appearance: none !important;
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
     background-image: none !important;
     height: 20px;
     width: 20px;
+    padding: 0;
   }
   
   #mainPopupSet .close-icon:hover,
   notification .close-icon:hover,
   .findbar-closebutton:hover,
-  #TabsToolbar[brighttext] .tab-close-button:hover {
+  #TabsToolbar[brighttext] .tab-close-button:hover,
+  #browser-panel .close-icon:hover,
+  #search-box .textbox-search-clear:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
   #mainPopupSet .close-icon:hover:active,
   notification .close-icon:hover:active,
   .findbar-closebutton:hover:active,
-  #TabsToolbar[brighttext] .tab-close-button:hover:active {
+  #TabsToolbar[brighttext] .tab-close-button:hover:active,
+  #browser-panel .close-icon:hover:active,
+  #search-box .textbox-search-clear:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
@@ -1567,7 +1596,7 @@
     border: none !important;
   }
   
-  #mainPopupSet textbox {
+  :-moz-any(#mainPopupSet, #sidebar-search-container) textbox {
     -moz-appearance: none !important;
     color: var(--main-font-color) !important;
     background-color: var(--searchbar-bg-color);
@@ -1576,11 +1605,11 @@
     box-shadow: none !important;
   }
 
-  #mainPopupSet textbox:hover {
+  :-moz-any(#mainPopupSet, #sidebar-search-container) textbox:hover {
     background-color: var(--searchbar-bg-hover-color);
   }
 
-  #mainPopupSet textbox[focused] {
+  :-moz-any(#mainPopupSet, #sidebar-search-container) textbox[focused] {
     background-color: var(--searchbar-bg-active-color);
   }
   
@@ -1600,9 +1629,23 @@
     padding: 0 !important;
     margin-right: 6px !important;
   }
+                 
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row,
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row {
+    height: 32px !important;
+  }
+                 
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-separator {
+    border-bottom: 1px solid var(--context-menu-separator-color) !important;
+    border-top: none !important;
+    margin-left: -11px;
+    margin-right: 12px;
+  }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) tree,
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listbox {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listbox,
+  :-moz-any(#bookmarksPanel, #history-panel) tree,
+  :-moz-any(#bookmarksPanel, #history-panel) listbox {
     -moz-appearance: none!important;
     background: var(--second-level-bg-color) !important;
     box-shadow: none !important;
@@ -1614,18 +1657,24 @@
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treecol,
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treecolpicker,
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-cell-text,
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem,
+  :-moz-any(#bookmarksPanel, #history-panel) tree,
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-cell-text {
     color: var(--main-font-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(hover),
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem:hover {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem:hover,
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row(hover),
+  :-moz-any(#bookmarksPanel, #history-panel) listitem:hover {
     border: none !important;
     background: var(--second-level-alt-bg-hover-color) !important;
   }
   
   :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) treechildren::-moz-tree-row(selected),
-  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem[selected="true"] {
+  :-moz-any(#mainPopupSet, #nav-bar) panel:not(#PopupAutoComplete) listitem[selected="true"],
+  :-moz-any(#bookmarksPanel, #history-panel) treechildren::-moz-tree-row(selected),
+  :-moz-any(#bookmarksPanel, #history-panel) listitem[selected="true"] {
     border: none !important;
     background: var(--second-level-alt-bg-active-color) !important;
   }
@@ -1984,6 +2033,44 @@
   
   .identity-popup-permission-remove-button > .button-box > .button-icon {
     fill: var(--gray-text-color);
+  }
+                 
+  /* SIDEBAR BOX */
+  sidebarheader {
+    height: 25px;
+    background-color: var(--top-level-bg-color);
+    border-bottom: 1px solid var(--panel-separator-color) !important;
+    border-top: none;
+    color: var(--main-font-color);
+  }
+                 
+  #viewButton {
+    height: 27px;
+  }
+                 
+  .sidebar-splitter {
+    border-inline-end: 1px solid var(--navigator-separator-bg-color);
+  }
+                 
+  #bookmarksPanel,
+  #history-panel {
+    background-color: var(--top-level-bg-color);
+    color: var(--main-font-color);
+  }
+                 
+  :-moz-any(#bookmarksPanel, #history-panel) tree {
+    border: none !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+  }
+                 
+  .textbox-search-icon {
+    list-style-image: var(--searchbar-search-button-image);
+    -moz-image-region: rect(0, 20px, 20px, 0);
+  }
+                 
+  .textbox-search-clear {
+    list-style-image: url(chrome://global/skin/icons/Search-close.png);
+    -moz-image-region: rect(0, 16px, 16px, 0);
   }
 
   /* CONTEXT MENUS */
