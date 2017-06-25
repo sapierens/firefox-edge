@@ -1253,7 +1253,7 @@
   .notification-anchor-icon:not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(.plugin-blocked),
   .desktop-notification-icon,
   .blocked-permission-icon,
-  .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]):not([value="reset-profile-notification"]):not([value="process-hang"]),
+  .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]):not([value="reset-profile-notification"]):not([value="process-hang"]):not([value^="Protocol Registration:"]),
   .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]):not([popupid="addon-install-restart"]):not([popupid="greasemonkey-notification"]):not([popupid="addon-install-blocked"]) {
     filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
   }
