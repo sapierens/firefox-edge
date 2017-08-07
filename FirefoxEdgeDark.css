@@ -16,7 +16,6 @@
     -moz-appearance: none !important;
     display: -moz-box !important;
     border: none !important;
-    padding: 0 !important;
     width: 46px !important;
     height: 32px !important;
   }
@@ -56,32 +55,26 @@
   #minimize-button,
   toolbar[brighttext] #titlebar-min,
   toolbar[brighttext] #minimize-button {
-    list-style-image: none !important;
-    background: var(--titlebar-min-image) no-repeat center;
-    background-position-y: 11px;
+    stroke: var(--titlebar-min-max-icon-color);
   }
 
   #titlebar-max {
-    list-style-image: none !important;
-    background: var(--titlebar-max-image) no-repeat center;
+    stroke: var(--titlebar-min-max-icon-color);
   }
 
   #main-window[sizemode="maximized"] #titlebar-max,
   #restore-button {
-    list-style-image: none !important;
-    background: var(--titlebar-restore-image) no-repeat center;
+    stroke: var(--titlebar-min-max-icon-color);
   }
 
   #titlebar-close,
   #close-button {
-    list-style-image: none !important;
-    background: var(--titlebar-close-image) no-repeat center;
+    stroke: var(--titlebar-close-icon-color);
   }
   
   #titlebar-close:hover,
   #close-button:hover {
-    list-style-image: none !important;
-    background: url("chrome://browser/skin/caption-buttons.svg#close-white") no-repeat center;
+    stroke: var(--titlebar-close-hover-icon-color);
   }
 
   #titlebar-min:hover,
@@ -2382,6 +2375,9 @@
   
   :root {
     /* COLOR VARIABLES */
+	--titlebar-min-max-icon-color: #FFFFFF;
+    --titlebar-close-icon-color: #FFFFFF;
+    --titlebar-close-hover-icon-color: #FFFFFF;
     --titlebar-min-max-hover-bg-color: #2E2E2E;
     --titlebar-min-max-active-bg-color: #444444;
     --titlebar-close-hover-bg-color: #E81123;
@@ -2437,10 +2433,6 @@
     --image-brightness: 1.5;
 	
     /* IMAGE VARIABLES */
-    --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize-white");
-    --titlebar-max-image: url("chrome://browser/skin/caption-buttons.svg#maximize-white");
-    --titlebar-restore-image: url("chrome://browser/skin/caption-buttons.svg#restore-white");
-    --titlebar-close-image: url("chrome://browser/skin/caption-buttons.svg#close-white");
     --new-tab-button-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0QzRDNEMyI+ICA8cmVjdCB4PSI2IiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxMyIvPiAgPHJlY3QgeD0iMCIgeT0iNiIgd2lkdGg9IjEzIiBoZWlnaHQ9IjEiLz48L3N2Zz4=);
     --tab-close-button-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDYwIDIwIj48ZGVmcz48c3R5bGU+LmNscy0yLC5jbHMtMywuY2xzLTR7ZmlsbDpub25lO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDoxLjFweDt9LmNscy0ye3N0cm9rZTojY2JjYmNiO30uY2xzLTN7c3Ryb2tlOiNlODA2MDY7fS5jbHMtNHtzdHJva2U6IzljMDcwNzt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmstaWRsZSIgc3R5bGU9InRyYW5zZm9ybTp0cmFuc2xhdGUoMHB4KSI+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iNSIgeTE9IjUiIHgyPSIxNSIgeTI9IjE1Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iMTUiIHkxPSI1IiB4Mj0iNSIgeTI9IjE1Ii8+PC9nPjxnIGlkPSJkYXJrLWhvdmVyIiBzdHlsZT0idHJhbnNmb3JtOnRyYW5zbGF0ZSgyMHB4KSI+PGxpbmUgY2xhc3M9ImNscy0zIiB4MT0iNSIgeTE9IjUiIHgyPSIxNSIgeTI9IjE1Ii8+PGxpbmUgY2xhc3M9ImNscy0zIiB4MT0iMTUiIHkxPSI1IiB4Mj0iNSIgeTI9IjE1Ii8+PC9nPjxnIGlkPSJkYXJrLWFjdGl2ZSIgc3R5bGU9InRyYW5zZm9ybTp0cmFuc2xhdGUoNDBweCkiPjxsaW5lIGNsYXNzPSJjbHMtNCIgeDE9IjUiIHkxPSI1IiB4Mj0iMTUiIHkyPSIxNSIvPjxsaW5lIGNsYXNzPSJjbHMtNCIgeDE9IjE1IiB5MT0iNSIgeDI9IjUiIHkyPSIxNSIvPjwvZz48L3N2Zz4=);
     --tab-scroll-up-down-button-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE1IDE3Ij48ZGVmcz48c3R5bGU+LmNscy0yLC5jbHMtM3tmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fS5jbHMtMntvcGFjaXR5OjAuNTt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMTEgMTQuNSA0LjUgOCAxMSAxLjUiLz48cG9seWxpbmUgY2xhc3M9ImNscy0zIiBwb2ludHM9IjExIDE0LjUgNC41IDggMTEgMS41Ii8+PC9nPjwvc3ZnPg==);
