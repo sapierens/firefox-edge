@@ -1299,6 +1299,7 @@
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover,
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active),
   #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color);
   }
@@ -2117,7 +2118,11 @@
   menu:not(.subviewbutton):not([disabled="true"]):hover, 
   menuitem:not(.subviewbutton):not([disabled="true"]):hover, 
   menucaption:not(.subviewbutton):not([disabled="true"]):hover, 
-  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"]):hover {
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"]):hover,
+  menu:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active), 
+  menuitem:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active), 
+  menucaption:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active), 
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active) {
     background-color: var(--context-menu-bg-hover-color) !important;
   }
   
