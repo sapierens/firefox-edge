@@ -1299,7 +1299,7 @@
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover,
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color);
   }
   
@@ -1307,7 +1307,7 @@
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover:active,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover:active,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active,
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
@@ -1699,7 +1699,7 @@
     border-top: none !important;
   }
   
-  #mainPopupSet .search-panel-header:not(.search-setting-button) {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-header:not(.search-setting-button) {
     background-color: var(--top-level-bg-color) !important;
     color: var(--gray-text-color);
     border: none !important;
@@ -1711,34 +1711,38 @@
     border-bottom: 1px solid var(--panel-separator-color) !important;
   }
   
-  #mainPopupSet .search-panel-input-value {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-input-value {
     color: var(--main-font-color) !important;
   }
   
-  #mainPopupSet .search-panel-one-offs {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-one-offs {
     background-color: var(--top-level-bg-color) !important;
     border-top: 1px solid var(--panel-separator-color) !important;
   }
   
-  #mainPopupSet .searchbar-engine-one-off-item {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item {
     background-image: none !important;
     border-right: 1px solid var(--panel-separator-color);
     border-left: none;
   }
   
-  #mainPopupSet .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
     border-right: none;
     border-left: 1px solid var(--panel-separator-color);
   }
 
-  #mainPopupSet .searchbar-engine-one-off-item.last-of-row,
-  #mainPopupSet .searchbar-engine-one-off-item[selected] {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item.last-of-row,
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item[selected] {
     border-right: none;
     border-left: none;
   }
   
-  #mainPopupSet .searchbar-engine-one-off-item:not(.last-row) {
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not(.last-row) {
     border-bottom: 1px solid var(--panel-separator-color);
+  }
+                 
+  #mainPopupSet #PopupAutoCompleteRichResult .searchbar-engine-one-off-item {
+    color: GrayText !important;
   }
   
   .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
