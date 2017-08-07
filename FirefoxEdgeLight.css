@@ -610,7 +610,7 @@
   }
 
   /* RELOAD BUTTON */
-  #urlbar-reload-button {
+  #reload-button {
     list-style-image: var(--reload-button-image);
     -moz-image-region: auto !important;
     border: none !important;
@@ -623,28 +623,28 @@
     height: 44px !important;
   }
   
-  #urlbar-reload-button > .toolbarbutton-icon {
+  #reload-button > .toolbarbutton-icon {
     width: 18px;
   }
 
-  #urlbar-reload-button:not([displaystop]) {
+  #reload-button:not([displaystop]) {
     visibility: visible !important;
   }
 
-  #urlbar-reload-button[displaystop] + #urlbar-stop-button {
+  #reload-button[displaystop] + #stop-button {
     visibility: visible !important;
   }
 
-  #urlbar-reload-button:not([disabled="true"]):hover {
+  #reload-button:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color) !important;
   }
 
-  #urlbar-reload-button:not([disabled="true"]):hover:active {
+  #reload-button:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
 
   /* STOP BUTTON */
-  #urlbar-stop-button {
+  #stop-button {
     list-style-image: var(--stop-button-image);
     -moz-image-region: auto !important;
     border: none !important;
@@ -657,15 +657,15 @@
     height: 44px !important;
   }
   
-  #urlbar-stop-button > .toolbarbutton-icon {
+  #stop-button > .toolbarbutton-icon {
     width: 16px;
   }
 
-  #urlbar-stop-button:not([disabled="true"]):hover {
+  #stop-button:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color) !important;
   }
 
-  #urlbar-stop-button:not([disabled="true"]):hover:active {
+  #stop-button:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
 
