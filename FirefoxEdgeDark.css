@@ -2275,18 +2275,19 @@
     border-top: 1px solid var(--panel-separator-color) !important;
   }
   
-  #mainPopupSet .searchbar-engine-one-off-item:not(.dummy) {
+  #mainPopupSet .searchbar-engine-one-off-item {
     background-image: none !important;
     border-right: 1px solid var(--panel-separator-color);
     border-left: none;
   }
   
-  #mainPopupSet .searchbar-engine-one-off-item:not(.dummy):-moz-locale-dir(rtl) {
+  #mainPopupSet .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
     border-right: none;
     border-left: 1px solid var(--panel-separator-color);
   }
 
   #mainPopupSet .searchbar-engine-one-off-item.last-of-row,
+  #mainPopupSet .searchbar-engine-one-off-item.dummy,    
   #mainPopupSet .searchbar-engine-one-off-item[selected] {
     border-right: none;
     border-left: none;
