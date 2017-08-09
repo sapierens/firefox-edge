@@ -1714,57 +1714,6 @@
     height: 24px;
   }
   
-  #mainPopupSet #PopupSearchAutoComplete {
-    border: 1px solid var(--urlbar-separator-color) !important;
-    border-top: none !important;
-  }
-  
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-header:not(.search-setting-button) {
-    background-color: var(--top-level-bg-color) !important;
-    color: var(--gray-text-color);
-    border: none !important;
-  }
-  
-  #mainPopupSet #PopupSearchAutoComplete tree {
-    border: none !important;
-    border-top: 1px solid var(--panel-separator-color) !important;
-    border-bottom: 1px solid var(--panel-separator-color) !important;
-  }
-  
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-input-value {
-    color: var(--main-font-color) !important;
-  }
-  
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-one-offs {
-    background-color: var(--top-level-bg-color) !important;
-    border-top: 1px solid var(--panel-separator-color) !important;
-  }
-  
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item {
-    background-image: none !important;
-    border-right: 1px solid var(--panel-separator-color);
-    border-left: none;
-  }
-  
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
-    border-right: none;
-    border-left: 1px solid var(--panel-separator-color);
-  }
-
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item.last-of-row,
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item[selected] {
-    border-right: none;
-    border-left: none;
-  }
-  
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not(.last-row) {
-    border-bottom: 1px solid var(--panel-separator-color);
-  }
-                 
-  #mainPopupSet #PopupAutoCompleteRichResult .searchbar-engine-one-off-item {
-    color: GrayText !important;
-  }
-  
   .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
     margin-left: 0;
     margin-right: 0;
@@ -2299,6 +2248,58 @@
   
   .unified-nav-forward[_moz-menuactive] > .menu-iconic-left {
     list-style-image: var(--contextmenu-forwardarrow) !important;
+  }
+  
+  /* SEARCH SUGGESTIONS POPUP */
+  #mainPopupSet #PopupSearchAutoComplete {
+    border: 1px solid var(--urlbar-separator-color) !important;
+    border-top: none !important;
+  }
+  
+  #mainPopupSet #PopupSearchAutoComplete tree {
+    border: none !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+    border-bottom: 1px solid var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-header:not(.search-setting-button) {
+    background-color: var(--top-level-bg-color) !important;
+    color: var(--gray-text-color);
+    border: none !important;
+  }
+  
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-input-value {
+    color: var(--main-font-color) !important;
+  }
+  
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .search-panel-one-offs {
+    background-color: var(--top-level-bg-color) !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item {
+    background-image: none !important;
+    border-right: 1px solid var(--panel-separator-color);
+    border-left: none;
+  }
+  
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
+    border-right: none;
+    border-left: 1px solid var(--panel-separator-color);
+  }
+
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item.last-of-row,
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item[selected] {
+    border-right: none;
+    border-left: none;
+  }
+  
+  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not(.last-row) {
+    border-bottom: 1px solid var(--panel-separator-color);
+  }
+                 
+  #mainPopupSet #PopupAutoCompleteRichResult .searchbar-engine-one-off-item {
+    color: GrayText !important;
   }
   
   @media not all and (min-resolution: 1.1dppx) {
