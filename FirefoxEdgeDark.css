@@ -1,4 +1,4 @@
-/*    Firefox Edge v1.10.0    */
+/*    Firefox Edge v1.11.0    */
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul"),
@@ -16,7 +16,6 @@
     -moz-appearance: none !important;
     display: -moz-box !important;
     border: none !important;
-    padding: 0 !important;
     width: 46px !important;
     height: 32px !important;
   }
@@ -56,32 +55,26 @@
   #minimize-button,
   toolbar[brighttext] #titlebar-min,
   toolbar[brighttext] #minimize-button {
-    list-style-image: none !important;
-    background: var(--titlebar-min-image) no-repeat center;
-    background-position-y: 11px;
+    stroke: var(--titlebar-min-max-icon-color);
   }
 
   #titlebar-max {
-    list-style-image: none !important;
-    background: var(--titlebar-max-image) no-repeat center;
+    stroke: var(--titlebar-min-max-icon-color);
   }
 
   #main-window[sizemode="maximized"] #titlebar-max,
   #restore-button {
-    list-style-image: none !important;
-    background: var(--titlebar-restore-image) no-repeat center;
+    stroke: var(--titlebar-min-max-icon-color);
   }
 
   #titlebar-close,
   #close-button {
-    list-style-image: none !important;
-    background: var(--titlebar-close-image) no-repeat center;
+    stroke: var(--titlebar-close-icon-color);
   }
   
   #titlebar-close:hover,
   #close-button:hover {
-    list-style-image: none !important;
-    background: url("chrome://browser/skin/caption-buttons.svg#close-white") no-repeat center;
+    stroke: var(--titlebar-close-hover-icon-color);
   }
 
   #titlebar-min:hover,
@@ -617,7 +610,7 @@
   }
 
   /* RELOAD BUTTON */
-  #urlbar-reload-button {
+  #reload-button {
     list-style-image: var(--reload-button-image);
     -moz-image-region: auto !important;
     border: none !important;
@@ -630,28 +623,28 @@
     height: 44px !important;
   }
   
-  #urlbar-reload-button > .toolbarbutton-icon {
+  #reload-button > .toolbarbutton-icon {
     width: 18px;
   }
 
-  #urlbar-reload-button:not([displaystop]) {
+  #reload-button:not([displaystop]) {
     visibility: visible !important;
   }
 
-  #urlbar-reload-button[displaystop] + #urlbar-stop-button {
+  #reload-button[displaystop] + #stop-button {
     visibility: visible !important;
   }
 
-  #urlbar-reload-button:not([disabled="true"]):hover {
+  #reload-button:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color) !important;
   }
 
-  #urlbar-reload-button:not([disabled="true"]):hover:active {
+  #reload-button:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
 
   /* STOP BUTTON */
-  #urlbar-stop-button {
+  #stop-button {
     list-style-image: var(--stop-button-image);
     -moz-image-region: auto !important;
     border: none !important;
@@ -664,15 +657,15 @@
     height: 44px !important;
   }
   
-  #urlbar-stop-button > .toolbarbutton-icon {
+  #stop-button > .toolbarbutton-icon {
     width: 16px;
   }
 
-  #urlbar-stop-button:not([disabled="true"]):hover {
+  #stop-button:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color) !important;
   }
 
-  #urlbar-stop-button:not([disabled="true"]):hover:active {
+  #stop-button:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color) !important;
   }
 
@@ -899,16 +892,16 @@
 
   /* BOOKMARKS BUTTON */
   :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar, #TabsToolbar) #bookmarks-menu-button {
-    list-style-image: var(--bookmarks-menu-button-image);
+    list-style-image: var(--bookmarks-menu-button-image) !important;
   }
 
   :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar, #TabsToolbar) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
   :-moz-any(#nav-bar, #mainPopupSet, #PersonalToolbar, #TabsToolbar)[brighttext] #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-    list-style-image: var(--bookmarks-menu-button-dropmarker-image);
+    list-style-image: var(--bookmarks-menu-button-dropmarker-image) !important;
   }
 
   #nav-bar #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
-    max-width: 33px;
+    max-width: 34px;
   }
 
   #nav-bar #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
@@ -955,6 +948,24 @@
   #bookmarked-notification-anchor[notification="finish"] > #bookmarked-notification {
     background-image: var(--bookmarked-notification-image);
   }
+                 
+  #bookmarked-notification-dropmarker-anchor[notification="finish"] > #bookmarked-notification-dropmarker-icon {
+    visibility: hidden;
+    animation: none;
+  }
+                 
+  #bookmarks-menu-button[notification="finish"] > .toolbarbutton-menubutton-dropmarker {
+    animation: animation-bookmarkPulse 300ms;
+    animation-delay: 600ms;
+    animation-timing-function: ease-out;
+  }
+                 
+  @keyframes animation-bookmarkAdded {
+    from { transform: rotate(0deg) translateX(-19px) rotate(0deg) scale(1); opacity: 0; }
+    60%  { transform: rotate(180deg) translateX(-19px) rotate(-180deg) scale(2.2); opacity: 1; }
+    80%  { opacity: 1; }
+    to   { transform: rotate(180deg) translateX(-19px) rotate(-180deg) scale(1); opacity: 0; }
+  }
 
   #nav-bar .badged-button:hover {
     background-color: var(--top-level-bg-hover-color) !important;
@@ -964,8 +975,7 @@
     background-color: var(--top-level-bg-active-color) !important;
   }
 
-  /* DOWNLOADS BUTTON */
-  
+  /* DOWNLOADS BUTTON */  
   #downloads-button[cui-areatype="toolbar"] .toolbarbutton-icon {
     width: 20px !important;
     height: 20px !important;
@@ -1125,6 +1135,8 @@
     background-image: var(--default-dropdown-image);
     background-position: right 4px top 22px;
   }
+                 
+
   
   /* TOOLBAR BUTTON BADGE */
   .toolbarbutton-badge {
@@ -1253,8 +1265,8 @@
   .notification-anchor-icon:not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(.plugin-blocked),
   .desktop-notification-icon,
   .blocked-permission-icon,
-  .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]):not([value="reset-profile-notification"]):not([value="process-hang"]),
-  .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]):not([popupid="addon-install-restart"]):not([popupid="greasemonkey-notification"]):not([popupid="addon-install-blocked"]) {
+  .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]):not([value="reset-profile-notification"]):not([value="process-hang"]):not([value^="Protocol Registration:"]),
+  .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]):not([popupid="addon-install-restart"]):not([popupid="greasemonkey-notification"]):not([popupid="addon-install-blocked"]):not([popupid="addon-installed"]) {
     filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
   }
 
@@ -1306,15 +1318,14 @@
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover,
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active) {
     background-color: var(--top-level-bg-hover-color);
   }
   
   #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not(#PanelUI-fxa-label):not([disabled="true"]):hover:active,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover:active,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover:active,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active,
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
@@ -1701,53 +1712,6 @@
     height: 24px;
   }
   
-  #mainPopupSet #PopupSearchAutoComplete {
-    border: 1px solid var(--urlbar-separator-color) !important;
-    border-top: none !important;
-  }
-  
-  #mainPopupSet .search-panel-header:not(.search-setting-button) {
-    background-color: var(--top-level-bg-color) !important;
-    color: var(--gray-text-color);
-    border: none !important;
-  }
-  
-  #mainPopupSet #PopupSearchAutoComplete tree {
-    border: none !important;
-    border-top: 1px solid var(--panel-separator-color) !important;
-    border-bottom: 1px solid var(--panel-separator-color) !important;
-  }
-  
-  #mainPopupSet .search-panel-input-value {
-    color: var(--main-font-color) !important;
-  }
-  
-  #mainPopupSet .search-panel-one-offs {
-    background-color: var(--top-level-bg-color) !important;
-    border-top: 1px solid var(--panel-separator-color) !important;
-  }
-  
-  #mainPopupSet .searchbar-engine-one-off-item {
-    background-image: none !important;
-    border-right: 1px solid var(--panel-separator-color);
-    border-left: none;
-  }
-  
-  #mainPopupSet .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
-    border-right: none;
-    border-left: 1px solid var(--panel-separator-color);
-  }
-
-  #mainPopupSet .searchbar-engine-one-off-item.last-of-row,
-  #mainPopupSet .searchbar-engine-one-off-item[selected] {
-    border-right: none;
-    border-left: none;
-  }
-  
-  #mainPopupSet .searchbar-engine-one-off-item:not(.last-row) {
-    border-bottom: 1px solid var(--panel-separator-color);
-  }
-  
   .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
     margin-left: 0;
     margin-right: 0;
@@ -2120,7 +2084,11 @@
   menu:not(.subviewbutton):not([disabled="true"]):hover, 
   menuitem:not(.subviewbutton):not([disabled="true"]):hover, 
   menucaption:not(.subviewbutton):not([disabled="true"]):hover, 
-  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"]):hover {
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"]):hover,
+  menu:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active), 
+  menuitem:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active), 
+  menucaption:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active), 
+  .splitmenu-menuitem:not(.subviewbutton):not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active) {
     background-color: var(--context-menu-bg-hover-color) !important;
   }
   
@@ -2280,6 +2248,111 @@
     list-style-image: var(--contextmenu-forwardarrow) !important;
   }
   
+  /* SEARCH SUGGESTIONS POPUP */
+  #mainPopupSet #PopupSearchAutoComplete {
+    border: 1px solid var(--urlbar-separator-color) !important;
+    border-top: none !important;
+  }
+  
+  #mainPopupSet #PopupSearchAutoComplete tree {
+    border: none !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+    border-bottom: 1px solid var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet .search-panel-header:not(.search-setting-button) {
+    background-color: var(--top-level-bg-color) !important;
+    color: var(--gray-text-color);
+    border: none !important;
+  }
+  
+  #mainPopupSet .search-panel-input-value {
+    color: var(--main-font-color) !important;
+  }
+  
+  #mainPopupSet .search-panel-one-offs {
+    background-color: var(--top-level-bg-color) !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+  }
+  
+  #mainPopupSet .searchbar-engine-one-off-item {
+    background-image: none !important;
+    border-right: 1px solid var(--panel-separator-color);
+    border-left: none;
+  }
+  
+  #mainPopupSet .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
+    border-right: none;
+    border-left: 1px solid var(--panel-separator-color);
+  }
+
+  #mainPopupSet .searchbar-engine-one-off-item.last-of-row,
+  #mainPopupSet .searchbar-engine-one-off-item.dummy,    
+  #mainPopupSet .searchbar-engine-one-off-item[selected] {
+    border-right: none;
+    border-left: none;
+  }
+  
+  #mainPopupSet .searchbar-engine-one-off-item:not(.last-row) {
+    border-bottom: 1px solid var(--panel-separator-color);
+  }
+                 
+  #mainPopupSet .searchbar-engine-one-off-item.search-setting-button-compact {
+    background-image: none !important;
+    border-left: 1px solid var(--panel-separator-color);
+    border-right: none;
+  }
+
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):not(.dummy):hover {
+    background-color: var(--top-level-bg-hover-color);
+  }
+
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):not(.dummy):hover:active {
+    background-color: var(--top-level-bg-active-color);
+  }
+
+  /* URLBAR SEARCH SUGGESTIONS POPUP */
+  #PopupAutoCompleteRichResult {
+    border: none !important;
+    border-top: 1px solid var(--urlbar-separator-color) !important;
+    border-bottom: 1px solid var(--urlbar-separator-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult > .autocomplete-richlistbox {
+    background-color: var(--second-level-bg-color) !important;
+    padding: 0 !important;
+    transition: none !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem {
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem:hover {
+    background-color: var(--second-level-alt-bg-hover-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem[selected="true"] {
+    background-color: var(--second-level-alt-bg-active-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-title-text {
+    color: var(--main-font-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-url-text:not([selected="true"]) {
+    color: var(--url-text-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-action-text:not([selected="true"]) {
+    color: var(--action-text-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-separator-text:not([selected=true]) {
+    color: var(--urlbar-separator-color) !important;
+  }
+  
   @media not all and (min-resolution: 1.1dppx) {
     #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
     #mainPopupSet :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button:not([attention="success"]), #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"],
@@ -2382,6 +2455,9 @@
   
   :root {
     /* COLOR VARIABLES */
+    --titlebar-min-max-icon-color: #FFFFFF;
+    --titlebar-close-icon-color: #FFFFFF;
+    --titlebar-close-hover-icon-color: #FFFFFF;
     --titlebar-min-max-hover-bg-color: #2E2E2E;
     --titlebar-min-max-active-bg-color: #444444;
     --titlebar-close-hover-bg-color: #E81123;
@@ -2431,16 +2507,14 @@
     --context-menu-separator-color: #808080;
     --findbar-notfound-bg-color: #F66;
     --findbar-flash-bg-color: yellow;
+    --action-text-color: #00A399;
+    --url-text-color: #1E9DFF;
 
     /* NUMERICAL VARIABLES */
     --image-inversion-percentage: 100%;
     --image-brightness: 1.5;
 	
     /* IMAGE VARIABLES */
-    --titlebar-min-image: url("chrome://browser/skin/caption-buttons.svg#minimize-white");
-    --titlebar-max-image: url("chrome://browser/skin/caption-buttons.svg#maximize-white");
-    --titlebar-restore-image: url("chrome://browser/skin/caption-buttons.svg#restore-white");
-    --titlebar-close-image: url("chrome://browser/skin/caption-buttons.svg#close-white");
     --new-tab-button-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0QzRDNEMyI+ICA8cmVjdCB4PSI2IiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxMyIvPiAgPHJlY3QgeD0iMCIgeT0iNiIgd2lkdGg9IjEzIiBoZWlnaHQ9IjEiLz48L3N2Zz4=);
     --tab-close-button-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDYwIDIwIj48ZGVmcz48c3R5bGU+LmNscy0yLC5jbHMtMywuY2xzLTR7ZmlsbDpub25lO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDoxLjFweDt9LmNscy0ye3N0cm9rZTojY2JjYmNiO30uY2xzLTN7c3Ryb2tlOiNlODA2MDY7fS5jbHMtNHtzdHJva2U6IzljMDcwNzt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmstaWRsZSIgc3R5bGU9InRyYW5zZm9ybTp0cmFuc2xhdGUoMHB4KSI+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iNSIgeTE9IjUiIHgyPSIxNSIgeTI9IjE1Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iMTUiIHkxPSI1IiB4Mj0iNSIgeTI9IjE1Ii8+PC9nPjxnIGlkPSJkYXJrLWhvdmVyIiBzdHlsZT0idHJhbnNmb3JtOnRyYW5zbGF0ZSgyMHB4KSI+PGxpbmUgY2xhc3M9ImNscy0zIiB4MT0iNSIgeTE9IjUiIHgyPSIxNSIgeTI9IjE1Ii8+PGxpbmUgY2xhc3M9ImNscy0zIiB4MT0iMTUiIHkxPSI1IiB4Mj0iNSIgeTI9IjE1Ii8+PC9nPjxnIGlkPSJkYXJrLWFjdGl2ZSIgc3R5bGU9InRyYW5zZm9ybTp0cmFuc2xhdGUoNDBweCkiPjxsaW5lIGNsYXNzPSJjbHMtNCIgeDE9IjUiIHkxPSI1IiB4Mj0iMTUiIHkyPSIxNSIvPjxsaW5lIGNsYXNzPSJjbHMtNCIgeDE9IjE1IiB5MT0iNSIgeDI9IjUiIHkyPSIxNSIvPjwvZz48L3N2Zz4=);
     --tab-scroll-up-down-button-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE1IDE3Ij48ZGVmcz48c3R5bGU+LmNscy0yLC5jbHMtM3tmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fS5jbHMtMntvcGFjaXR5OjAuNTt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImRhcmsiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMTEgMTQuNSA0LjUgOCAxMSAxLjUiLz48cG9seWxpbmUgY2xhc3M9ImNscy0zIiBwb2ludHM9IjExIDE0LjUgNC41IDggMTEgMS41Ii8+PC9nPjwvc3ZnPg==);
