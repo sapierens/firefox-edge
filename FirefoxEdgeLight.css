@@ -2277,13 +2277,13 @@
     border-top: 1px solid var(--panel-separator-color) !important;
   }
   
-  #mainPopupSet .searchbar-engine-one-off-item {
+  #mainPopupSet .searchbar-engine-one-off-item:not(.dummy) {
     background-image: none !important;
     border-right: 1px solid var(--panel-separator-color);
     border-left: none;
   }
   
-  #mainPopupSet .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
+  #mainPopupSet .searchbar-engine-one-off-item:not(.dummy):-moz-locale-dir(rtl) {
     border-right: none;
     border-left: 1px solid var(--panel-separator-color);
   }
