@@ -1232,13 +1232,7 @@
   
   /* POCKET BUTTON */
   #nav-bar #pocket-button {
-    list-style-image: var(--pocket-button-image) !important;
-  }
-  
-  @media (min-resolution: 1.1dppx) {
-    #nav-bar #pocket-button {
-      list-style-image: var(--pocket-button-image2x) !important;
-    }
+    fill: var(--main-font-color);
   }
 
   /* TAB THROBBER ANIMATION */
@@ -2544,8 +2538,6 @@
     --bookmarks-drop-indicator-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgOSAxOCI+PGRlZnM+PHN0eWxlPi5jbHMtMiwuY2xzLTN7ZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1taXRlcmxpbWl0OjEwO30uY2xzLTN7c3Ryb2tlLWRhc2hhcnJheToxO308L3N0eWxlPjwvZGVmcz48ZyBpZD0ibGlnaHQiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMC41IDAuNSA0LjUgNC41IDguNSAwLjUiLz48bGluZSBjbGFzcz0iY2xzLTMiIHgxPSI0LjUiIHkxPSI4IiB4Mj0iNC41IiB5Mj0iMTciLz48L2c+PC9zdmc+);
     --bookmarks-chevron-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDE4IDEwIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImxpZ2h0Ij48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjEgMSA5IDkgMTcgMSIvPjwvZz48L3N2Zz4=);
     --bookmarks-favicon-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MS4ycHg7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJsaWdodC1mYXZpY29uIj48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMS44IDggOCA4IDEwIDIgMTIgOCAxOC4yIDggMTMgMTIgMTUgMTguMyAxMCAxNC41IDUgMTguMyA3IDEyIDEuOCA4Ii8+PC9nPjwvc3ZnPg==);
-    --pocket-button-image: url(chrome://pocket/skin/Toolbar.png);
-    --pocket-button-image2x: url(chrome://pocket/skin/Toolbar@2x.png);
     --panel-arrow-vertical: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIj4gIDxwYXRoIGQ9Ik0gMCwxMCBMIDEwLDAgMjAsMTAgeiIgZmlsbD0iIzkxOTE5MSIvPiAgPHBhdGggZD0iTSAxLDEwIEwgMTAsMSAxOSwxMCB6IiBmaWxsPSIjRjJGMkYyIi8+PC9zdmc+);
     --menupanel-images: url(chrome://browser/skin/menuPanel.svg);
     --menupanel-small-images: url(chrome://browser/skin/menuPanel-small.svg);
