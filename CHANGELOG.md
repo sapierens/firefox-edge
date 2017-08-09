@@ -1,5 +1,12 @@
 # Changelog
 
+**[v1.11.0 August 9th, 2017]**
+
+* Style has been updated for Firefox 55.
+* Added urlbar search popup styling.
+* Fixed a bunch of issues that were caused by Firefox 55.
+* Multiple other minor fixes & improvements.
+
 **[v1.10.0 June 15th, 2017]**
 
 * Improved compatibility with Firefox 54.
