@@ -2302,6 +2302,47 @@
     color: GrayText !important;
   }
   
+  /* URLBAR SEARCH SUGGESTIONS POPUP */
+  #PopupAutoCompleteRichResult {
+    border: none !important;
+    border-top: 1px solid var(--urlbar-separator-color) !important;
+    border-bottom: 1px solid var(--urlbar-separator-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult > .autocomplete-richlistbox {
+    background-color: var(--second-level-bg-color) !important;
+    padding: 0 !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem {
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem:hover {
+    background-color: var(--second-level-alt-bg-hover-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem[selected="true"] {
+    background-color: var(--second-level-alt-bg-active-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-title-text {
+    color: var(--main-font-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-url-text:not([selected="true"]) {
+    color: var(--url-text-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-action-text:not([selected="true"]) {
+    color: var(--action-text-color) !important;
+  }
+
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-separator-text:not([selected=true]) {
+    color: var(--urlbar-separator-color) !important;
+  }
+  
   @media not all and (min-resolution: 1.1dppx) {
     #mainPopupSet toolbaritem[sdkstylewidget="true"] > toolbarbutton,
     #mainPopupSet :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button:not([attention="success"]), #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"],
@@ -2404,7 +2445,7 @@
   
   :root {
     /* COLOR VARIABLES */
-	--titlebar-min-max-icon-color: #FFFFFF;
+    --titlebar-min-max-icon-color: #FFFFFF;
     --titlebar-close-icon-color: #FFFFFF;
     --titlebar-close-hover-icon-color: #FFFFFF;
     --titlebar-min-max-hover-bg-color: #2E2E2E;
@@ -2456,6 +2497,8 @@
     --context-menu-separator-color: #808080;
     --findbar-notfound-bg-color: #F66;
     --findbar-flash-bg-color: yellow;
+    --action-text-color: #00A399;
+    --url-text-color: #1E9DFF;
 
     /* NUMERICAL VARIABLES */
     --image-inversion-percentage: 100%;
