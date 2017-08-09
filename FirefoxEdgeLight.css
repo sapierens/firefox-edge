@@ -1318,16 +1318,14 @@
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover,
   :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active),
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not([disabled="true"]):hover {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"])[_moz-menuactive]:not(:hover):not(:active) {
     background-color: var(--top-level-bg-hover-color);
   }
   
   #mainPopupSet toolbarbutton:not(.close-icon):not(#PanelUI-quit):not(#PanelUI-fxa-label):not([disabled="true"]):hover:active,
   #nav-bar panel toolbarbutton:not(.close-icon):not([disabled="true"]):hover:active,
   #mainPopupSet .identity-popup-expander:not([disabled="true"]):hover:active,
-  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active,
-  #mainPopupSet panel:not(#PopupAutoCompleteRichResult) .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
+  :-moz-any(#mainPopupSet, #nav-bar, #PersonalToolbar, #TabsToolbar) .subviewbutton:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
   
@@ -2296,6 +2294,14 @@
   
   #mainPopupSet .searchbar-engine-one-off-item:not(.last-row) {
     border-bottom: 1px solid var(--panel-separator-color);
+  }
+                 
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover {
+    background-color: var(--top-level-bg-hover-color);
+  }
+
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
+    background-color: var(--top-level-bg-active-color);
   }
   
   /* URLBAR SEARCH SUGGESTIONS POPUP */
