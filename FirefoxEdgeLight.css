@@ -2295,7 +2295,7 @@
   #mainPopupSet .searchbar-engine-one-off-item:not(.last-row) {
     border-bottom: 1px solid var(--panel-separator-color);
   }
-                 
+
   #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color);
   }
@@ -2303,7 +2303,7 @@
   #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
-  
+
   /* URLBAR SEARCH SUGGESTIONS POPUP */
   #PopupAutoCompleteRichResult {
     border: none !important;
@@ -2314,6 +2314,7 @@
   #PopupAutoCompleteRichResult > .autocomplete-richlistbox {
     background-color: var(--second-level-bg-color) !important;
     padding: 0 !important;
+    transition: none !important;
   }
 
   #PopupAutoCompleteRichResult .autocomplete-richlistitem {
