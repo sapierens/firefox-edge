@@ -2296,6 +2296,12 @@
   #mainPopupSet .searchbar-engine-one-off-item:not(.last-row) {
     border-bottom: 1px solid var(--panel-separator-color);
   }
+                 
+  #mainPopupSet .searchbar-engine-one-off-item.search-setting-button-compact {
+    background-image: none !important;
+    border-left: 1px solid var(--panel-separator-color);
+    border-right: none;
+  }
 
   #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover {
     background-color: var(--top-level-bg-hover-color);
