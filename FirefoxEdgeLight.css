@@ -2303,11 +2303,11 @@
     border-right: none;
   }
 
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover {
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):not(.dummy):hover {
     background-color: var(--top-level-bg-hover-color);
   }
 
-  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):hover:active {
+  #mainPopupSet .searchbar-engine-one-off-item:not([disabled="true"]):not(.dummy):hover:active {
     background-color: var(--top-level-bg-active-color);
   }
 
