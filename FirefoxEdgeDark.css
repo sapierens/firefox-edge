@@ -1234,6 +1234,11 @@
   #nav-bar #pocket-button {
     fill: var(--main-font-color);
   }
+                 
+  /* COLOR OF TOOLBAR BUTTONS */
+  .toolbarbutton-1 {
+    fill: var(--main-font-color) !important;
+  }
 
   /* TAB THROBBER ANIMATION */
   .tab-throbber[busy],
