@@ -1,5 +1,11 @@
 # Changelog
 
+**[v1.11.1 August 10th, 2017]**
+
+* Fixed missing Pocket button when placed on toolbar.
+* Fixed default toolbar icons being too dark on dark theme.
+* Slightly improved the bookmarking animation.
+
 **[v1.11.0 August 9th, 2017]**
 
 * Style has been updated for Firefox 55.
