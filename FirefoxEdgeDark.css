@@ -1273,7 +1273,7 @@
   }
 
   /* MENU & POPUPS */
-  :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel) .panel-arrowcontent,
+  :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel, #sidebarMenu-popup) .panel-arrowcontent,
   #BMB_bookmarksPopup .arrowscrollbox-scrollbox {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
@@ -1575,7 +1575,8 @@
   .findbar-closebutton,
   #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]),
   #browser-panel .close-icon,
-  #search-box .textbox-search-clear {
+  #search-box .textbox-search-clear,
+  #sidebar-close {
     -moz-appearance: none !important;
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
@@ -1590,7 +1591,8 @@
   .findbar-closebutton:hover,
   #TabsToolbar[brighttext] .tab-close-button:hover,
   #browser-panel .close-icon:hover,
-  #search-box .textbox-search-clear:hover {
+  #search-box .textbox-search-clear:hover,
+  #sidebar-close:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
@@ -1599,7 +1601,8 @@
   .findbar-closebutton:hover:active,
   #TabsToolbar[brighttext] .tab-close-button:hover:active,
   #browser-panel .close-icon:hover:active,
-  #search-box .textbox-search-clear:hover:active {
+  #search-box .textbox-search-clear:hover:active,
+  #sidebar-close:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
@@ -2003,40 +2006,57 @@
                  
   /* SIDEBAR BOX */
   sidebarheader {
-    height: 25px;
-    background-color: var(--top-level-bg-color);
+    height: 32px;
+    background-color: var(--top-level-bg-color) !important;
     border-bottom: 1px solid var(--panel-separator-color) !important;
     border-top: none;
-    color: var(--main-font-color);
+    color: var(--main-font-color) !important;
   }
                  
   #viewButton {
     height: 27px;
   }
-                 
+
   .sidebar-splitter {
     border-inline-end: 1px solid var(--navigator-separator-bg-color);
   }
-                 
+
   #bookmarksPanel,
   #history-panel {
     background-color: var(--top-level-bg-color);
     color: var(--main-font-color);
   }
-                 
+
   :-moz-any(#bookmarksPanel, #history-panel) tree {
     border: none !important;
     border-top: 1px solid var(--panel-separator-color) !important;
   }
-                 
+
   .textbox-search-icon {
     list-style-image: var(--searchbar-search-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
-                 
+
   .textbox-search-clear {
     list-style-image: url(chrome://global/skin/icons/Search-close.png);
     -moz-image-region: rect(0, 16px, 16px, 0);
+  }
+
+  #sidebar-close {
+    background-color: transparent !important;
+  }
+                 
+  #sidebar-switcher-arrow {
+    list-style-image: var(--menulist-dropdown-image) !important;
+    width: 14px;
+  }
+                 
+  #sidebar-switcher-target:hover {
+    background-color: var(--top-level-bg-hover-color) !important;
+  }
+                 
+  #sidebar-switcher-target.active {
+    background-color: var(--top-level-bg-active-color) !important;
   }
 
   /* CONTEXT MENUS */
