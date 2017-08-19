@@ -149,7 +149,11 @@
 
   .tabbrowser-tab[selected] {
     color: var(--main-font-color) !important;
-    background: var(--top-level-bg-color) !important;
+    background: transparent !important;
+  }
+                 
+  .tabbrowser-tab[selected] > .tab-stack {
+    background-color: var(--top-level-bg-color) !important;
   }
 
   .tab-background {
@@ -454,18 +458,16 @@
     margin-left: 3px !important;
   }
 
-  /* NEW TAB ANIMATION */
-  .tabbrowser-tab:not([pinned]) {
-    margin-top: 0;
-    transition: min-width 70ms ease-out,
-      max-width 100ms ease-out,
-      margin-top 160ms linear;
+  /* NEW TAB ANIMATION */     
+  .tabbrowser-tab:not([pinned]) > .tab-stack {
+    transform: translateY(0px);
+    transition: transform 100ms linear;
   }
 
-  .tabbrowser-tab:not([pinned]):not([fadein]) {
-    margin-top: 14px;
+  .tabbrowser-tab:not([pinned]):not([fadein]) > .tab-stack {
+    transform: translateY(32px);
   }
-  
+
   /* TAB ATTENTION ANIMATION */
   @keyframes tab-attention {  
     0% { background-color: rgba(255, 185, 0, 0); }
