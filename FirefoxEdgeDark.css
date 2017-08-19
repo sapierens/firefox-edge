@@ -362,15 +362,16 @@
 
   .tab-icon-sound {
     list-style-image: var(--tab-icon-sound-image) !important;
+    opacity: 1 !important;
   }
 
   .tab-icon-sound[soundplaying] {
     -moz-image-region: rect(0, 16px, 16px, 0);
-    opacity: 0.8;
+    opacity: 0.9 !important;
   }
 
   .tab-icon-sound[soundplaying]:hover {
-    opacity: 0.9 !important;
+    opacity: 0.95 !important;
   }
 
   .tab-icon-sound[soundplaying]:hover:active {
@@ -379,11 +380,11 @@
 
   .tab-icon-sound[muted] {
     -moz-image-region: rect(0, 32px, 16px, 16px);
-    opacity: 0.8;
+    opacity: 0.9 !important;
   }
 
   .tab-icon-sound[muted]:hover {
-    opacity: 0.9 !important;
+    opacity: 0.95 !important;
   }
 
   .tab-icon-sound[muted]:hover:active {
@@ -395,7 +396,7 @@
   }
 
   .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound {
-    opacity: 1;
+    opacity: 0.6 !important;
   }
 
   /* REPLACE PINNED TAB'S FAVICON WITH AUDIO ICON */  
