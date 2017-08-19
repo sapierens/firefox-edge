@@ -50,6 +50,40 @@
     background-color: var(--second-level-bg-active-color) !important;
     border-width: 2px !important;
   }
+                 
+  .titlebar-button {
+    border: none;
+    margin: 0 !important;
+    padding: 10px 17px;
+    -moz-context-properties: stroke;
+    stroke: black;
+  }
+
+  :root[sizemode=maximized] .titlebar-button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .titlebar-button > .toolbarbutton-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  #titlebar-min {
+    list-style-image: url(chrome://browser/skin/window-controls/minimize.svg);
+  }
+
+  #titlebar-max {
+    list-style-image: url(chrome://browser/skin/window-controls/maximize.svg);
+  }
+
+  :root[sizemode="maximized"] #titlebar-max {
+    list-style-image: url(chrome://browser/skin/window-controls/restore.svg);
+  }
+
+  #titlebar-close {
+    list-style-image: url(chrome://browser/skin/window-controls/close.svg);
+  }
 
   #titlebar-min,
   #minimize-button,
