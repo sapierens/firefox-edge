@@ -1,4 +1,4 @@
-/*    Firefox Edge v1.11.1    */
+/*    Firefox Edge v1.11.2    */
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul"),
@@ -49,6 +49,40 @@
   #main-menubar > menu[open="true"] {
     background-color: var(--second-level-bg-active-color) !important;
     border-width: 2px !important;
+  }
+                 
+  .titlebar-button {
+    border: none;
+    margin: 0 !important;
+    padding: 10px 17px;
+    -moz-context-properties: stroke;
+    stroke: black;
+  }
+
+  :root[sizemode=maximized] .titlebar-button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .titlebar-button > .toolbarbutton-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  #titlebar-min {
+    list-style-image: url(chrome://browser/skin/window-controls/minimize.svg);
+  }
+
+  #titlebar-max {
+    list-style-image: url(chrome://browser/skin/window-controls/maximize.svg);
+  }
+
+  :root[sizemode="maximized"] #titlebar-max {
+    list-style-image: url(chrome://browser/skin/window-controls/restore.svg);
+  }
+
+  #titlebar-close {
+    list-style-image: url(chrome://browser/skin/window-controls/close.svg);
   }
 
   #titlebar-min,
@@ -149,7 +183,11 @@
 
   .tabbrowser-tab[selected] {
     color: var(--main-font-color) !important;
-    background: var(--top-level-bg-color) !important;
+    background: transparent !important;
+  }
+                 
+  .tabbrowser-tab[selected] > .tab-stack {
+    background-color: var(--top-level-bg-color) !important;
   }
 
   .tab-background {
@@ -358,15 +396,16 @@
 
   .tab-icon-sound {
     list-style-image: var(--tab-icon-sound-image) !important;
+    opacity: 1 !important;
   }
 
   .tab-icon-sound[soundplaying] {
     -moz-image-region: rect(0, 16px, 16px, 0);
-    opacity: 0.8;
+    opacity: 0.9 !important;
   }
 
   .tab-icon-sound[soundplaying]:hover {
-    opacity: 0.9 !important;
+    opacity: 0.95 !important;
   }
 
   .tab-icon-sound[soundplaying]:hover:active {
@@ -375,11 +414,11 @@
 
   .tab-icon-sound[muted] {
     -moz-image-region: rect(0, 32px, 16px, 16px);
-    opacity: 0.8;
+    opacity: 0.9 !important;
   }
 
   .tab-icon-sound[muted]:hover {
-    opacity: 0.9 !important;
+    opacity: 0.95 !important;
   }
 
   .tab-icon-sound[muted]:hover:active {
@@ -391,7 +430,7 @@
   }
 
   .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound {
-    opacity: 1;
+    opacity: 0.6 !important;
   }
 
   /* REPLACE PINNED TAB'S FAVICON WITH AUDIO ICON */  
@@ -454,18 +493,16 @@
     margin-left: 3px !important;
   }
 
-  /* NEW TAB ANIMATION */
-  .tabbrowser-tab:not([pinned]) {
-    margin-top: 0;
-    transition: min-width 70ms ease-out,
-      max-width 100ms ease-out,
-      margin-top 160ms linear;
+  /* NEW TAB ANIMATION */     
+  .tabbrowser-tab:not([pinned]) > .tab-stack {
+    transform: translateY(0px);
+    transition: transform 100ms linear;
   }
 
-  .tabbrowser-tab:not([pinned]):not([fadein]) {
-    margin-top: 14px;
+  .tabbrowser-tab:not([pinned]):not([fadein]) > .tab-stack {
+    transform: translateY(32px);
   }
-  
+
   /* TAB ATTENTION ANIMATION */
   @keyframes tab-attention {  
     0% { background-color: rgba(255, 185, 0, 0); }
@@ -1270,7 +1307,7 @@
   }
 
   /* MENU & POPUPS */
-  :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel) .panel-arrowcontent,
+  :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel, #sidebarMenu-popup) .panel-arrowcontent,
   #BMB_bookmarksPopup .arrowscrollbox-scrollbox {
     background-color: var(--top-level-bg-color) !important;
     color: var(--main-font-color) !important;
@@ -1547,13 +1584,19 @@
     background-color: var(--blue-accent-color) !important;
     color: var(--main-font-color) !important;
   }
+                 
+  #mainPopupSet .popup-notification-button-container button[anonid="button"][disabled] {
+    opacity: 0.65;
+    background-color: var(--top-level-bg-color) !important;
+    color: var(--inactive-font-color) !important;
+  }
   
-  #mainPopupSet .popup-notification-button-container button[anonid="button"]:hover {
+  #mainPopupSet .popup-notification-button-container button[anonid="button"]:not([disabled]):hover {
     box-shadow: inset 0px 0px 0px 2px var(--blue-accent-color-hover) !important;
     background-color: var(--blue-accent-color) !important;
   }
   
-  #mainPopupSet .popup-notification-button-container button[anonid="button"]:hover:active {
+  #mainPopupSet .popup-notification-button-container button[anonid="button"]:not([disabled]):hover:active {
     box-shadow: none !important;
     background-color: var(--blue-accent-color-hover) !important;
   }
@@ -1572,7 +1615,8 @@
   .findbar-closebutton,
   #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]),
   #browser-panel .close-icon,
-  #search-box .textbox-search-clear {
+  #search-box .textbox-search-clear,
+  #sidebar-close {
     -moz-appearance: none !important;
     list-style-image: var(--tab-close-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0px);
@@ -1587,7 +1631,8 @@
   .findbar-closebutton:hover,
   #TabsToolbar[brighttext] .tab-close-button:hover,
   #browser-panel .close-icon:hover,
-  #search-box .textbox-search-clear:hover {
+  #search-box .textbox-search-clear:hover,
+  #sidebar-close:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
   
@@ -1596,7 +1641,8 @@
   .findbar-closebutton:hover:active,
   #TabsToolbar[brighttext] .tab-close-button:hover:active,
   #browser-panel .close-icon:hover:active,
-  #search-box .textbox-search-clear:hover:active {
+  #search-box .textbox-search-clear:hover:active,
+  #sidebar-close:hover:active {
     -moz-image-region: rect(0, 60px, 20px, 40px);
   }
   
@@ -2000,40 +2046,57 @@
                  
   /* SIDEBAR BOX */
   sidebarheader {
-    height: 25px;
-    background-color: var(--top-level-bg-color);
+    height: 32px;
+    background-color: var(--top-level-bg-color) !important;
     border-bottom: 1px solid var(--panel-separator-color) !important;
     border-top: none;
-    color: var(--main-font-color);
+    color: var(--main-font-color) !important;
   }
                  
   #viewButton {
     height: 27px;
   }
-                 
+
   .sidebar-splitter {
     border-inline-end: 1px solid var(--navigator-separator-bg-color);
   }
-                 
+
   #bookmarksPanel,
   #history-panel {
     background-color: var(--top-level-bg-color);
     color: var(--main-font-color);
   }
-                 
+
   :-moz-any(#bookmarksPanel, #history-panel) tree {
     border: none !important;
     border-top: 1px solid var(--panel-separator-color) !important;
   }
-                 
+
   .textbox-search-icon {
     list-style-image: var(--searchbar-search-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
-                 
+
   .textbox-search-clear {
     list-style-image: url(chrome://global/skin/icons/Search-close.png);
     -moz-image-region: rect(0, 16px, 16px, 0);
+  }
+
+  #sidebar-close {
+    background-color: transparent !important;
+  }
+                 
+  #sidebar-switcher-arrow {
+    list-style-image: var(--menulist-dropdown-image) !important;
+    width: 14px;
+  }
+                 
+  #sidebar-switcher-target:hover {
+    background-color: var(--top-level-bg-hover-color) !important;
+  }
+                 
+  #sidebar-switcher-target.active {
+    background-color: var(--top-level-bg-active-color) !important;
   }
 
   /* CONTEXT MENUS */

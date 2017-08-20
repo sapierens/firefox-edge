@@ -1,5 +1,14 @@
 # Changelog
 
+**[v1.11.2 August 20th, 2017]**
+
+* Fixed glitchy tabs after they were shuffled around.
+* Fixed sidebar header styling.
+* Fixed missing titlebar buttons on Windows 7 and 8.
+* Fixed tab audio icon opacity levels.
+* Improved popup notification button's styling when disabled.
+* Slightly improved new tab animation.
+
 **[v1.11.1 August 10th, 2017]**
 
 * Fixed missing Pocket button when placed on toolbar.
