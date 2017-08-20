@@ -1584,13 +1584,19 @@
     background-color: var(--blue-accent-color) !important;
     color: var(--main-font-color) !important;
   }
+                 
+  #mainPopupSet .popup-notification-button-container button[anonid="button"][disabled] {
+    opacity: 0.65;
+    background-color: var(--top-level-bg-color) !important;
+    color: var(--inactive-font-color) !important;
+  }
   
-  #mainPopupSet .popup-notification-button-container button[anonid="button"]:hover {
+  #mainPopupSet .popup-notification-button-container button[anonid="button"]:not([disabled]):hover {
     box-shadow: inset 0px 0px 0px 2px var(--blue-accent-color-hover) !important;
     background-color: var(--blue-accent-color) !important;
   }
   
-  #mainPopupSet .popup-notification-button-container button[anonid="button"]:hover:active {
+  #mainPopupSet .popup-notification-button-container button[anonid="button"]:not([disabled]):hover:active {
     box-shadow: none !important;
     background-color: var(--blue-accent-color-hover) !important;
   }
