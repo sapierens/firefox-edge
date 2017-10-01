@@ -4,6 +4,11 @@
 @-moz-document url("chrome://browser/content/browser.xul"),
                url("chrome://browser/content/bookmarks/bookmarksPanel.xul"),
                url("chrome://browser/content/history/history-panel.xul") {
+                 
+                 :root {
+                   --chrome-background-color: var(--second-level-bg-color) !important;
+                   --chrome-secondary-background-color: var(--top-level-bg-color) !important;
+                 }
   
   /* MAIN WINDOW & TITLEBAR BUTTONS */
   #titlebar-min,
@@ -614,6 +619,7 @@
     padding: 0 !important;
     max-width: 36px !important;
     background-color: transparent !important;
+    border: none !important;
   }
 
   /* FORWARD BUTTON */
@@ -875,7 +881,7 @@
   }
 
   /* SEARCH TEXTBOX */
-  .searchbar-textbox {
+  #navigator-toolbox .searchbar-textbox {
     color: var(--main-font-color) !important;
     background-color: var(--searchbar-bg-color) !important;
     border-color: var(--tab-separator-color) !important;
@@ -884,20 +890,20 @@
     height: 26px !important;
   }
 
-  .searchbar-textbox:hover {
+  #navigator-toolbox .searchbar-textbox:hover {
     background-color: var(--searchbar-bg-hover-color) !important;
   }
 
-  .searchbar-textbox[focused] {
+  #navigator-toolbox .searchbar-textbox[focused] {
     background-color: var(--searchbar-bg-active-color) !important;
   }
 
-  .searchbar-search-button {
+  #navigator-toolbox .searchbar-search-button {
     list-style-image: var(--searchbar-search-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
   
-  .searchbar-search-button:hover {
+  #navigator-toolbox .searchbar-search-button:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
 
