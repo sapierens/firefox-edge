@@ -170,6 +170,7 @@
   
   .tab-content {
     padding-bottom: 1px !important;
+    height: 32px;
   }
 
   .tabbrowser-tab .tab-stack {
@@ -309,11 +310,6 @@
   #tabbrowser-tabs[overflow] > .tabbrowser-tab[pinned] {
     padding-bottom: 15px !important;
     height: 32px !important;
-  }
-
-  #tabbrowser-tabs[overflow] > .tabbrowser-tab[pinned] > .tab-stack {
-    margin-top: 7px !important;
-    margin-bottom: -7px !important;
   }
 
   .tabbrowser-arrowscrollbox > .scrollbutton-up, 
