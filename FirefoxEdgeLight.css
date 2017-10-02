@@ -1033,6 +1033,10 @@
     background: var(--downloads-button-image) bottom no-repeat !important;
   }
                  
+  #downloads-button[cui-areatype="toolbar"][attention="success"] #downloads-indicator-progress-outer {
+    background: var(--downloads-button-attention-image) bottom no-repeat !important;
+  }
+                 
   #downloads-indicator-progress-inner {
     background-size: 20px;
     background-image: var(--downloads-button-attention-image) !important;
