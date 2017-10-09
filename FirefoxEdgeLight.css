@@ -1330,7 +1330,14 @@
     filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
   }
 
-  /* MENU & POPUPS */
+  /* MENU & POPUPS */                 
+  @media not screen and (-moz-windows-theme) {
+    #PersonalToolbar .menuitem-iconic.bookmark-item.menuitem-with-favicon,
+    #PersonalToolbar .menu-iconic.bookmark-item {
+      padding-left: 8px;
+    }
+  }
+                 
   :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel, #sidebarMenu-popup) .panel-arrowcontent,
   #BMB_bookmarksPopup .arrowscrollbox-scrollbox {
     background-color: var(--top-level-bg-color) !important;
