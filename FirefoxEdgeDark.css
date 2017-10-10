@@ -395,7 +395,7 @@
     display: block !important;
   }
 
-  .tab-icon-sound {
+  .tab-icon-sound:not([activemedia-blocked]) {
     list-style-image: var(--tab-icon-sound-image) !important;
     opacity: 1 !important;
   }
@@ -432,6 +432,10 @@
 
   .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound {
     opacity: 0.6 !important;
+  }
+                 
+  .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound[activemedia-blocked] {
+    opacity: 1 !important;
   }
 
   /* REPLACE PINNED TAB'S FAVICON WITH AUDIO ICON */  
