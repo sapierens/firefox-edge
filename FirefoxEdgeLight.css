@@ -1,9 +1,14 @@
-/*    Firefox Edge v1.11.2    */
+/*    Firefox Edge v1.12.0    */
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/browser.xul"),
                url("chrome://browser/content/bookmarks/bookmarksPanel.xul"),
                url("chrome://browser/content/history/history-panel.xul") {
+                 
+  :root {
+    --chrome-background-color: var(--second-level-bg-color) !important;
+    --chrome-secondary-background-color: var(--top-level-bg-color) !important;
+  }
   
   /* MAIN WINDOW & TITLEBAR BUTTONS */
   #titlebar-min,
@@ -170,6 +175,7 @@
   
   .tab-content {
     padding-bottom: 1px !important;
+    height: 32px;
   }
 
   .tabbrowser-tab .tab-stack {
@@ -311,11 +317,6 @@
     height: 32px !important;
   }
 
-  #tabbrowser-tabs[overflow] > .tabbrowser-tab[pinned] > .tab-stack {
-    margin-top: 7px !important;
-    margin-bottom: -7px !important;
-  }
-
   .tabbrowser-arrowscrollbox > .scrollbutton-up, 
   .tabbrowser-arrowscrollbox > .scrollbutton-down,
   #TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-up,
@@ -394,7 +395,7 @@
     display: block !important;
   }
 
-  .tab-icon-sound {
+  .tab-icon-sound:not([activemedia-blocked]) {
     list-style-image: var(--tab-icon-sound-image) !important;
     opacity: 1 !important;
   }
@@ -431,6 +432,10 @@
 
   .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound {
     opacity: 0.6 !important;
+  }
+                 
+  .tabbrowser-tab:not([visuallyselected]):not(:hover) > .tab-stack >.tab-content > .tab-icon-sound[activemedia-blocked] {
+    opacity: 1 !important;
   }
 
   /* REPLACE PINNED TAB'S FAVICON WITH AUDIO ICON */  
@@ -618,6 +623,7 @@
     padding: 0 !important;
     max-width: 36px !important;
     background-color: transparent !important;
+    border: none !important;
   }
 
   /* FORWARD BUTTON */
@@ -879,7 +885,7 @@
   }
 
   /* SEARCH TEXTBOX */
-  .searchbar-textbox {
+  #navigator-toolbox .searchbar-textbox {
     color: var(--main-font-color) !important;
     background-color: var(--searchbar-bg-color) !important;
     border-color: var(--tab-separator-color) !important;
@@ -888,20 +894,20 @@
     height: 26px !important;
   }
 
-  .searchbar-textbox:hover {
+  #navigator-toolbox .searchbar-textbox:hover {
     background-color: var(--searchbar-bg-hover-color) !important;
   }
 
-  .searchbar-textbox[focused] {
+  #navigator-toolbox .searchbar-textbox[focused] {
     background-color: var(--searchbar-bg-active-color) !important;
   }
 
-  .searchbar-search-button {
+  #navigator-toolbox .searchbar-search-button {
     list-style-image: var(--searchbar-search-button-image);
     -moz-image-region: rect(0, 20px, 20px, 0);
   }
   
-  .searchbar-search-button:hover {
+  #navigator-toolbox .searchbar-search-button:hover {
     -moz-image-region: rect(0, 40px, 20px, 20px);
   }
 
@@ -1013,11 +1019,35 @@
   }
 
   /* DOWNLOADS BUTTON */  
-  #downloads-button[cui-areatype="toolbar"] .toolbarbutton-icon {
+  #downloads-button[cui-areatype="toolbar"] {
     width: 20px !important;
     height: 20px !important;
     list-style-image: none !important;
     background: var(--downloads-button-image) no-repeat center !important;
+  }
+                 
+  #downloads-button[cui-areatype="toolbar"][indicator] {
+    background: none !important;
+  }
+                 
+  #downloads-indicator-progress-outer {
+    background-size: 20px;
+    width: 20px !important;
+    height: 20px !important;
+    background: var(--downloads-button-image) bottom no-repeat !important;
+  }
+                 
+  #downloads-button[cui-areatype="toolbar"][attention="success"] #downloads-indicator-progress-outer {
+    background: var(--downloads-button-attention-image) bottom no-repeat !important;
+  }
+                 
+  #downloads-indicator-progress-inner {
+    background-size: 20px;
+    background-image: var(--downloads-button-attention-image) !important;
+  }
+                 
+  #downloads-button[cui-areatype="toolbar"]:not([progress]) #downloads-indicator-progress-inner {
+    background-image: none !important;
   }
 
   #downloads-indicator-icon {
@@ -1172,8 +1202,6 @@
     background-image: var(--default-dropdown-image);
     background-position: right 4px top 22px;
   }
-                 
-
   
   /* TOOLBAR BUTTON BADGE */
   .toolbarbutton-badge {
@@ -1298,15 +1326,22 @@
   }
   
   /* INVERSION & BRIGHTENING OF IMAGES */
-  .notification-anchor-icon:not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(.plugin-blocked),
-  .desktop-notification-icon,
+  .notification-anchor-icon:not(#servicesInstall-notification-icon):not(#translated-notification-icon):not(.plugin-blocked):not(#web-notifications-notification-icon),
   .blocked-permission-icon,
+  #blocked-permissions-container,
   .messageImage:not([value="popup-blocked"]):not([value="plugin-hidden"]):not([value="reset-profile-notification"]):not([value="process-hang"]):not([value^="Protocol Registration:"]),
-  .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]):not([popupid="addon-install-restart"]):not([popupid="greasemonkey-notification"]):not([popupid="addon-install-blocked"]):not([popupid="addon-installed"]) {
+  .popup-notification-icon:not([popupid="addon-install-confirmation"]):not([popupid="addon-progress"]):not([popupid="addon-install-complete"]):not([popupid="addon-install-restart"]):not([popupid="greasemonkey-notification"]):not([popupid="addon-install-blocked"]):not([popupid="addon-installed"]):not([popupid="addon-webext-permissions"]) {
     filter: invert(var(--image-inversion-percentage)) brightness(var(--image-brightness));
   }
 
-  /* MENU & POPUPS */
+  /* MENU & POPUPS */                 
+  @media not screen and (-moz-windows-theme) {
+    #PersonalToolbar .menuitem-iconic.bookmark-item.menuitem-with-favicon,
+    #PersonalToolbar .menu-iconic.bookmark-item {
+      padding-left: 8px;
+    }
+  }
+                 
   :-moz-any(#PopupAutoComplete, #PopupSearchAutoComplete, #PopupAutoCompleteRichResult, #invalid-form-popup, #editBookmarkPanel, #social-share-panel, #social-notification-panel, #social-flyout-panel, #ctrlTab-panel, #notification-popup, #PanelUI-popup, #widget-overflow, #customization-tipPanel, #panic-button-success-notification, #identity-popup, #alertbox_menu_panel, #downloadsPanel, #BMB_bookmarksPopup, #customizationui-widget-panel, #sidebarMenu-popup) .panel-arrowcontent,
   #BMB_bookmarksPopup .arrowscrollbox-scrollbox {
     background-color: var(--top-level-bg-color) !important;

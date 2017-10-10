@@ -1,5 +1,15 @@
 # Changelog
 
+**[v1.12.0 October 10th, 2017]**
+
+* Style has been updated for Firefox 56.
+* Fixed the download button for Firefox 56.
+* Fixed tab's media blocked icon.
+* Fixed some of the background colors not being correctly set when compact mode is enabled.
+* Fixed tab background sometimes not covering the entire tab.
+* Fixed a couple of icons being inverted when they shouldn't and vice versa.
+* Fixed missing padding for bookmarks folder popup on Firefox for Linux.
+
 **[v1.11.2 August 20th, 2017]**
 
 * Fixed glitchy tabs after they were shuffled around.
